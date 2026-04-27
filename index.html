@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Qurated — Your Brand, Qurated.</title>
-<meta name="description" content="Qurated is a content and growth agency for trades, real estate, and professional businesses in Australia. We build AI-powered growth systems that make you look premium, rank higher, and convert more."/>
-<meta property="og:title" content="Qurated — Your Brand, Qurated."/>
-<meta property="og:description" content="Content that builds brands. Systems that scale them."/>
+<title>Qurated — Content. Systems. Growth.</title>
+<meta name="description" content="Qurated builds content strategies, manages social media, and deploys AI automation systems that help businesses grow online. Done for you. Built to scale."/>
+<meta property="og:title" content="Qurated — Content. Systems. Growth."/>
+<meta property="og:description" content="We build the systems. You run the business."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://www.quratedagency.com"/>
 <link rel="canonical" href="https://www.quratedagency.com"/>
@@ -37,26 +37,20 @@ body { background: var(--black); color: var(--white); font-family: var(--font-bo
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--red); }
-
-/* CURSOR */
 * { cursor: none !important; }
 .cursor { position: fixed; width: 8px; height: 8px; background: var(--red); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s, height .3s; }
 .cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(229,0,0,.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .3s, height .3s, opacity .3s; }
 .cursor.hovered { width: 14px; height: 14px; }
 .cursor-ring.hovered { width: 50px; height: 50px; opacity: .5; }
-
-/* NOISE */
 body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 999; opacity: .3; }
-
-/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; transition: background .4s, border-color .4s; border-bottom: 1px solid transparent; }
 nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); border-bottom-color: var(--black-3); }
-.nav-logo { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
-.nav-logo img { height: 32px; width: auto; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 28px; width: auto; max-width: 200px; object-fit: contain; object-position: left center; display: block; }
 .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
 .nav-links a { font-family: var(--font-condensed); font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-2); text-decoration: none; transition: color .2s; }
 .nav-links a:hover { color: var(--white); }
-.nav-cta { color: var(--black) !important; background: var(--red); padding: .55rem 1.4rem; border: none; transition: background .2s !important; }
+.nav-cta { color: var(--black) !important; background: var(--red); padding: .55rem 1.4rem; transition: background .2s !important; }
 .nav-cta:hover { background: var(--white) !important; }
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all .3s; }
@@ -65,8 +59,6 @@ nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); bord
 .mobile-menu a { font-family: var(--font-display); font-size: 3rem; letter-spacing: .1em; color: var(--white); text-decoration: none; transition: color .2s; }
 .mobile-menu a:hover { color: var(--red); }
 .mobile-menu .m-cta { font-family: var(--font-condensed); font-size: .85rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--black); background: var(--red); padding: .9rem 2.5rem; }
-
-/* HERO */
 #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
 .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(229,0,0,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(229,0,0,.025) 1px, transparent 1px); background-size: 64px 64px; pointer-events: none; }
 .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 10rem 3rem 6rem; position: relative; z-index: 2; }
@@ -87,21 +79,15 @@ nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); bord
 .h-stat-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--red); line-height: 1; letter-spacing: .05em; }
 .h-stat-label { font-family: var(--font-condensed); font-size: .65rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-2); margin-top: .2rem; }
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-/* BUTTONS */
 .btn-primary { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--black); background: var(--red); padding: .9rem 2rem; text-decoration: none; border: 1px solid var(--red); transition: all .25s; }
 .btn-primary:hover { background: var(--white); border-color: var(--white); }
 .btn-ghost { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--white); background: transparent; padding: .9rem 2rem; text-decoration: none; border: 1px solid var(--black-3); transition: border-color .25s; }
 .btn-ghost:hover { border-color: var(--grey-2); }
-
-/* MARQUEE */
 .marquee-wrap { overflow: hidden; background: var(--red); padding: .68rem 0; border-top: 1px solid var(--red-dark); border-bottom: 1px solid var(--red-dark); }
-.marquee-track { display: flex; width: max-content; animation: marquee 26s linear infinite; }
+.marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
 .marquee-item { font-family: var(--font-condensed); font-size: .68rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--black); padding: 0 2rem; white-space: nowrap; }
 .marquee-sep { opacity: .25; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* SECTIONS */
 section { padding: 7rem 3rem; }
 .inner { max-width: 1140px; margin: 0 auto; }
 .s-eyebrow { font-family: var(--font-condensed); font-size: .65rem; font-weight: 700; letter-spacing: .35em; text-transform: uppercase; color: var(--red); margin-bottom: .7rem; display: flex; align-items: center; gap: .65rem; }
@@ -111,8 +97,6 @@ section { padding: 7rem 3rem; }
 .s-body { font-size: .93rem; font-weight: 300; color: var(--grey-3); line-height: 1.8; max-width: 500px; }
 .s-body strong { color: var(--white); font-weight: 400; }
 .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--red), transparent); opacity: .18; }
-
-/* SERVICES */
 #services { background: var(--black); }
 .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--black-3); border: 1px solid var(--black-3); }
@@ -128,40 +112,36 @@ section { padding: 7rem 3rem; }
 .svc-list { list-style: none; display: flex; flex-direction: column; gap: .38rem; }
 .svc-list li { font-family: var(--font-condensed); font-size: .78rem; font-weight: 500; letter-spacing: .03em; color: var(--grey-2); display: flex; align-items: center; gap: .6rem; }
 .svc-list li::before { content: ''; display: block; width: 14px; height: 1px; background: var(--red); flex-shrink: 0; }
-
-/* VERTICALS */
-#verticals { background: var(--black-2); }
-.vert-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
-.vert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.vert-card { border: 1px solid var(--black-3); padding: 2.5rem 2rem; position: relative; transition: border-color .3s; overflow: hidden; }
-.vert-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 100%; background: linear-gradient(to top, rgba(229,0,0,.04), transparent); opacity: 0; transition: opacity .4s; pointer-events: none; }
-.vert-card:hover { border-color: var(--red); }
-.vert-card:hover::after { opacity: 1; }
-.vert-tag { font-family: var(--font-condensed); font-size: .6rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--red); margin-bottom: .5rem; }
-.vert-name { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: .05em; margin-bottom: .7rem; }
-.vert-desc { font-size: .83rem; font-weight: 300; color: var(--grey-2); line-height: 1.75; }
-
-/* THE WAY */
-#way { background: var(--black); }
-.way-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
-.way-steps { display: flex; flex-direction: column; }
-.way-step { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--black-3); align-items: start; }
-.way-step:first-child { border-top: 1px solid var(--black-3); }
-.step-num { font-family: var(--font-display); font-size: 1.8rem; color: var(--red); line-height: 1; padding-top: .1rem; }
-.step-title { font-family: var(--font-condensed); font-size: .88rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .35rem; }
-.step-body { font-size: .83rem; font-weight: 300; color: var(--grey-2); line-height: 1.72; }
-.way-callout { background: var(--black-2); border: 1px solid var(--black-3); padding: 3rem; position: relative; }
-.way-callout::before { content: '"'; position: absolute; top: .5rem; left: 2rem; font-family: var(--font-display); font-size: 7rem; color: var(--red); line-height: 1; opacity: .12; }
-.callout-quote { font-family: var(--font-condensed); font-size: 1.35rem; font-weight: 600; line-height: 1.4; letter-spacing: .02em; padding-top: 1.75rem; margin-bottom: 2rem; }
-.metric-row { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; border-bottom: 1px solid var(--black-3); }
-.metric-row:last-child { border-bottom: none; }
-.metric-label { font-family: var(--font-condensed); font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--grey-2); }
-.metric-val { font-family: var(--font-display); font-size: 1.5rem; color: var(--red); letter-spacing: .05em; }
-
-/* CONTACT */
+#why { background: var(--black-2); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
+.why-points { display: flex; flex-direction: column; }
+.why-point { padding: 1.75rem 0; border-bottom: 1px solid var(--black-3); }
+.why-point:first-child { border-top: 1px solid var(--black-3); }
+.why-point-label { font-family: var(--font-condensed); font-size: .6rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--red); margin-bottom: .35rem; }
+.why-point-title { font-family: var(--font-condensed); font-size: 1.05rem; font-weight: 700; letter-spacing: .05em; margin-bottom: .35rem; }
+.why-point-body { font-size: .83rem; font-weight: 300; color: var(--grey-2); line-height: 1.72; }
+.why-callout { background: var(--black-3); border: 1px solid var(--black-4); padding: 3rem; position: relative; }
+.why-callout::before { content: '"'; position: absolute; top: .5rem; left: 2rem; font-family: var(--font-display); font-size: 7rem; color: var(--red); line-height: 1; opacity: .1; }
+.why-quote { font-family: var(--font-condensed); font-size: 1.35rem; font-weight: 600; line-height: 1.4; letter-spacing: .02em; padding-top: 1.75rem; margin-bottom: 2rem; }
+.stat-stack { display: flex; flex-direction: column; }
+.stat-row { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; border-bottom: 1px solid var(--black-4); }
+.stat-row:last-child { border-bottom: none; }
+.stat-label { font-family: var(--font-condensed); font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--grey-2); }
+.stat-val { font-family: var(--font-display); font-size: 1.5rem; color: var(--red); letter-spacing: .05em; }
+#process { background: var(--black); }
+.process-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--black-3); border: 1px solid var(--black-3); }
+.process-step { background: var(--black-2); padding: 2rem 1.75rem; position: relative; transition: background .3s; overflow: hidden; }
+.process-step:hover { background: var(--black-3); }
+.process-step::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
+.process-step:hover::after { transform: scaleX(1); }
+.process-step-num { font-family: var(--font-display); font-size: 3.5rem; color: var(--black-3); line-height: 1; margin-bottom: .75rem; transition: color .3s; }
+.process-step:hover .process-step-num { color: var(--black-4); }
+.process-step-title { font-family: var(--font-condensed); font-size: .85rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .5rem; }
+.process-step-body { font-size: .8rem; font-weight: 300; color: var(--grey-2); line-height: 1.7; }
 #contact { background: var(--black-2); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; margin-top: 3.5rem; }
-.contact-info { display: flex; flex-direction: column; gap: 2.5rem; }
+.contact-info { display: flex; flex-direction: column; gap: 2rem; }
 .contact-detail-label { font-family: var(--font-condensed); font-size: .6rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--red); margin-bottom: .3rem; }
 .contact-detail-value { font-family: var(--font-condensed); font-size: 1rem; font-weight: 500; letter-spacing: .04em; }
 .contact-detail-value a { color: var(--white); text-decoration: none; transition: color .2s; }
@@ -169,38 +149,63 @@ section { padding: 7rem 3rem; }
 .contact-note { padding: 1.5rem; border-left: 2px solid var(--red); background: var(--black-3); }
 .contact-note p { font-size: .83rem; font-weight: 300; color: var(--grey-3); line-height: 1.75; font-style: italic; }
 .contact-note strong { color: var(--white); font-weight: 400; font-style: normal; }
-.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-.form-group { display: flex; flex-direction: column; gap: .38rem; }
-.form-group label { font-family: var(--font-condensed); font-size: .62rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: var(--grey-2); }
-.form-group input, .form-group select, .form-group textarea { background: var(--black-3); border: 1px solid var(--black-4); color: var(--white); font-family: var(--font-body); font-size: .88rem; font-weight: 300; padding: .82rem 1rem; outline: none; transition: border-color .2s, background .2s; border-radius: 0; appearance: none; -webkit-appearance: none; }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--red); background: var(--black-2); }
-.form-group input::placeholder, .form-group textarea::placeholder { color: var(--grey-1); }
-.form-group select { color: var(--grey-3); }
-.form-group select option { background: var(--black-2); color: var(--white); }
-.form-group textarea { resize: vertical; min-height: 130px; }
-.form-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: .25rem; }
-.form-note { font-size: .75rem; font-weight: 300; color: var(--grey-1); }
-#form-success { display: none; background: var(--black-3); border: 1px solid var(--red); padding: 1.5rem 2rem; margin-top: .5rem; text-align: center; }
-#form-success p { font-family: var(--font-condensed); font-size: 1rem; font-weight: 600; letter-spacing: .08em; color: var(--white); }
-
-/* FOOTER */
+.quinn-inline-btn { background: none; border: none; color: var(--red); font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .05em; text-decoration: underline; text-underline-offset: 3px; padding: 0; }
+.contact-right { display: flex; flex-direction: column; gap: 2.5rem; }
+.booking-block { background: var(--black-3); border: 1px solid var(--black-4); padding: 2rem; }
+.booking-block h3 { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: .05em; margin-bottom: .4rem; }
+.booking-block p { font-size: .83rem; font-weight: 300; color: var(--grey-3); line-height: 1.7; margin-bottom: 1.5rem; }
+.email-block { display: flex; flex-direction: column; gap: .5rem; }
+.email-block label { font-family: var(--font-condensed); font-size: .62rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: var(--grey-2); }
+.email-row { display: flex; }
+.email-row input { flex: 1; background: var(--black-3); border: 1px solid var(--black-4); border-right: none; color: var(--white); font-family: var(--font-body); font-size: .88rem; font-weight: 300; padding: .82rem 1rem; outline: none; transition: border-color .2s; border-radius: 0; }
+.email-row input:focus { border-color: var(--red); }
+.email-row input::placeholder { color: var(--grey-1); }
+.email-row button { font-family: var(--font-condensed); font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; background: var(--red); color: var(--black); border: 1px solid var(--red); padding: .82rem 1.25rem; transition: all .2s; }
+.email-row button:hover { background: var(--white); border-color: var(--white); }
+#email-success { display: none; font-family: var(--font-condensed); font-size: .82rem; color: var(--grey-3); padding-top: .35rem; }
 footer { background: var(--black); border-top: 1px solid var(--black-3); padding: 2.5rem 3rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; }
-.footer-logo { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
-.footer-logo img { height: 26px; width: auto; }
+.footer-logo { display: flex; align-items: center; text-decoration: none; }
+.footer-logo img { height: 24px; width: auto; max-width: 180px; object-fit: contain; object-position: left center; display: block; }
 .footer-tagline { font-family: var(--font-body); font-size: .82rem; font-weight: 300; color: var(--grey-2); font-style: italic; text-align: center; }
 .footer-tagline em { color: var(--white); font-style: normal; }
 .footer-copy { font-family: var(--font-condensed); font-size: .65rem; font-weight: 500; letter-spacing: .12em; color: var(--grey-1); text-align: right; }
-
-/* REVEAL */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: .12s; }
 .reveal-delay-2 { transition-delay: .24s; }
 .reveal-delay-3 { transition-delay: .36s; }
-
-/* RESPONSIVE */
+.quinn-bubble { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: .75rem; }
+.quinn-panel { width: 320px; background: var(--black-2); border: 1px solid var(--black-3); display: flex; flex-direction: column; overflow: hidden; opacity: 0; pointer-events: none; transform: translateY(12px) scale(.97); transition: opacity .3s, transform .3s; box-shadow: 0 16px 48px rgba(0,0,0,.6); }
+.quinn-panel.open { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+.quinn-header { background: var(--black-3); padding: 1rem 1.25rem; display: flex; align-items: center; gap: .75rem; border-bottom: 1px solid var(--black-4); }
+.quinn-avatar { width: 34px; height: 34px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.1rem; color: var(--white); flex-shrink: 0; }
+.quinn-name { font-family: var(--font-condensed); font-size: .88rem; font-weight: 700; letter-spacing: .08em; }
+.quinn-status { font-family: var(--font-condensed); font-size: .62rem; letter-spacing: .1em; color: var(--grey-3); display: flex; align-items: center; gap: .35rem; }
+.quinn-status::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+.quinn-messages { height: 300px; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; }
+.quinn-messages::-webkit-scrollbar { width: 2px; }
+.quinn-messages::-webkit-scrollbar-thumb { background: var(--black-4); }
+.q-msg { max-width: 88%; }
+.q-msg.quinn { align-self: flex-start; }
+.q-msg.user { align-self: flex-end; }
+.q-msg p { font-size: .82rem; font-weight: 300; line-height: 1.6; padding: .65rem .9rem; }
+.q-msg.quinn p { background: var(--black-3); color: var(--white); border-radius: 0 8px 8px 8px; }
+.q-msg.user p { background: var(--red); color: var(--white); border-radius: 8px 8px 0 8px; }
+.quinn-typing { display: none; align-self: flex-start; padding: .7rem .9rem; background: var(--black-3); border-radius: 0 8px 8px 8px; gap: 4px; }
+.quinn-typing span { display: inline-block; width: 6px; height: 6px; background: var(--grey-2); border-radius: 50%; animation: dot-bounce .8s ease-in-out infinite; }
+.quinn-typing span:nth-child(2) { animation-delay: .15s; }
+.quinn-typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes dot-bounce { 0%, 80%, 100% { opacity: .3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-4px); } }
+.quinn-input-row { display: flex; border-top: 1px solid var(--black-3); }
+.quinn-input { flex: 1; background: transparent; border: none; padding: .85rem 1rem; color: var(--white); font-family: var(--font-body); font-size: .82rem; font-weight: 300; outline: none; }
+.quinn-input::placeholder { color: var(--grey-1); }
+.quinn-send { background: none; border: none; padding: .85rem 1rem; color: var(--grey-2); transition: color .2s; font-size: 1.1rem; line-height: 1; }
+.quinn-send:hover { color: var(--red); }
+.quinn-toggle { width: 56px; height: 56px; background: var(--red); border-radius: 50%; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(229,0,0,.35); transition: transform .2s, box-shadow .2s; position: relative; }
+.quinn-toggle:hover { transform: scale(1.06); box-shadow: 0 6px 28px rgba(229,0,0,.5); }
+.quinn-toggle-q { font-family: var(--font-display); font-size: 1.6rem; color: var(--white); line-height: 1; }
+.quinn-badge { position: absolute; top: 0; right: 0; width: 13px; height: 13px; background: #22c55e; border-radius: 50%; border: 2px solid var(--black); }
 @media (max-width: 1024px) {
   #hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
@@ -209,386 +214,308 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
   .nav-links { display: none; }
   .hamburger { display: flex; }
   section { padding: 5rem 1.5rem; }
-  .services-header, .vert-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .services-header, .process-header { grid-template-columns: 1fr; gap: 1.5rem; }
   .services-grid { grid-template-columns: 1fr; }
-  .vert-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .way-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr; gap: 3rem; }
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .form-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .footer-logo { justify-content: center; }
   .footer-copy { text-align: center; }
   .hero-stat-row { flex-wrap: wrap; }
   .h-stat { border-right: none; flex-basis: 45%; border-bottom: 1px solid var(--black-3); padding-bottom: 1rem; }
   .h-stat:last-child { border-bottom: none; }
+  .quinn-panel { width: 290px; }
+  .quinn-bubble { bottom: 1.25rem; right: 1.25rem; }
 }
 @media (max-width: 600px) {
   .hero-headline { font-size: 3.8rem; }
   .s-title { font-size: 2.6rem; }
+  .process-steps { grid-template-columns: 1fr; }
+  .email-row { flex-direction: column; }
+  .email-row input { border-right: 1px solid var(--black-4); }
+  .email-row button { width: 100%; }
 }
 </style>
 </head>
 <body>
-
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
-
 <div class="mobile-menu" id="mobile-menu">
   <a href="#services" onclick="closeMobile()">Services</a>
-  <a href="#verticals" onclick="closeMobile()">Who We Help</a>
-  <a href="#way" onclick="closeMobile()">Our Way</a>
+  <a href="#why" onclick="closeMobile()">Why Qurated</a>
+  <a href="#process" onclick="closeMobile()">Our Process</a>
   <a href="#contact" class="m-cta" onclick="closeMobile()">Get Started</a>
 </div>
-
 <nav id="nav">
   <a href="#hero" class="nav-logo">
     <img src="https://cdn.jsdelivr.net/gh/ggarang3/qurated-website@main/PNG%20LONG%20LOGO.png" alt="Qurated"/>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#verticals">Who We Help</a></li>
-    <li><a href="#way">Our Way</a></li>
+    <li><a href="#why">Why Qurated</a></li>
+    <li><a href="#process">Our Process</a></li>
     <li><a href="#contact" class="nav-cta">Get Started</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
-<!-- HERO -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-left">
-    <div class="hero-eyebrow">Growth Systems Agency</div>
-    <h1 class="hero-headline">
-      YOUR<br>BRAND,<br><span class="q-drop">QURATED</span>.
-    </h1>
-    <p class="hero-sub">
-      We build <strong>AI-powered growth systems</strong> for trades, real estate, and professional businesses across Australia — so you look premium, rank higher, and convert more.
-    </p>
+    <div class="hero-eyebrow">Content · Systems · Growth</div>
+    <h1 class="hero-headline">WE BUILD<br>BRANDS<br><span class="q-drop">THAT WORK.</span></h1>
+    <p class="hero-sub">Most businesses have great products and no one to sell them to. We fix that with <strong>done-for-you content, AI-powered automation, and websites built to convert</strong> — so your business grows while you work.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Get Started →</a>
-      <a href="#services" class="btn-ghost">See Our Services</a>
+      <a href="#contact" class="btn-primary">Book Your Free Diagnosis →</a>
+      <a href="#services" class="btn-ghost">See what we do</a>
     </div>
     <div class="hero-stat-row">
-      <div class="h-stat">
-        <div class="h-stat-num">3X</div>
-        <div class="h-stat-label">Avg. Engagement Lift</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-num">48H</div>
-        <div class="h-stat-label">Onboarding Turnaround</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-num">100%</div>
-        <div class="h-stat-label">Done For You</div>
-      </div>
+      <div class="h-stat"><div class="h-stat-num">100%</div><div class="h-stat-label">Done For You</div></div>
+      <div class="h-stat"><div class="h-stat-num">30D</div><div class="h-stat-label">To First Results</div></div>
+      <div class="h-stat"><div class="h-stat-num">AI</div><div class="h-stat-label">Powered Systems</div></div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-bg-mark">Q</div>
-  </div>
+  <div class="hero-right"><div class="hero-bg-mark">Q</div></div>
 </section>
-
-<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span class="marquee-item">Social Media</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Content Strategy</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Brand Identity</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Web Design</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">AI Growth Systems</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Paid Ads</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Copywriting</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Social Media</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Content Strategy</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Brand Identity</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Web Design</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">AI Growth Systems</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Paid Ads</span>
-    <span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Copywriting</span>
-    <span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Content Strategy</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Social Media Management</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Web Design &amp; Development</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">AI Automation</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Meta Ads</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">CRM Systems</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Reels &amp; Short-Form Video</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Copywriting</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Content Strategy</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Social Media Management</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Web Design &amp; Development</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">AI Automation</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Meta Ads</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">CRM Systems</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Reels &amp; Short-Form Video</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Copywriting</span><span class="marquee-item marquee-sep">✦</span>
   </div>
 </div>
-
-<!-- SERVICES -->
 <section id="services">
   <div class="inner">
     <div class="services-header">
       <div>
-        <div class="s-eyebrow">What We Do</div>
-        <h2 class="s-title">GROWTH<br><span class="red">SYSTEMS</span></h2>
+        <div class="s-eyebrow">What we do</div>
+        <h2 class="s-title">THREE THINGS.<br><span class="red">DONE RIGHT.</span></h2>
       </div>
-      <p class="s-body">Not just content. Not just a website. We build end-to-end growth systems that position your brand as the authority in your market — and keep it there.</p>
+      <p class="s-body">We don't try to be everything. We're exceptionally good at three things — and we put all of them to work for your business.</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="svc-num">01</div>
-        <div class="svc-tag">Foundational</div>
-        <div class="svc-name">Presence</div>
-        <p class="svc-desc">Get your brand looking professional and consistent across all platforms. The foundation everything else is built on.</p>
+        <div class="svc-tag">Build</div>
+        <div class="svc-name">Web &amp; AI</div>
+        <p class="svc-desc">Websites that convert and AI systems that do the follow-up work for you. Built once, running forever.</p>
         <ul class="svc-list">
-          <li>Brand profile setup & optimisation</li>
-          <li>Content calendar creation</li>
-          <li>Monthly content (8 posts)</li>
-          <li>Copywriting & graphics</li>
+          <li>High-converting website design</li>
+          <li>AI chatbots &amp; lead qualification</li>
+          <li>CRM setup &amp; automation</li>
+          <li>Lead capture funnels</li>
+          <li>SEO &amp; Google Business</li>
         </ul>
       </div>
       <div class="service-card reveal reveal-delay-1">
         <div class="svc-num">02</div>
-        <div class="svc-tag">Growth</div>
-        <div class="svc-name">Authority</div>
-        <p class="svc-desc">Build real authority in your market. Premium content, consistent strategy, and the systems to turn followers into clients.</p>
+        <div class="svc-tag">Grow</div>
+        <div class="svc-name">Content &amp; Social</div>
+        <p class="svc-desc">Done-for-you content strategy and social media management. You focus on the work — we make sure the right people see it.</p>
         <ul class="svc-list">
-          <li>Full content strategy & execution</li>
-          <li>16 posts per month</li>
-          <li>Reels & short-form video</li>
-          <li>Monthly performance reporting</li>
-          <li>Ad management (spend separate)</li>
+          <li>Monthly content strategy</li>
+          <li>Social media management</li>
+          <li>Reels &amp; short-form video</li>
+          <li>Captions &amp; copywriting</li>
+          <li>Meta ad campaigns</li>
         </ul>
       </div>
       <div class="service-card reveal reveal-delay-2">
         <div class="svc-num">03</div>
-        <div class="svc-tag">Domination</div>
-        <div class="svc-name">Dominance</div>
-        <p class="svc-desc">For businesses ready to own their category. Full-stack growth system — content, ads, web, and AI automation working together.</p>
+        <div class="svc-tag">Scale</div>
+        <div class="svc-name">Growth Systems</div>
+        <p class="svc-desc">The full stack. Content, web, and AI working as one system — built to compound month over month.</p>
         <ul class="svc-list">
-          <li>Everything in Authority</li>
-          <li>Custom website design & build</li>
-          <li>AI lead generation systems</li>
-          <li>Aggressive ad management</li>
-          <li>Weekly strategy calls</li>
+          <li>Everything in 01 &amp; 02</li>
+          <li>Integrated AI growth stack</li>
+          <li>Automated lead follow-up</li>
+          <li>Monthly strategy &amp; reporting</li>
+          <li>Priority support</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
-<!-- VERTICALS -->
-<section id="verticals">
+<section id="why">
   <div class="inner">
-    <div class="vert-header">
+    <div class="why-grid">
       <div>
-        <div class="s-eyebrow">Who We Help</div>
-        <h2 class="s-title">BUILT FOR<br><span class="red">YOUR INDUSTRY</span></h2>
+        <div class="s-eyebrow">Why Qurated</div>
+        <h2 class="s-title">SYSTEMS,<br>NOT<br><span class="red">POSTS.</span></h2>
+        <p class="s-body" style="margin-top:1rem;">Most agencies sell you deliverables. We sell you outcomes. The difference is a system built around your business — not a template built around their workflow.</p>
+        <div class="why-points" style="margin-top:2.5rem;">
+          <div class="why-point">
+            <div class="why-point-label">Our edge</div>
+            <div class="why-point-title">AI-First by Default</div>
+            <p class="why-point-body">We embed AI automation into everything we build — so your leads get followed up, your content gets scheduled, and your business keeps moving without you lifting a finger.</p>
+          </div>
+          <div class="why-point">
+            <div class="why-point-label">Our standard</div>
+            <div class="why-point-title">One Voice, One Standard</div>
+            <p class="why-point-body">Website, Instagram, automated emails — it all looks and sounds like you. Consistent, premium, and on-brand every time.</p>
+          </div>
+          <div class="why-point">
+            <div class="why-point-label">Our promise</div>
+            <div class="why-point-title">Done For You, Built to Scale</div>
+            <p class="why-point-body">You don't need to learn new tools or manage a content calendar. We handle all of it — and the system gets smarter every month.</p>
+          </div>
+        </div>
       </div>
-      <p class="s-body">We specialise in three verticals. Deep expertise, not a generalist approach — which means faster results and content that actually resonates.</p>
-    </div>
-    <div class="vert-grid">
-      <div class="vert-card reveal">
-        <div class="vert-tag">Vertical 01</div>
-        <div class="vert-name">Trades & Construction</div>
-        <p class="vert-desc">Builders, electricians, plumbers, landscapers. You do the best work but your competitors are beating you online. We fix that.</p>
-      </div>
-      <div class="vert-card reveal reveal-delay-1">
-        <div class="vert-tag">Vertical 02</div>
-        <div class="vert-name">Real Estate</div>
-        <p class="vert-desc">Agents and property managers who need to stand out in a saturated market. Premium content that builds trust before the first call.</p>
-      </div>
-      <div class="vert-card reveal reveal-delay-2">
-        <div class="vert-tag">Vertical 03</div>
-        <div class="vert-name">Professional Services</div>
-        <p class="vert-desc">Lawyers, accountants, consultants, allied health. Authority content that drives referrals and inbound leads.</p>
+      <div class="why-callout reveal">
+        <p class="why-quote">A doctor doesn't let the patient choose their own prescription. We know what your business needs — and we'll tell you.</p>
+        <div class="stat-stack">
+          <div class="stat-row"><span class="stat-label">Time to first results</span><span class="stat-val">30 Days</span></div>
+          <div class="stat-row"><span class="stat-label">Content managed for you</span><span class="stat-val">100%</span></div>
+          <div class="stat-row"><span class="stat-label">AI systems deployed</span><span class="stat-val">Always</span></div>
+          <div class="stat-row"><span class="stat-label">Stress added to your week</span><span class="stat-val">Zero</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
-<!-- THE WAY -->
-<section id="way">
+<section id="process">
   <div class="inner">
-    <div class="s-eyebrow">Our Process</div>
-    <h2 class="s-title">THE QURATED<br><span class="red">WAY</span></h2>
-    <div class="way-grid">
-      <div class="way-steps">
-        <div class="way-step">
-          <div class="step-num">01</div>
-          <div>
-            <div class="step-title">Discovery & Audit</div>
-            <p class="step-body">We audit your current presence, competitors, and market position. You get clarity on exactly what's holding your growth back.</p>
-          </div>
-        </div>
-        <div class="way-step">
-          <div class="step-num">02</div>
-          <div>
-            <div class="step-title">Strategy Build</div>
-            <p class="step-body">A custom growth system designed for your business, your market, and your goals. No templates. No guesswork.</p>
-          </div>
-        </div>
-        <div class="way-step">
-          <div class="step-num">03</div>
-          <div>
-            <div class="step-title">Execution</div>
-            <p class="step-body">We handle everything. Content, copy, design, ads, tech. You focus on your business — we handle your brand.</p>
-          </div>
-        </div>
-        <div class="way-step">
-          <div class="step-num">04</div>
-          <div>
-            <div class="step-title">Optimise & Scale</div>
-            <p class="step-body">Monthly reporting, ongoing refinement, and scaling what works. Your growth system gets sharper every month.</p>
-          </div>
-        </div>
+    <div class="process-header">
+      <div>
+        <div class="s-eyebrow">How we work</div>
+        <h2 class="s-title">THE QURATED <span class="red">WAY.</span></h2>
       </div>
-      <div class="way-callout reveal">
-        <p class="callout-quote">Most agencies give you posts. We give you a system that makes your business impossible to ignore.</p>
-        <div class="metric-row">
-          <span class="metric-label">Avg. Onboarding Time</span>
-          <span class="metric-val">48H</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Content Turnaround</span>
-          <span class="metric-val">5 Days</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Avg. Engagement Lift</span>
-          <span class="metric-val">3X</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Client Retention Rate</span>
-          <span class="metric-val">94%</span>
-        </div>
+      <p class="s-body">We don't pitch packages. We diagnose, prescribe, build, and compound. Every engagement follows the same four-step system.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-step-num">01</div>
+        <div class="process-step-title">Diagnose First</div>
+        <p class="process-step-body">We ask the questions your last agency didn't. Where are you losing clients? What does your brand say right now? Only then do we prescribe.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title">Prescribe with Authority</div>
+        <p class="process-step-body">No menu of options. A clear recommendation and a clear outcome. We tell you exactly what you need and what it will do for your business.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title">Build &amp; Execute</div>
+        <p class="process-step-body">We build the system — website, content, automation — under one standard. One voice, one visual, regardless of what's running behind the scenes.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title">Review &amp; Compound</div>
+        <p class="process-step-body">Monthly check-ins aren't admin — they're the adjustment. We cut what isn't working, double down on what is, and keep building momentum.</p>
       </div>
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="inner">
-    <div class="s-eyebrow">Get Started</div>
-    <h2 class="s-title">LET'S BUILD<br><span class="red">SOMETHING</span></h2>
+    <div class="s-eyebrow">Get started</div>
+    <h2 class="s-title">READY TO<br><span class="red">LOOK THE PART?</span></h2>
     <div class="contact-grid">
       <div class="contact-info">
-        <div>
-          <div class="contact-detail-label">Email</div>
-          <div class="contact-detail-value"><a href="mailto:hello@quratedagency.com">hello@quratedagency.com</a></div>
-        </div>
-        <div>
-          <div class="contact-detail-label">Based In</div>
-          <div class="contact-detail-value">Perth, Western Australia</div>
-        </div>
-        <div>
-          <div class="contact-detail-label">Serving</div>
-          <div class="contact-detail-value">Australia-Wide</div>
-        </div>
+        <div><div class="contact-detail-label">Based in</div><div class="contact-detail-value">Perth, Western Australia</div></div>
+        <div><div class="contact-detail-label">Email</div><div class="contact-detail-value"><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></div></div>
+        <div><div class="contact-detail-label">Instagram</div><div class="contact-detail-value"><a href="https://instagram.com/quratedagency" target="_blank">@quratedagency</a></div></div>
+        <div><div class="contact-detail-label">Phone</div><div class="contact-detail-value"><a href="tel:0456847420">0456 847 420</a></div></div>
         <div class="contact-note">
-          <p><strong>Not taking on everyone.</strong> We work with a select number of clients to ensure quality. If you're serious about growth, let's talk.</p>
+          <p>Not sure yet? <strong>Chat with Quinn</strong> — our AI assistant will figure out if we're the right fit before you speak to anyone.</p>
+        </div>
+        <button class="quinn-inline-btn" onclick="openQuinn()">Start a conversation with Quinn →</button>
+      </div>
+      <div class="contact-right reveal">
+        <div class="booking-block">
+          <h3>Book a Free 15-Min Call</h3>
+          <p>No prep needed. Show up and we'll tell you exactly what we'd do for your business.</p>
+          <a href="#" class="btn-primary">Book Your Free Diagnosis →</a>
+        </div>
+        <div class="email-block">
+          <label for="email-capture">Or leave your email — we'll reach out</label>
+          <div class="email-row">
+            <input type="email" id="email-capture" placeholder="your@email.com"/>
+            <button onclick="submitEmail()">Send it</button>
+          </div>
+          <div id="email-success">Got it — we'll be in touch within 24 hours.</div>
         </div>
       </div>
-      <form class="contact-form" id="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required/>
-          </div>
-          <div class="form-group">
-            <label for="business">Business Name</label>
-            <input type="text" id="business" name="business" placeholder="Your business"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required/>
-        </div>
-        <div class="form-group">
-          <label for="service">Interested In</label>
-          <select id="service" name="service">
-            <option value="" disabled selected>Select a service</option>
-            <option value="presence">Presence — Social Media Starter</option>
-            <option value="authority">Authority — Growth Retainer</option>
-            <option value="dominance">Dominance — Full System</option>
-            <option value="unsure">Not Sure — Let's Talk</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Tell Us About Your Business</label>
-          <textarea id="message" name="message" placeholder="What do you do, who are your clients, what's your biggest challenge right now?"></textarea>
-        </div>
-        <div class="form-footer">
-          <span class="form-note">We'll get back to you within 24 hours.</span>
-          <button type="submit" class="btn-primary">Send Message →</button>
-        </div>
-        <div id="form-success">
-          <p>Message received. We'll be in touch within 24 hours.</p>
-        </div>
-      </form>
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <a href="#hero" class="footer-logo">
       <img src="https://cdn.jsdelivr.net/gh/ggarang3/qurated-website@main/PNG%20LONG%20LOGO.png" alt="Qurated"/>
     </a>
-    <p class="footer-tagline">Your Brand, <em>Qurated</em>.</p>
-    <p class="footer-copy">© 2025 Qurated Agency. All rights reserved.</p>
+    <p class="footer-tagline">Your brand, <em>Qurated</em>.</p>
+    <p class="footer-copy">© 2026 Qurated. Perth, WA. · <a href="mailto:info@quratedagency.com" style="color:inherit;text-decoration:none;">info@quratedagency.com</a></p>
   </div>
 </footer>
-
+<div class="quinn-bubble" id="quinn-bubble">
+  <div class="quinn-panel" id="quinn-panel">
+    <div class="quinn-header">
+      <div class="quinn-avatar">Q</div>
+      <div>
+        <div class="quinn-name">Quinn</div>
+        <div class="quinn-status">Online now · Qurated AI</div>
+      </div>
+    </div>
+    <div class="quinn-messages" id="quinn-messages">
+      <div class="quinn-typing" id="quinn-typing"><span></span><span></span><span></span></div>
+    </div>
+    <div class="quinn-input-row">
+      <input class="quinn-input" id="quinn-input" type="text" placeholder="Message Quinn..." autocomplete="off"/>
+      <button class="quinn-send" id="quinn-send" aria-label="Send">→</button>
+    </div>
+  </div>
+  <button class="quinn-toggle" id="quinn-toggle" aria-label="Chat with Quinn">
+    <span class="quinn-toggle-q">Q</span>
+    <span class="quinn-badge"></span>
+  </button>
+</div>
 <script>
-// CURSOR
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+const cursor = document.getElementById('cursor'), ring = document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+(function ar(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ar);})();
+document.querySelectorAll('a,button,input,select,textarea').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.classList.add('hovered');ring.classList.add('hovered');});
+  el.addEventListener('mouseleave',()=>{cursor.classList.remove('hovered');ring.classList.remove('hovered');});
 });
-function animateRing() {
-  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-  requestAnimationFrame(animateRing);
-}
-animateRing();
-document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.classList.add('hovered'); ring.classList.add('hovered'); });
-  el.addEventListener('mouseleave', () => { cursor.classList.remove('hovered'); ring.classList.remove('hovered'); });
-});
-
-// NAV SCROLL
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
-
-// HAMBURGER
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-function closeMobile() { mobileMenu.classList.remove('open'); }
-
-// REVEAL ON SCROLL
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// FORM
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  document.getElementById('form-success').style.display = 'block';
-  this.reset();
-});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
+function closeMobile(){document.getElementById('mobile-menu').classList.remove('open');}
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+function submitEmail(){const v=document.getElementById('email-capture').value;if(!v||!v.includes('@'))return;document.getElementById('email-success').style.display='block';document.getElementById('email-capture').value='';}
+const qPanel=document.getElementById('quinn-panel'),qMessages=document.getElementById('quinn-messages'),qInput=document.getElementById('quinn-input'),qTyping=document.getElementById('quinn-typing');
+let qHistory=[],qOpen=false,qStarted=false;
+function openQuinn(){qOpen=true;qPanel.classList.add('open');if(!qStarted)initQuinn();setTimeout(()=>qInput.focus(),300);}
+document.getElementById('quinn-toggle').addEventListener('click',()=>{qOpen=!qOpen;qPanel.classList.toggle('open',qOpen);if(qOpen&&!qStarted)initQuinn();if(qOpen)setTimeout(()=>qInput.focus(),300);});
+async function initQuinn(){qStarted=true;showT();const r=await askQ('Hello');hideT();addM('quinn',r);}
+function addM(role,text){const d=document.createElement('div');d.className='q-msg '+role;const p=document.createElement('p');p.textContent=text;d.appendChild(p);qMessages.insertBefore(d,qTyping);qMessages.scrollTop=qMessages.scrollHeight;}
+function showT(){qTyping.style.display='flex';qMessages.scrollTop=qMessages.scrollHeight;}
+function hideT(){qTyping.style.display='none';}
+async function askQ(t){qHistory.push({role:'user',content:t});try{const r=await fetch('/.netlify/functions/quinn',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:qHistory})});const d=await r.json();const reply=d.reply||"Sorry, having a moment — reach us at info@quratedagency.com.";qHistory.push({role:'assistant',content:reply});return reply;}catch{return "Sorry, having a moment — reach us at info@quratedagency.com.";}}
+async function sendM(){const t=qInput.value.trim();if(!t)return;qInput.value='';addM('user',t);showT();const r=await askQ(t);hideT();addM('quinn',r);}
+document.getElementById('quinn-send').addEventListener('click',sendM);
+qInput.addEventListener('keydown',e=>{if(e.key==='Enter')sendM();});
 </script>
-
 </body>
 </html>
