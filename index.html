@@ -596,8 +596,6 @@ function submitEmail(){
 }
 
 // ─── QUINN ────────────────────────────────────────────────────────────────────
-const FORMSPREE_ID = 'mreovojd';
-
 const qPanel=document.getElementById('quinn-panel');
 const qMessages=document.getElementById('quinn-messages');
 const qInput=document.getElementById('quinn-input');
@@ -714,30 +712,35 @@ function handleDetailStep(input){
     collectedDetails.email=input;
     detailStep=2;
     showT();
-    setTimeout(()=>{hideT();addQMsg("Almost done — what's your business called?");},800);
+    setTimeout(()=>{hideT();addQMsg("And your phone number? We'll only use it to reach out about your enquiry.");},800);
   } else if(detailStep===2){
+    collectedDetails.phone=input;
+    detailStep=3;
+    showT();
+    setTimeout(()=>{hideT();addQMsg("Last one — what's your business called?");},800);
+  } else if(detailStep===3){
     collectedDetails.business=input;
-    submitToFormspree();
+    submitLead();
   }
 }
 
-async function submitToFormspree(){
+async function submitLead(){
   showT();
   try{
-    await fetch('https://formspree.io/f/'+FORMSPREE_ID,{
+    await fetch('/.netlify/functions/submit-lead',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
         name:collectedDetails.name,
         email:collectedDetails.email,
-        business:collectedDetails.business,
-        source:'Quinn AI Chat'
+        phone:collectedDetails.phone,
+        business:collectedDetails.business
       })
     });
-  }catch(e){}
+  }catch(e){console.error('Lead submission error:',e);}
   hideT();
   collectingDetails=false;
-  addQMsg("Done — we'll be in touch within 24 hours, "+collectedDetails.name+". If you'd rather fast-track it, you can book a call directly now.");
+  addQMsg("All done, "+collectedDetails.name+" — we'll be in touch within 24 hours. If you'd rather fast-track it, book a call directly below.");
   showChips([{label:'Book a call →',action:'book'}]);
 }
 
