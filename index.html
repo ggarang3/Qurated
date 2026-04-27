@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Qurated — Content. Systems. Growth.</title>
-<meta name="description" content="Qurated builds content strategies, manages social media, and deploys AI automation systems that help businesses grow online. Done for you. Built to scale."/>
-<meta property="og:title" content="Qurated — Content. Systems. Growth."/>
-<meta property="og:description" content="We build the systems. You run the business."/>
+<meta name="description" content="Qurated is a growth systems partner for businesses serious about being found, trusted, and chosen online. Content, AI automation, and web — handled end to end."/>
+<meta property="og:title" content="Qurated — Your Business Deserves To Be Found."/>
+<meta property="og:description" content="Content, systems, and AI built around your business — running while you work."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://www.quratedagency.com"/>
 <link rel="canonical" href="https://www.quratedagency.com"/>
@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <style>
 :root {
   --red: #e50000;
@@ -43,6 +44,8 @@ body { background: var(--black); color: var(--white); font-family: var(--font-bo
 .cursor.hovered { width: 14px; height: 14px; }
 .cursor-ring.hovered { width: 50px; height: 50px; opacity: .5; }
 body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 999; opacity: .3; }
+
+/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; transition: background .4s, border-color .4s; border-bottom: 1px solid transparent; }
 nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); border-bottom-color: var(--black-3); }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
@@ -51,7 +54,7 @@ nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); bord
 .nav-links a { font-family: var(--font-condensed); font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-2); text-decoration: none; transition: color .2s; }
 .nav-links a:hover { color: var(--white); }
 .nav-cta { color: var(--black) !important; background: var(--red); padding: .55rem 1.4rem; transition: background .2s !important; }
-.nav-cta:hover { background: var(--white) !important; }
+.nav-cta:hover { background: var(--white) !important; color: var(--black) !important; }
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all .3s; }
 .mobile-menu { position: fixed; inset: 0; background: var(--black); z-index: 800; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
@@ -59,6 +62,8 @@ nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); bord
 .mobile-menu a { font-family: var(--font-display); font-size: 3rem; letter-spacing: .1em; color: var(--white); text-decoration: none; transition: color .2s; }
 .mobile-menu a:hover { color: var(--red); }
 .mobile-menu .m-cta { font-family: var(--font-condensed); font-size: .85rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--black); background: var(--red); padding: .9rem 2.5rem; }
+
+/* HERO */
 #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
 .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(229,0,0,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(229,0,0,.025) 1px, transparent 1px); background-size: 64px 64px; pointer-events: none; }
 .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 10rem 3rem 6rem; position: relative; z-index: 2; }
@@ -68,9 +73,9 @@ nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); bord
 @keyframes drift { from { transform: translateX(-4%) rotate(-3deg); } to { transform: translateX(3%) rotate(2deg); } }
 .hero-eyebrow { font-family: var(--font-condensed); font-size: .7rem; font-weight: 700; letter-spacing: .35em; text-transform: uppercase; color: var(--red); margin-bottom: 1.2rem; display: flex; align-items: center; gap: .7rem; opacity: 0; animation: fade-up .8s .2s forwards; }
 .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--red); }
-.hero-headline { font-family: var(--font-display); font-size: clamp(4.5rem, 8vw, 8.5rem); line-height: .88; letter-spacing: .02em; margin-bottom: 1.5rem; opacity: 0; animation: fade-up .8s .35s forwards; }
+.hero-headline { font-family: var(--font-display); font-size: clamp(4rem, 7.5vw, 8rem); line-height: .88; letter-spacing: .02em; margin-bottom: 1.5rem; opacity: 0; animation: fade-up .8s .35s forwards; }
 .q-drop { color: var(--red); }
-.hero-sub { font-size: 1rem; font-weight: 300; color: var(--grey-3); max-width: 440px; line-height: 1.8; margin-bottom: 2.5rem; opacity: 0; animation: fade-up .8s .5s forwards; }
+.hero-sub { font-size: 1rem; font-weight: 300; color: var(--grey-3); max-width: 460px; line-height: 1.8; margin-bottom: 2.5rem; opacity: 0; animation: fade-up .8s .5s forwards; }
 .hero-sub strong { color: var(--white); font-weight: 400; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fade-up .8s .65s forwards; }
 .hero-stat-row { display: flex; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--black-3); opacity: 0; animation: fade-up .8s .8s forwards; }
@@ -79,15 +84,21 @@ nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); bord
 .h-stat-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--red); line-height: 1; letter-spacing: .05em; }
 .h-stat-label { font-family: var(--font-condensed); font-size: .65rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-2); margin-top: .2rem; }
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* BUTTONS */
 .btn-primary { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--black); background: var(--red); padding: .9rem 2rem; text-decoration: none; border: 1px solid var(--red); transition: all .25s; }
-.btn-primary:hover { background: var(--white); border-color: var(--white); }
+.btn-primary:hover { background: var(--white); border-color: var(--white); color: var(--black); }
 .btn-ghost { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--white); background: transparent; padding: .9rem 2rem; text-decoration: none; border: 1px solid var(--black-3); transition: border-color .25s; }
 .btn-ghost:hover { border-color: var(--grey-2); }
+
+/* MARQUEE */
 .marquee-wrap { overflow: hidden; background: var(--red); padding: .68rem 0; border-top: 1px solid var(--red-dark); border-bottom: 1px solid var(--red-dark); }
-.marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+.marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
 .marquee-item { font-family: var(--font-condensed); font-size: .68rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--black); padding: 0 2rem; white-space: nowrap; }
 .marquee-sep { opacity: .25; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* SECTIONS */
 section { padding: 7rem 3rem; }
 .inner { max-width: 1140px; margin: 0 auto; }
 .s-eyebrow { font-family: var(--font-condensed); font-size: .65rem; font-weight: 700; letter-spacing: .35em; text-transform: uppercase; color: var(--red); margin-bottom: .7rem; display: flex; align-items: center; gap: .65rem; }
@@ -97,6 +108,8 @@ section { padding: 7rem 3rem; }
 .s-body { font-size: .93rem; font-weight: 300; color: var(--grey-3); line-height: 1.8; max-width: 500px; }
 .s-body strong { color: var(--white); font-weight: 400; }
 .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--red), transparent); opacity: .18; }
+
+/* SERVICES */
 #services { background: var(--black); }
 .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--black-3); border: 1px solid var(--black-3); }
@@ -112,6 +125,8 @@ section { padding: 7rem 3rem; }
 .svc-list { list-style: none; display: flex; flex-direction: column; gap: .38rem; }
 .svc-list li { font-family: var(--font-condensed); font-size: .78rem; font-weight: 500; letter-spacing: .03em; color: var(--grey-2); display: flex; align-items: center; gap: .6rem; }
 .svc-list li::before { content: ''; display: block; width: 14px; height: 1px; background: var(--red); flex-shrink: 0; }
+
+/* WHY */
 #why { background: var(--black-2); }
 .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
 .why-points { display: flex; flex-direction: column; }
@@ -122,12 +137,14 @@ section { padding: 7rem 3rem; }
 .why-point-body { font-size: .83rem; font-weight: 300; color: var(--grey-2); line-height: 1.72; }
 .why-callout { background: var(--black-3); border: 1px solid var(--black-4); padding: 3rem; position: relative; }
 .why-callout::before { content: '"'; position: absolute; top: .5rem; left: 2rem; font-family: var(--font-display); font-size: 7rem; color: var(--red); line-height: 1; opacity: .1; }
-.why-quote { font-family: var(--font-condensed); font-size: 1.35rem; font-weight: 600; line-height: 1.4; letter-spacing: .02em; padding-top: 1.75rem; margin-bottom: 2rem; }
+.why-quote { font-family: var(--font-condensed); font-size: 1.3rem; font-weight: 600; line-height: 1.4; letter-spacing: .02em; padding-top: 1.75rem; margin-bottom: 2rem; }
 .stat-stack { display: flex; flex-direction: column; }
 .stat-row { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; border-bottom: 1px solid var(--black-4); }
 .stat-row:last-child { border-bottom: none; }
 .stat-label { font-family: var(--font-condensed); font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--grey-2); }
 .stat-val { font-family: var(--font-display); font-size: 1.5rem; color: var(--red); letter-spacing: .05em; }
+
+/* PROCESS */
 #process { background: var(--black); }
 .process-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
 .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--black-3); border: 1px solid var(--black-3); }
@@ -139,6 +156,8 @@ section { padding: 7rem 3rem; }
 .process-step:hover .process-step-num { color: var(--black-4); }
 .process-step-title { font-family: var(--font-condensed); font-size: .85rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .5rem; }
 .process-step-body { font-size: .8rem; font-weight: 300; color: var(--grey-2); line-height: 1.7; }
+
+/* CONTACT */
 #contact { background: var(--black-2); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; margin-top: 3.5rem; }
 .contact-info { display: flex; flex-direction: column; gap: 2rem; }
@@ -149,11 +168,12 @@ section { padding: 7rem 3rem; }
 .contact-note { padding: 1.5rem; border-left: 2px solid var(--red); background: var(--black-3); }
 .contact-note p { font-size: .83rem; font-weight: 300; color: var(--grey-3); line-height: 1.75; font-style: italic; }
 .contact-note strong { color: var(--white); font-weight: 400; font-style: normal; }
-.quinn-inline-btn { background: none; border: none; color: var(--red); font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .05em; text-decoration: underline; text-underline-offset: 3px; padding: 0; }
+.quinn-inline-btn { background: none; border: none; color: var(--red); font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .05em; text-decoration: underline; text-underline-offset: 3px; padding: 0; margin-top: .25rem; display: inline-block; }
 .contact-right { display: flex; flex-direction: column; gap: 2.5rem; }
 .booking-block { background: var(--black-3); border: 1px solid var(--black-4); padding: 2rem; }
 .booking-block h3 { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: .05em; margin-bottom: .4rem; }
-.booking-block p { font-size: .83rem; font-weight: 300; color: var(--grey-3); line-height: 1.7; margin-bottom: 1.5rem; }
+.booking-block p { font-size: .83rem; font-weight: 300; color: var(--grey-3); line-height: 1.7; margin-bottom: .6rem; }
+.booking-note { font-family: var(--font-condensed); font-size: .7rem; font-weight: 600; letter-spacing: .1em; color: var(--grey-1); text-transform: uppercase; margin-bottom: 1.5rem !important; }
 .email-block { display: flex; flex-direction: column; gap: .5rem; }
 .email-block label { font-family: var(--font-condensed); font-size: .62rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: var(--grey-2); }
 .email-row { display: flex; }
@@ -163,6 +183,8 @@ section { padding: 7rem 3rem; }
 .email-row button { font-family: var(--font-condensed); font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; background: var(--red); color: var(--black); border: 1px solid var(--red); padding: .82rem 1.25rem; transition: all .2s; }
 .email-row button:hover { background: var(--white); border-color: var(--white); }
 #email-success { display: none; font-family: var(--font-condensed); font-size: .82rem; color: var(--grey-3); padding-top: .35rem; }
+
+/* FOOTER */
 footer { background: var(--black); border-top: 1px solid var(--black-3); padding: 2.5rem 3rem; }
 .footer-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; }
 .footer-logo { display: flex; align-items: center; text-decoration: none; }
@@ -170,20 +192,27 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
 .footer-tagline { font-family: var(--font-body); font-size: .82rem; font-weight: 300; color: var(--grey-2); font-style: italic; text-align: center; }
 .footer-tagline em { color: var(--white); font-style: normal; }
 .footer-copy { font-family: var(--font-condensed); font-size: .65rem; font-weight: 500; letter-spacing: .12em; color: var(--grey-1); text-align: right; }
+
+/* REVEAL */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: .12s; }
 .reveal-delay-2 { transition-delay: .24s; }
 .reveal-delay-3 { transition-delay: .36s; }
+
+/* QUINN WIDGET */
 .quinn-bubble { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: .75rem; }
-.quinn-panel { width: 320px; background: var(--black-2); border: 1px solid var(--black-3); display: flex; flex-direction: column; overflow: hidden; opacity: 0; pointer-events: none; transform: translateY(12px) scale(.97); transition: opacity .3s, transform .3s; box-shadow: 0 16px 48px rgba(0,0,0,.6); }
+.quinn-proactive { background: var(--white); color: var(--black); padding: .75rem 1.1rem; font-family: var(--font-condensed); font-size: .82rem; font-weight: 600; letter-spacing: .03em; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,.4); opacity: 0; transform: translateY(8px); transition: opacity .4s, transform .4s; pointer-events: none; position: relative; }
+.quinn-proactive::after { content: ''; position: absolute; bottom: -6px; right: 22px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--white); }
+.quinn-proactive.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.quinn-panel { width: 340px; background: var(--black-2); border: 1px solid var(--black-3); display: flex; flex-direction: column; overflow: hidden; opacity: 0; pointer-events: none; transform: translateY(12px) scale(.97); transition: opacity .3s, transform .3s; box-shadow: 0 16px 48px rgba(0,0,0,.6); max-height: 540px; }
 .quinn-panel.open { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
-.quinn-header { background: var(--black-3); padding: 1rem 1.25rem; display: flex; align-items: center; gap: .75rem; border-bottom: 1px solid var(--black-4); }
+.quinn-header { background: var(--black-3); padding: 1rem 1.25rem; display: flex; align-items: center; gap: .75rem; border-bottom: 1px solid var(--black-4); flex-shrink: 0; }
 .quinn-avatar { width: 34px; height: 34px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.1rem; color: var(--white); flex-shrink: 0; }
 .quinn-name { font-family: var(--font-condensed); font-size: .88rem; font-weight: 700; letter-spacing: .08em; }
 .quinn-status { font-family: var(--font-condensed); font-size: .62rem; letter-spacing: .1em; color: var(--grey-3); display: flex; align-items: center; gap: .35rem; }
 .quinn-status::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
-.quinn-messages { height: 300px; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; }
+.quinn-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; min-height: 200px; }
 .quinn-messages::-webkit-scrollbar { width: 2px; }
 .quinn-messages::-webkit-scrollbar-thumb { background: var(--black-4); }
 .q-msg { max-width: 88%; }
@@ -192,12 +221,16 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
 .q-msg p { font-size: .82rem; font-weight: 300; line-height: 1.6; padding: .65rem .9rem; }
 .q-msg.quinn p { background: var(--black-3); color: var(--white); border-radius: 0 8px 8px 8px; }
 .q-msg.user p { background: var(--red); color: var(--white); border-radius: 8px 8px 0 8px; }
-.quinn-typing { display: none; align-self: flex-start; padding: .7rem .9rem; background: var(--black-3); border-radius: 0 8px 8px 8px; gap: 4px; }
+.quinn-typing { display: none; align-self: flex-start; padding: .7rem .9rem; background: var(--black-3); border-radius: 0 8px 8px 8px; gap: 4px; flex-shrink: 0; }
 .quinn-typing span { display: inline-block; width: 6px; height: 6px; background: var(--grey-2); border-radius: 50%; animation: dot-bounce .8s ease-in-out infinite; }
 .quinn-typing span:nth-child(2) { animation-delay: .15s; }
 .quinn-typing span:nth-child(3) { animation-delay: .3s; }
-@keyframes dot-bounce { 0%, 80%, 100% { opacity: .3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-4px); } }
-.quinn-input-row { display: flex; border-top: 1px solid var(--black-3); }
+@keyframes dot-bounce { 0%,80%,100% { opacity:.3; transform:translateY(0); } 40% { opacity:1; transform:translateY(-4px); } }
+.quinn-quick-replies { padding: .6rem .75rem; display: flex; flex-wrap: wrap; gap: .4rem; border-top: 1px solid var(--black-3); flex-shrink: 0; }
+.quinn-quick-replies.hidden { display: none; }
+.q-chip { font-family: var(--font-condensed); font-size: .75rem; font-weight: 600; letter-spacing: .04em; color: var(--white); background: var(--black-3); border: 1px solid var(--black-4); padding: .4rem .8rem; border-radius: 20px; transition: all .2s; white-space: nowrap; }
+.q-chip:hover { border-color: var(--red); color: var(--red); }
+.quinn-input-row { display: flex; border-top: 1px solid var(--black-3); flex-shrink: 0; }
 .quinn-input { flex: 1; background: transparent; border: none; padding: .85rem 1rem; color: var(--white); font-family: var(--font-body); font-size: .82rem; font-weight: 300; outline: none; }
 .quinn-input::placeholder { color: var(--grey-1); }
 .quinn-send { background: none; border: none; padding: .85rem 1rem; color: var(--grey-2); transition: color .2s; font-size: 1.1rem; line-height: 1; }
@@ -206,6 +239,8 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
 .quinn-toggle:hover { transform: scale(1.06); box-shadow: 0 6px 28px rgba(229,0,0,.5); }
 .quinn-toggle-q { font-family: var(--font-display); font-size: 1.6rem; color: var(--white); line-height: 1; }
 .quinn-badge { position: absolute; top: 0; right: 0; width: 13px; height: 13px; background: #22c55e; border-radius: 50%; border: 2px solid var(--black); }
+
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   #hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
@@ -225,28 +260,33 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
   .hero-stat-row { flex-wrap: wrap; }
   .h-stat { border-right: none; flex-basis: 45%; border-bottom: 1px solid var(--black-3); padding-bottom: 1rem; }
   .h-stat:last-child { border-bottom: none; }
-  .quinn-panel { width: 290px; }
+  .quinn-panel { width: 300px; }
   .quinn-bubble { bottom: 1.25rem; right: 1.25rem; }
 }
 @media (max-width: 600px) {
-  .hero-headline { font-size: 3.8rem; }
+  .hero-headline { font-size: 3.6rem; }
   .s-title { font-size: 2.6rem; }
   .process-steps { grid-template-columns: 1fr; }
   .email-row { flex-direction: column; }
   .email-row input { border-right: 1px solid var(--black-4); }
   .email-row button { width: 100%; }
+  .quinn-panel { width: calc(100vw - 2.5rem); }
+  .quinn-proactive { display: none; }
 }
 </style>
 </head>
 <body>
+
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
+
 <div class="mobile-menu" id="mobile-menu">
   <a href="#services" onclick="closeMobile()">Services</a>
   <a href="#why" onclick="closeMobile()">Why Qurated</a>
-  <a href="#process" onclick="closeMobile()">Our Process</a>
+  <a href="#process" onclick="closeMobile()">How It Works</a>
   <a href="#contact" class="m-cta" onclick="closeMobile()">Get Started</a>
 </div>
+
 <nav id="nav">
   <a href="#hero" class="nav-logo">
     <img src="https://cdn.jsdelivr.net/gh/ggarang3/qurated-website@main/PNG%20LONG%20LOGO.png" alt="Qurated"/>
@@ -254,31 +294,35 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Qurated</a></li>
-    <li><a href="#process">Our Process</a></li>
+    <li><a href="#process">How It Works</a></li>
     <li><a href="#contact" class="nav-cta">Get Started</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- HERO -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-left">
-    <div class="hero-eyebrow">Content · Systems · Growth</div>
-    <h1 class="hero-headline">WE BUILD<br>BRANDS<br><span class="q-drop">THAT WORK.</span></h1>
-    <p class="hero-sub">Most businesses have great products and no one to sell them to. We fix that with <strong>done-for-you content, AI-powered automation, and websites built to convert</strong> — so your business grows while you work.</p>
+    <div class="hero-eyebrow">Growth Systems Partner · Perth, WA</div>
+    <h1 class="hero-headline">YOUR<br>BUSINESS<br>DESERVES<br>TO BE <span class="q-drop">FOUND.</span></h1>
+    <p class="hero-sub">Most businesses are run by people who are <strong>exceptional at their craft</strong> — and completely overlooked online. We change that. Content, systems, and AI built around your business and running while you work.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Book Your Free Diagnosis →</a>
-      <a href="#services" class="btn-ghost">See what we do</a>
+      <button class="btn-primary" onclick="openCalendly()">Book Your Free Diagnosis →</button>
+      <a href="#services" class="btn-ghost">See how it works</a>
     </div>
     <div class="hero-stat-row">
       <div class="h-stat"><div class="h-stat-num">100%</div><div class="h-stat-label">Done For You</div></div>
       <div class="h-stat"><div class="h-stat-num">30D</div><div class="h-stat-label">To First Results</div></div>
-      <div class="h-stat"><div class="h-stat-num">AI</div><div class="h-stat-label">Powered Systems</div></div>
+      <div class="h-stat"><div class="h-stat-num">AI</div><div class="h-stat-label">Powered By Default</div></div>
     </div>
   </div>
   <div class="hero-right"><div class="hero-bg-mark">Q</div></div>
 </section>
+
+<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span class="marquee-item">Content Strategy</span><span class="marquee-item marquee-sep">✦</span>
@@ -287,48 +331,54 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
     <span class="marquee-item">AI Automation</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Meta Ads</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">CRM Systems</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">AI Chatbots</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Reels &amp; Short-Form Video</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Copywriting</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Lead Automation</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Content Strategy</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Social Media Management</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Web Design &amp; Development</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">AI Automation</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Meta Ads</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">CRM Systems</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">AI Chatbots</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Reels &amp; Short-Form Video</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Copywriting</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Lead Automation</span><span class="marquee-item marquee-sep">✦</span>
   </div>
 </div>
+
+<!-- SERVICES -->
 <section id="services">
   <div class="inner">
     <div class="services-header">
       <div>
         <div class="s-eyebrow">What we do</div>
-        <h2 class="s-title">THREE THINGS.<br><span class="red">DONE RIGHT.</span></h2>
+        <h2 class="s-title">THREE<br>CAPABILITIES.<br><span class="red">ONE SYSTEM.</span></h2>
       </div>
-      <p class="s-body">We don't try to be everything. We're exceptionally good at three things — and we put all of them to work for your business.</p>
+      <p class="s-body">We're not a generalist agency. We do three things with precision — and we deploy all of them inside a system built specifically for your business. Not a template. Not a package. Yours.</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="svc-num">01</div>
         <div class="svc-tag">Build</div>
-        <div class="svc-name">Web &amp; AI</div>
-        <p class="svc-desc">Websites that convert and AI systems that do the follow-up work for you. Built once, running forever.</p>
+        <div class="svc-name">Web &amp; AI Systems</div>
+        <p class="svc-desc">Most websites exist. Yours should work. We build sites that convert visitors into enquiries — then layer in AI that handles the follow-up so nothing falls through the cracks.</p>
         <ul class="svc-list">
-          <li>High-converting website design</li>
-          <li>AI chatbots &amp; lead qualification</li>
-          <li>CRM setup &amp; automation</li>
+          <li>High-converting website design &amp; build</li>
+          <li>AI chatbots &amp; automated lead qualification</li>
+          <li>CRM setup &amp; workflow automation</li>
           <li>Lead capture funnels</li>
-          <li>SEO &amp; Google Business</li>
+          <li>SEO foundation &amp; Google Business</li>
         </ul>
       </div>
       <div class="service-card reveal reveal-delay-1">
         <div class="svc-num">02</div>
         <div class="svc-tag">Grow</div>
         <div class="svc-name">Content &amp; Social</div>
-        <p class="svc-desc">Done-for-you content strategy and social media management. You focus on the work — we make sure the right people see it.</p>
+        <p class="svc-desc">Content that actually represents the quality of your work — published consistently, without you managing it. We handle the strategy, the creative, and the calendar. Every month. Without being chased.</p>
         <ul class="svc-list">
-          <li>Monthly content strategy</li>
+          <li>Monthly content strategy &amp; calendar</li>
           <li>Social media management</li>
           <li>Reels &amp; short-form video</li>
           <li>Captions &amp; copywriting</li>
@@ -339,57 +389,63 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
         <div class="svc-num">03</div>
         <div class="svc-tag">Scale</div>
         <div class="svc-name">Growth Systems</div>
-        <p class="svc-desc">The full stack. Content, web, and AI working as one system — built to compound month over month.</p>
+        <p class="svc-desc">The full stack. Web, content, and AI running as one compounding system — getting sharper every month, not just ticking boxes.</p>
         <ul class="svc-list">
-          <li>Everything in 01 &amp; 02</li>
+          <li>Everything in Web &amp; AI + Content &amp; Social</li>
           <li>Integrated AI growth stack</li>
-          <li>Automated lead follow-up</li>
-          <li>Monthly strategy &amp; reporting</li>
-          <li>Priority support</li>
+          <li>Automated lead nurture &amp; follow-up</li>
+          <li>Monthly performance review &amp; strategy</li>
+          <li>Priority access &amp; dedicated support</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
+
 <div class="divider"></div>
+
+<!-- WHY QURATED -->
 <section id="why">
   <div class="inner">
     <div class="why-grid">
       <div>
         <div class="s-eyebrow">Why Qurated</div>
-        <h2 class="s-title">SYSTEMS,<br>NOT<br><span class="red">POSTS.</span></h2>
-        <p class="s-body" style="margin-top:1rem;">Most agencies sell you deliverables. We sell you outcomes. The difference is a system built around your business — not a template built around their workflow.</p>
-        <div class="why-points" style="margin-top:2.5rem;">
+        <h2 class="s-title">SYSTEMS.<br>NOT<br><span class="red">GENERIC<br>PACKAGES.</span></h2>
+        <p class="s-body" style="margin-top:1rem; margin-bottom: 2.5rem;">Most agencies sell you deliverables. We sell you outcomes. The difference is a system built around your business — not a template built around their workflow.</p>
+        <div class="why-points">
+          <div class="why-point">
+            <div class="why-point-label">Our model</div>
+            <div class="why-point-title">The Right People, Every Time</div>
+            <p class="why-point-body">Every project gets the right specialist for the job — not whoever happens to be available. We run a curated network of the best creative and technical talent in the market, assembled specifically around your brief.</p>
+          </div>
           <div class="why-point">
             <div class="why-point-label">Our edge</div>
             <div class="why-point-title">AI-First by Default</div>
-            <p class="why-point-body">We embed AI automation into everything we build — so your leads get followed up, your content gets scheduled, and your business keeps moving without you lifting a finger.</p>
+            <p class="why-point-body">We don't bolt AI on at the end. It's in the foundation. Every system we build includes automation that makes your business run smarter — leads followed up, enquiries handled, workflows running — without adding to your workload.</p>
           </div>
           <div class="why-point">
             <div class="why-point-label">Our standard</div>
-            <div class="why-point-title">One Voice, One Standard</div>
-            <p class="why-point-body">Website, Instagram, automated emails — it all looks and sounds like you. Consistent, premium, and on-brand every time.</p>
-          </div>
-          <div class="why-point">
-            <div class="why-point-label">Our promise</div>
-            <div class="why-point-title">Done For You, Built to Scale</div>
-            <p class="why-point-body">You don't need to learn new tools or manage a content calendar. We handle all of it — and the system gets smarter every month.</p>
+            <div class="why-point-title">One Brand. One Voice. Zero Compromise.</div>
+            <p class="why-point-body">Whether it's your website, your Instagram, or your automated responses — it all looks, sounds, and feels like you. One standard across everything we touch.</p>
           </div>
         </div>
       </div>
       <div class="why-callout reveal">
-        <p class="why-quote">A doctor doesn't let the patient choose their own prescription. We know what your business needs — and we'll tell you.</p>
+        <p class="why-quote">A doctor doesn't let the patient choose their own prescription. We diagnose your business, prescribe what it actually needs, and build it — no guessing, no generic packages.</p>
         <div class="stat-stack">
           <div class="stat-row"><span class="stat-label">Time to first results</span><span class="stat-val">30 Days</span></div>
           <div class="stat-row"><span class="stat-label">Content managed for you</span><span class="stat-val">100%</span></div>
-          <div class="stat-row"><span class="stat-label">AI systems deployed</span><span class="stat-val">Always</span></div>
+          <div class="stat-row"><span class="stat-label">AI built into every system</span><span class="stat-val">Always</span></div>
           <div class="stat-row"><span class="stat-label">Stress added to your week</span><span class="stat-val">Zero</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <div class="divider"></div>
+
+<!-- PROCESS -->
 <section id="process">
   <div class="inner">
     <div class="process-header">
@@ -397,37 +453,40 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
         <div class="s-eyebrow">How we work</div>
         <h2 class="s-title">THE QURATED <span class="red">WAY.</span></h2>
       </div>
-      <p class="s-body">We don't pitch packages. We diagnose, prescribe, build, and compound. Every engagement follows the same four-step system.</p>
+      <p class="s-body">Every engagement runs the same four-step system. No exceptions. No shortcuts. No generic strategy decks that collect dust after the first meeting.</p>
     </div>
     <div class="process-steps">
       <div class="process-step reveal">
         <div class="process-step-num">01</div>
-        <div class="process-step-title">Diagnose First</div>
-        <p class="process-step-body">We ask the questions your last agency didn't. Where are you losing clients? What does your brand say right now? Only then do we prescribe.</p>
+        <div class="process-step-title">Diagnose</div>
+        <p class="process-step-body">We don't pitch packages. We ask questions. Where are you losing clients? What does your brand say right now? Only when we understand the problem do we prescribe the solution.</p>
       </div>
       <div class="process-step reveal reveal-delay-1">
         <div class="process-step-num">02</div>
-        <div class="process-step-title">Prescribe with Authority</div>
-        <p class="process-step-body">No menu of options. A clear recommendation and a clear outcome. We tell you exactly what you need and what it will do for your business.</p>
+        <div class="process-step-title">Prescribe</div>
+        <p class="process-step-body">One recommendation. Clear rationale. Expected outcome. We tell you what your business needs and why — not what's easiest to sell you. If we're not the right fit, we'll say so.</p>
       </div>
       <div class="process-step reveal reveal-delay-2">
         <div class="process-step-num">03</div>
-        <div class="process-step-title">Build &amp; Execute</div>
-        <p class="process-step-body">We build the system — website, content, automation — under one standard. One voice, one visual, regardless of what's running behind the scenes.</p>
+        <div class="process-step-title">Build</div>
+        <p class="process-step-body">We assemble the right people for your project and execute under one standard — Qurated's. One voice, one visual identity, one point of contact. You never feel the complexity behind it.</p>
       </div>
       <div class="process-step reveal reveal-delay-3">
         <div class="process-step-num">04</div>
-        <div class="process-step-title">Review &amp; Compound</div>
-        <p class="process-step-body">Monthly check-ins aren't admin — they're the adjustment. We cut what isn't working, double down on what is, and keep building momentum.</p>
+        <div class="process-step-title">Compound</div>
+        <p class="process-step-body">Monthly reviews aren't admin — they're the system getting smarter. We cut what isn't working, double down on what is, and keep building momentum. Good brands don't peak. They compound.</p>
       </div>
     </div>
   </div>
 </section>
+
 <div class="divider"></div>
+
+<!-- CONTACT -->
 <section id="contact">
   <div class="inner">
     <div class="s-eyebrow">Get started</div>
-    <h2 class="s-title">READY TO<br><span class="red">LOOK THE PART?</span></h2>
+    <h2 class="s-title">LET'S BUILD<br><span class="red">SOMETHING<br>THAT WORKS.</span></h2>
     <div class="contact-grid">
       <div class="contact-info">
         <div><div class="contact-detail-label">Based in</div><div class="contact-detail-value">Perth, Western Australia</div></div>
@@ -435,21 +494,22 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
         <div><div class="contact-detail-label">Instagram</div><div class="contact-detail-value"><a href="https://instagram.com/quratedagency" target="_blank">@quratedagency</a></div></div>
         <div><div class="contact-detail-label">Phone</div><div class="contact-detail-value"><a href="tel:0456847420">0456 847 420</a></div></div>
         <div class="contact-note">
-          <p>Not sure yet? <strong>Chat with Quinn</strong> — our AI assistant will figure out if we're the right fit before you speak to anyone.</p>
+          <p>Not sure if we're the right fit? <strong>That's exactly what Quinn is for.</strong> Have a conversation first — no commitment, no sales pitch.</p>
         </div>
-        <button class="quinn-inline-btn" onclick="openQuinn()">Start a conversation with Quinn →</button>
+        <button class="quinn-inline-btn" onclick="openQuinn()">Talk to Quinn →</button>
       </div>
       <div class="contact-right reveal">
         <div class="booking-block">
-          <h3>Book a Free 15-Min Call</h3>
-          <p>No prep needed. Show up and we'll tell you exactly what we'd do for your business.</p>
-          <a href="#" class="btn-primary">Book Your Free Diagnosis →</a>
+          <h3>Book a Free Diagnosis Call</h3>
+          <p>No prep needed. No pitch on our end. Show up, tell us what's going on with your business, and we'll tell you exactly what we'd do about it.</p>
+          <p class="booking-note">We keep our client list intentionally small. Quality over volume — always.</p>
+          <button class="btn-primary" onclick="openCalendly()">Book Your Free Diagnosis →</button>
         </div>
         <div class="email-block">
-          <label for="email-capture">Or leave your email — we'll reach out</label>
+          <label for="email-capture">Not ready for a call yet? Leave your email.</label>
           <div class="email-row">
             <input type="email" id="email-capture" placeholder="your@email.com"/>
-            <button onclick="submitEmail()">Send it</button>
+            <button onclick="submitEmail()">Send it →</button>
           </div>
           <div id="email-success">Got it — we'll be in touch within 24 hours.</div>
         </div>
@@ -457,6 +517,8 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
     </div>
   </div>
 </section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <a href="#hero" class="footer-logo">
@@ -466,7 +528,12 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
     <p class="footer-copy">© 2026 Qurated. Perth, WA. · <a href="mailto:info@quratedagency.com" style="color:inherit;text-decoration:none;">info@quratedagency.com</a></p>
   </div>
 </footer>
+
+<!-- QUINN WIDGET -->
 <div class="quinn-bubble" id="quinn-bubble">
+  <div class="quinn-proactive" id="quinn-proactive" onclick="openQuinn()">
+    Not sure if we're the right fit? Let's find out. →
+  </div>
   <div class="quinn-panel" id="quinn-panel">
     <div class="quinn-header">
       <div class="quinn-avatar">Q</div>
@@ -478,8 +545,9 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
     <div class="quinn-messages" id="quinn-messages">
       <div class="quinn-typing" id="quinn-typing"><span></span><span></span><span></span></div>
     </div>
+    <div class="quinn-quick-replies hidden" id="quinn-chips"></div>
     <div class="quinn-input-row">
-      <input class="quinn-input" id="quinn-input" type="text" placeholder="Message Quinn..." autocomplete="off"/>
+      <input class="quinn-input" id="quinn-input" type="text" placeholder="Or type a message..." autocomplete="off"/>
       <button class="quinn-send" id="quinn-send" aria-label="Send">→</button>
     </div>
   </div>
@@ -488,7 +556,10 @@ footer { background: var(--black); border-top: 1px solid var(--black-3); padding
     <span class="quinn-badge"></span>
   </button>
 </div>
+
+<script async src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
+// ─── CURSOR ───────────────────────────────────────────────────────────────────
 const cursor = document.getElementById('cursor'), ring = document.getElementById('cursor-ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
@@ -497,25 +568,244 @@ document.querySelectorAll('a,button,input,select,textarea').forEach(el=>{
   el.addEventListener('mouseenter',()=>{cursor.classList.add('hovered');ring.classList.add('hovered');});
   el.addEventListener('mouseleave',()=>{cursor.classList.remove('hovered');ring.classList.remove('hovered');});
 });
+
+// ─── NAV ──────────────────────────────────────────────────────────────────────
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
 document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
 function closeMobile(){document.getElementById('mobile-menu').classList.remove('open');}
-const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.12});
+
+// ─── REVEAL ───────────────────────────────────────────────────────────────────
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
+},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-function submitEmail(){const v=document.getElementById('email-capture').value;if(!v||!v.includes('@'))return;document.getElementById('email-success').style.display='block';document.getElementById('email-capture').value='';}
-const qPanel=document.getElementById('quinn-panel'),qMessages=document.getElementById('quinn-messages'),qInput=document.getElementById('quinn-input'),qTyping=document.getElementById('quinn-typing');
-let qHistory=[],qOpen=false,qStarted=false;
-function openQuinn(){qOpen=true;qPanel.classList.add('open');if(!qStarted)initQuinn();setTimeout(()=>qInput.focus(),300);}
-document.getElementById('quinn-toggle').addEventListener('click',()=>{qOpen=!qOpen;qPanel.classList.toggle('open',qOpen);if(qOpen&&!qStarted)initQuinn();if(qOpen)setTimeout(()=>qInput.focus(),300);});
-async function initQuinn(){qStarted=true;showT();const r=await askQ('Hello');hideT();addM('quinn',r);}
-function addM(role,text){const d=document.createElement('div');d.className='q-msg '+role;const p=document.createElement('p');p.textContent=text;d.appendChild(p);qMessages.insertBefore(d,qTyping);qMessages.scrollTop=qMessages.scrollHeight;}
+
+// ─── CALENDLY ─────────────────────────────────────────────────────────────────
+function openCalendly(){
+  Calendly.initPopupWidget({url:'https://calendly.com/quratedagency-info/30min'});
+}
+
+// ─── EMAIL CAPTURE ────────────────────────────────────────────────────────────
+function submitEmail(){
+  const v=document.getElementById('email-capture').value;
+  if(!v||!v.includes('@'))return;
+  // Optional: POST to Formspree here too
+  document.getElementById('email-success').style.display='block';
+  document.getElementById('email-capture').value='';
+}
+
+// ─── QUINN ────────────────────────────────────────────────────────────────────
+const FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; // Replace with your Formspree form ID
+
+const qPanel=document.getElementById('quinn-panel');
+const qMessages=document.getElementById('quinn-messages');
+const qInput=document.getElementById('quinn-input');
+const qTyping=document.getElementById('quinn-typing');
+const qChips=document.getElementById('quinn-chips');
+
+let qHistory=[], qOpen=false, qStarted=false;
+let collectingDetails=false, detailStep=0;
+let collectedDetails={};
+let quinnTurnCount=0;
+
+// Proactive bubble after 8s
+setTimeout(()=>{
+  const p=document.getElementById('quinn-proactive');
+  if(!qOpen) p.classList.add('visible');
+  setTimeout(()=>p.classList.remove('visible'), 8000);
+},8000);
+
+function openQuinn(){
+  document.getElementById('quinn-proactive').classList.remove('visible');
+  qOpen=true;
+  qPanel.classList.add('open');
+  if(!qStarted) initQuinn();
+  setTimeout(()=>qInput.focus(),300);
+}
+
+document.getElementById('quinn-toggle').addEventListener('click',()=>{
+  qOpen=!qOpen;
+  qPanel.classList.toggle('open',qOpen);
+  document.getElementById('quinn-proactive').classList.remove('visible');
+  if(qOpen&&!qStarted) initQuinn();
+  if(qOpen) setTimeout(()=>qInput.focus(),300);
+});
+
+async function initQuinn(){
+  qStarted=true;
+  showT();
+  await delay(1200);
+  hideT();
+  addQMsg("Hey, I'm Quinn — Qurated's AI. I'm not here to sell you anything. I just want to understand your business and see if we're actually the right fit.");
+  await delay(800);
+  showT();
+  await delay(1000);
+  hideT();
+  addQMsg("To start — what kind of business do you run?");
+  showChips([
+    {label:'Real Estate',action:'msg'},
+    {label:'Trades & Construction',action:'msg'},
+    {label:'Professional Services',action:'msg'},
+    {label:'Something else',action:'msg'}
+  ]);
+}
+
+function addQMsg(text){
+  const d=document.createElement('div');
+  d.className='q-msg quinn';
+  const p=document.createElement('p');
+  p.textContent=text;
+  d.appendChild(p);
+  qMessages.insertBefore(d,qTyping);
+  qMessages.scrollTop=qMessages.scrollHeight;
+}
+
+function addUserMsg(text){
+  const d=document.createElement('div');
+  d.className='q-msg user';
+  const p=document.createElement('p');
+  p.textContent=text;
+  d.appendChild(p);
+  qMessages.insertBefore(d,qTyping);
+  qMessages.scrollTop=qMessages.scrollHeight;
+}
+
 function showT(){qTyping.style.display='flex';qMessages.scrollTop=qMessages.scrollHeight;}
 function hideT(){qTyping.style.display='none';}
-async function askQ(t){qHistory.push({role:'user',content:t});try{const r=await fetch('/.netlify/functions/quinn',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:qHistory})});const d=await r.json();const reply=d.reply||"Sorry, having a moment — reach us at info@quratedagency.com.";qHistory.push({role:'assistant',content:reply});return reply;}catch{return "Sorry, having a moment — reach us at info@quratedagency.com.";}}
-async function sendM(){const t=qInput.value.trim();if(!t)return;qInput.value='';addM('user',t);showT();const r=await askQ(t);hideT();addM('quinn',r);}
-document.getElementById('quinn-send').addEventListener('click',sendM);
-qInput.addEventListener('keydown',e=>{if(e.key==='Enter')sendM();});
+function delay(ms){return new Promise(r=>setTimeout(r,ms));}
+
+function showChips(chips){
+  qChips.innerHTML='';
+  chips.forEach(c=>{
+    const btn=document.createElement('button');
+    btn.className='q-chip';
+    btn.textContent=c.label;
+    btn.addEventListener('click',()=>{
+      hideChips();
+      if(c.action==='msg') handleUserInput(c.label);
+      else if(c.action==='book') openCalendly();
+      else if(c.action==='details') startDetailCollection();
+    });
+    qChips.appendChild(btn);
+  });
+  qChips.classList.remove('hidden');
+}
+
+function hideChips(){qChips.classList.add('hidden');qChips.innerHTML='';}
+
+// Detail collection (bypasses AI for reliability)
+function startDetailCollection(){
+  collectingDetails=true;
+  detailStep=0;
+  collectedDetails={};
+  hideChips();
+  showT();
+  setTimeout(()=>{hideT();addQMsg("What's your name?");},800);
+}
+
+function handleDetailStep(input){
+  if(detailStep===0){
+    collectedDetails.name=input;
+    detailStep=1;
+    showT();
+    setTimeout(()=>{hideT();addQMsg("Nice to meet you, "+collectedDetails.name+". What's your email address?");},800);
+  } else if(detailStep===1){
+    collectedDetails.email=input;
+    detailStep=2;
+    showT();
+    setTimeout(()=>{hideT();addQMsg("Almost done — what's your business called?");},800);
+  } else if(detailStep===2){
+    collectedDetails.business=input;
+    submitToFormspree();
+  }
+}
+
+async function submitToFormspree(){
+  showT();
+  try{
+    await fetch('https://formspree.io/f/'+FORMSPREE_ID,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        name:collectedDetails.name,
+        email:collectedDetails.email,
+        business:collectedDetails.business,
+        source:'Quinn AI Chat'
+      })
+    });
+  }catch(e){}
+  hideT();
+  collectingDetails=false;
+  addQMsg("Done — we'll be in touch within 24 hours, "+collectedDetails.name+". If you'd rather fast-track it, you can book a call directly now.");
+  showChips([{label:'Book a call →',action:'book'}]);
+}
+
+async function handleUserInput(text){
+  if(!text.trim()) return;
+  hideChips();
+  addUserMsg(text);
+  qHistory.push({role:'user',content:text});
+  quinnTurnCount++;
+
+  if(collectingDetails){ handleDetailStep(text); return; }
+
+  showT();
+  const reply=await callQuinnAPI();
+  hideT();
+
+  if(reply){
+    addQMsg(reply);
+    qHistory.push({role:'assistant',content:reply});
+  }
+
+  // Show contextual chips based on turn
+  if(quinnTurnCount===1){
+    showChips([
+      {label:'Weak social media presence',action:'msg'},
+      {label:'Need a better website',action:'msg'},
+      {label:'Not getting enough leads',action:'msg'},
+      {label:'No time to manage it all',action:'msg'}
+    ]);
+  } else if(quinnTurnCount===2){
+    showChips([
+      {label:'Doing it myself',action:'msg'},
+      {label:'Not happy with current agency',action:'msg'},
+      {label:'Starting fresh',action:'msg'},
+      {label:'Never had help before',action:'msg'}
+    ]);
+  } else if(quinnTurnCount>=3 && quinnTurnCount<=4){
+    showChips([
+      {label:'Book a free call',action:'book'},
+      {label:'Leave my details',action:'details'},
+      {label:'Tell me more first',action:'msg'}
+    ]);
+  }
+}
+
+async function callQuinnAPI(){
+  try{
+    const res=await fetch('/.netlify/functions/quinn',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:qHistory})
+    });
+    const d=await res.json();
+    return d.reply||"Sorry, having a moment — reach us at info@quratedagency.com.";
+  }catch{
+    return "Sorry, having a moment — reach us at info@quratedagency.com.";
+  }
+}
+
+async function sendMsg(){
+  const text=qInput.value.trim();
+  if(!text) return;
+  qInput.value='';
+  await handleUserInput(text);
+}
+
+document.getElementById('quinn-send').addEventListener('click',sendMsg);
+qInput.addEventListener('keydown',e=>{if(e.key==='Enter')sendMsg();});
 </script>
 </body>
 </html>
