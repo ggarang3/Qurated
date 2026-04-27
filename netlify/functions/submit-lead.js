@@ -13,10 +13,19 @@ exports.handler = async (event) => {
   try {
     const { name, email, phone, business } = JSON.parse(event.body);
 
-    // ── HubSpot Contacts API ──────────────────────────────────────────────────
     const nameParts = (name || '').trim().split(' ');
     const firstname = nameParts[0] || '';
     const lastname = nameParts.slice(1).join(' ') || '';
+
+    console.log('=== submit-lead called ===');
+    console.log('Data:', { firstname, lastname, email, phone, business });
+
+    // ── HubSpot — only safe, guaranteed fields ────────────────────────────────
+    const properties = { email };
+    if (firstname) properties.firstname = firstname;
+    if (lastname)  properties.lastname  = lastname;
+    if (phone)     properties.phone     = phone;
+    if (business)  properties.company   = business;
 
     const hubspotRes = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
       method: 'POST',
@@ -24,35 +33,28 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${process.env.HUBSPOT_TOKEN}`
       },
-      body: JSON.stringify({
-        properties: {
-          firstname,
-          lastname,
-          email,
-          phone,
-          company: business,
-          hs_lead_status: 'NEW',
-          lead_source: 'Quinn AI Chat — Qurated Website'
-        }
-      })
+      body: JSON.stringify({ properties })
     });
 
     const hubspotData = await hubspotRes.json();
+    console.log('HubSpot status:', hubspotRes.status);
+    console.log('HubSpot body:', JSON.stringify(hubspotData));
 
-    // If contact already exists (409), update instead
-    if (hubspotRes.status === 409 && hubspotData.message) {
-      const existingId = hubspotData.message.match(/ID: (\d+)/)?.[1];
+    // Contact already exists — patch it
+    if (hubspotRes.status === 409) {
+      const existingId = hubspotData.message?.match(/ID: (\d+)/)?.[1];
       if (existingId) {
+        const patch = { ...properties };
+        delete patch.email;
         await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${existingId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${process.env.HUBSPOT_TOKEN}`
           },
-          body: JSON.stringify({
-            properties: { firstname, lastname, phone, company: business }
-          })
+          body: JSON.stringify({ properties: patch })
         });
+        console.log('Patched existing contact:', existingId);
       }
     }
 
@@ -66,7 +68,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ success: true })
+      body: JSON.stringify({ success: true, hubspot_status: hubspotRes.status })
     };
 
   } catch (err) {
