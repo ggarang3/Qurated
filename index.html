@@ -630,23 +630,49 @@ document.getElementById('quinn-toggle').addEventListener('click',()=>{
   if(qOpen) setTimeout(()=>qInput.focus(),300);
 });
 
+// Scripted turns — chips always match the question
+const QUINN_SCRIPT = [
+  {
+    msg: "To start — what kind of business do you run?",
+    chips: [
+      {label:'Real Estate',action:'msg'},
+      {label:'Trades & Construction',action:'msg'},
+      {label:'Professional Services',action:'msg'},
+      {label:'Something else',action:'msg'}
+    ]
+  },
+  {
+    msg: "Got it. What\'s the biggest challenge with your online presence right now?",
+    chips: [
+      {label:'Weak social media presence',action:'msg'},
+      {label:'No website or poor website',action:'msg'},
+      {label:'Not getting enough leads',action:'msg'},
+      {label:'No time to manage it all',action:'msg'}
+    ]
+  },
+  {
+    msg: "Are you currently working with anyone on your marketing?",
+    chips: [
+      {label:'No, doing it myself',action:'msg'},
+      {label:'Not happy with current agency',action:'msg'},
+      {label:'Starting fresh',action:'msg'},
+      {label:'Never had help before',action:'msg'}
+    ]
+  }
+];
+
 async function initQuinn(){
   qStarted=true;
   showT();
   await delay(1200);
   hideT();
-  addQMsg("Hey, I'm Quinn — Qurated's AI. I'm not here to sell you anything. I just want to understand your business and see if we're actually the right fit.");
-  await delay(800);
+  addQMsg("Hey, I\'m Quinn — Qurated\'s AI. I\'m not here to sell you anything. I just want to understand your business and see if we\'re actually the right fit.");
+  await delay(900);
   showT();
-  await delay(1000);
+  await delay(900);
   hideT();
-  addQMsg("To start — what kind of business do you run?");
-  showChips([
-    {label:'Real Estate',action:'msg'},
-    {label:'Trades & Construction',action:'msg'},
-    {label:'Professional Services',action:'msg'},
-    {label:'Something else',action:'msg'}
-  ]);
+  addQMsg(QUINN_SCRIPT[0].msg);
+  showChips(QUINN_SCRIPT[0].chips);
 }
 
 function addQMsg(text){
@@ -749,41 +775,36 @@ async function handleUserInput(text){
   hideChips();
   addUserMsg(text);
   qHistory.push({role:'user',content:text});
-  quinnTurnCount++;
 
   if(collectingDetails){ handleDetailStep(text); return; }
 
+  quinnTurnCount++;
+
+  // Turns 1 & 2 — scripted response + matching chips (no AI needed)
+  if(quinnTurnCount < 3){
+    const script = QUINN_SCRIPT[quinnTurnCount];
+    showT();
+    await delay(900);
+    hideT();
+    addQMsg(script.msg);
+    qHistory.push({role:'assistant',content:script.msg});
+    showChips(script.chips);
+    return;
+  }
+
+  // Turn 3 — AI responds with full context, then show action chips
   showT();
   const reply=await callQuinnAPI();
   hideT();
-
   if(reply){
     addQMsg(reply);
     qHistory.push({role:'assistant',content:reply});
   }
-
-  // Show contextual chips based on turn
-  if(quinnTurnCount===1){
-    showChips([
-      {label:'Weak social media presence',action:'msg'},
-      {label:'Need a better website',action:'msg'},
-      {label:'Not getting enough leads',action:'msg'},
-      {label:'No time to manage it all',action:'msg'}
-    ]);
-  } else if(quinnTurnCount===2){
-    showChips([
-      {label:'Doing it myself',action:'msg'},
-      {label:'Not happy with current agency',action:'msg'},
-      {label:'Starting fresh',action:'msg'},
-      {label:'Never had help before',action:'msg'}
-    ]);
-  } else if(quinnTurnCount>=3 && quinnTurnCount<=4){
-    showChips([
-      {label:'Book a free call',action:'book'},
-      {label:'Leave my details',action:'details'},
-      {label:'Tell me more first',action:'msg'}
-    ]);
-  }
+  showChips([
+    {label:'Book a free call',action:'book'},
+    {label:'Leave my details',action:'details'},
+    {label:'Tell me more first',action:'msg'}
+  ]);
 }
 
 async function callQuinnAPI(){
