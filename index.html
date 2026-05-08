@@ -3,338 +3,57 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Qurated — We Build the System. You Build the Business.</title>
-<meta name="description" content="Qurated builds lead generation systems for businesses too busy to chase their own growth. Website, automation, AI, and content — managed for you. Perth, WA."/>
-<meta property="og:title" content="Qurated — We Build the System. You Build the Business."/>
-<meta property="og:description" content="Lead capture, AI automation, content and web — one system, managed for you."/>
+<meta name="robots" content="index, follow"/>
+<title>Lead Generation Agency Perth | Qurated — Growth Systems</title>
+<meta name="description" content="Qurated is Perth's growth systems agency. We build lead generation systems — website, AI automation, CRM, and content — for businesses too busy to chase their own growth."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://www.quratedagency.com"/>
-<link rel="canonical" href="https://www.quratedagency.com"/>
+<meta property="og:url" content="https://www.quratedagency.com/"/>
+<meta property="og:title" content="Lead Generation Agency Perth | Qurated"/>
+<meta property="og:description" content="We build the system. You build the business. Lead generation, AI automation, and content for Perth businesses."/>
+<meta property="og:image" content="https://www.quratedagency.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Lead Generation Agency Perth | Qurated"/>
+<meta name="twitter:description" content="We build the system. You build the business."/>
+<meta name="twitter:image" content="https://www.quratedagency.com/og-image.png"/>
+<link rel="canonical" href="https://www.quratedagency.com/"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="image" href="logo_long_white.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
-<style>
-/* ── DESIGN TOKENS ── */
-:root {
-  --red:   #e50000;
-  --red-dk:#b00000;
-  --black: #0d0d0d;
-  --s1:    #111111;
-  --s2:    #181818;
-  --s3:    #222222;
-  --w100:  rgba(255,255,255,1);
-  --w60:   rgba(255,255,255,.6);
-  --w40:   rgba(255,255,255,.4);
-  --w20:   rgba(255,255,255,.2);
-  --w08:   rgba(255,255,255,.08);
-  --w04:   rgba(255,255,255,.04);
-  --fd: 'Bebas Neue', sans-serif;
-  --fc: 'Barlow Condensed', sans-serif;
-  --fb: 'Barlow', sans-serif;
-  /* Type scale — controlled */
-  --t-display: clamp(2.8rem, 5vw, 5rem);
-  --t-hero:    clamp(3.5rem, 6.5vw, 7rem);
-  --t-section: clamp(2rem, 3.5vw, 3.5rem);
-  --t-card:    1.4rem;
-  --t-label:   0.7rem;
-  --t-body:    0.9rem;
-  --t-sm:      0.8rem;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;scroll-padding-top:68px;}
-/* Offset all anchor targets by nav height so content isn't hidden behind fixed nav */
-section[id]{scroll-margin-top:68px;}
-body{background:var(--black);color:var(--w100);font-family:var(--fb);font-weight:300;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-::selection{background:var(--red);color:var(--w100);}
-::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--black);}::-webkit-scrollbar-thumb{background:var(--red);}
-*{cursor:none!important;}
-
-/* CURSOR */
-.cursor{position:fixed;width:8px;height:8px;background:var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
-.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(229,0,0,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,opacity .3s;}
-.cursor.h{width:12px;height:12px;}.cursor-ring.h{width:44px;height:44px;opacity:.6;}
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:998;opacity:.3;}
-
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;border-bottom:1px solid transparent;transition:background .4s,border-color .4s;}
-nav.scrolled{background:rgba(13,13,13,.97);backdrop-filter:blur(20px);border-bottom-color:var(--w08);}
-.nav-logo img{height:24px;width:auto;max-width:170px;object-fit:contain;object-position:left;}
-.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
-.nav-links a{font-family:var(--fc);font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--w40);text-decoration:none;transition:color .2s;}
-.nav-links a:hover{color:var(--w100);}
-.nav-cta{background:var(--red)!important;color:var(--black)!important;padding:.5rem 1.3rem;letter-spacing:.15em!important;transition:background .2s!important;}
-.nav-cta:hover{background:var(--w100)!important;color:var(--black)!important;}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--w100);transition:all .3s;}
-.mobile-menu{position:fixed;inset:0;background:var(--black);z-index:800;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;pointer-events:none;transition:opacity .3s;}
-.mobile-menu.open{opacity:1;pointer-events:all;}
-.mobile-menu a{font-family:var(--fd);font-size:3rem;letter-spacing:.1em;color:var(--w100);text-decoration:none;}
-.mobile-menu a:hover{color:var(--red);}
-.mobile-menu .m-cta{font-family:var(--fc);font-size:.85rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--red);padding:.9rem 2.5rem;}
-
-/* ── SHARED ── */
-.sec{padding:6rem 3rem;}
-.inner{max-width:1140px;margin:0 auto;}
-/* Eyebrow — used sparingly, one per section */
-.ew{font-family:var(--fc);font-size:var(--t-label);font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:flex;align-items:center;gap:.65rem;}
-.ew::before{content:'';display:block;width:18px;height:1px;background:var(--red);}
-/* Section headline — controlled size */
-.sh{font-family:var(--fd);font-size:var(--t-section);line-height:1;letter-spacing:.02em;color:var(--w100);}
-/* Body text */
-.sb{font-size:var(--t-body);color:var(--w40);line-height:1.8;max-width:540px;}
-.sb strong{color:var(--w100);font-weight:400;}
-/* Divider */
-.divider{height:1px;background:var(--w08);}
-/* Buttons */
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fc);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.85rem 1.9rem;border:1px solid;transition:all .22s;white-space:nowrap;text-decoration:none;}
-.btn-red{background:var(--red);border-color:var(--red);color:var(--black);}
-.btn-red:hover{background:var(--w100);border-color:var(--w100);}
-.btn-ghost{background:transparent;border-color:var(--w20);color:var(--w100);}
-.btn-ghost:hover{border-color:var(--w60);}
-.btn-white{background:var(--w100);border-color:var(--w100);color:var(--red);}
-.btn-white:hover{background:rgba(255,255,255,.9);}
-.btn-ghost-w{background:transparent;border-color:rgba(255,255,255,.35);color:var(--w100);}
-.btn-ghost-w:hover{border-color:var(--w100);}
-
-/* ── MARQUEE ── */
-.mq{overflow:hidden;background:var(--red);padding:.6rem 0;border-top:1px solid var(--red-dk);border-bottom:1px solid var(--red-dk);}
-.mq-track{display:flex;width:max-content;animation:mq 40s linear infinite;}
-.mq-item{font-family:var(--fc);font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--black);padding:0 2rem;white-space:nowrap;}
-.mq-dot{opacity:.3;}
-@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
-/* ── HERO ── */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 5.5rem;position:relative;overflow:hidden;}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--w04) 1px,transparent 1px),linear-gradient(90deg,var(--w04) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.5) 45%,transparent 100%);}
-.hero-q{position:absolute;right:-3vw;bottom:-6vh;font-family:var(--fd);font-size:58vw;color:var(--w100);opacity:.022;line-height:1;user-select:none;animation:qdrift 22s ease-in-out infinite alternate;pointer-events:none;}
-@keyframes qdrift{from{transform:rotate(-2deg);}to{transform:rotate(1.5deg);}}
-.hero-content{position:relative;z-index:1;padding-top:9rem;}
-.hero-eye{font-family:var(--fc);font-size:var(--t-label);font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem;opacity:0;animation:fu .7s .1s forwards;}
-.hero-eye::before{content:'';display:block;width:28px;height:1px;background:var(--red);}
-/* Hero headline — the ONE place we go large */
-.hero-hl{font-family:var(--fd);font-size:var(--t-hero);line-height:.9;letter-spacing:.02em;margin-bottom:2.5rem;opacity:0;animation:fu .8s .25s forwards;}
-.hero-hl .r{color:var(--red);}
-.hero-row{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;opacity:0;animation:fu .8s .4s forwards;}
-.hero-sub{font-size:var(--t-body);color:var(--w40);line-height:1.8;max-width:440px;}
-.hero-sub strong{color:var(--w100);font-weight:400;}
-.hero-acts{display:flex;flex-direction:column;align-items:flex-end;gap:.9rem;flex-shrink:0;}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fu .6s .8s forwards;}
-.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,var(--red),transparent);animation:sp 2.2s ease-in-out infinite;}
-.scroll-txt{font-family:var(--fc);font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--w20);}
-@keyframes fu{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-@keyframes sp{0%,100%{opacity:.35;}50%{opacity:1;}}
-
-/* ── PROBLEM — clean, one voice ── */
-#problem{background:var(--s1);}
-/* Section headline at top — full width, one moment */
-.prob-headline-wrap{margin-bottom:4rem;}
-.prob-headline{font-family:var(--fd);font-size:var(--t-display);line-height:.95;letter-spacing:.02em;color:var(--w100);max-width:900px;}
-/* List — left-heavy, right breathes */
-.prob-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-.prob-list{display:flex;flex-direction:column;}
-.prob-item{display:flex;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid var(--w08);}
-.prob-item:first-child{border-top:1px solid var(--w08);}
-.p-n{font-family:var(--fd);font-size:1.1rem;color:var(--red);line-height:1;flex-shrink:0;width:22px;margin-top:.1rem;}
-.p-t strong{font-family:var(--fc);font-size:.95rem;font-weight:600;letter-spacing:.04em;color:var(--w100);display:block;margin-bottom:.35rem;}
-.p-t p{font-size:var(--t-sm);color:var(--w40);line-height:1.75;}
-/* Right side — a single clean statement, not a competing billboard */
-.prob-aside{display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem;padding-top:.25rem;}
-.prob-statement{font-family:var(--fc);font-size:1.05rem;font-weight:600;color:var(--w60);line-height:1.6;letter-spacing:.02em;border-left:2px solid var(--red);padding-left:1.5rem;max-width:380px;}
-.prob-statement em{color:var(--w100);font-style:normal;}
-/* Stats — restrained, four clean rows */
-.prob-stats{display:flex;flex-direction:column;gap:0;}
-.pstat{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid var(--w08);}
-.pstat:first-child{border-top:1px solid var(--w08);}
-.pstat-lbl{font-family:var(--fc);font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--w40);}
-/* Stat values — Bebas Neue but smaller and only here */
-.pstat-val{font-family:var(--fd);font-size:1.3rem;color:var(--red);letter-spacing:.05em;}
-
-/* ── SERVICES ── */
-#services{background:var(--black);}
-.svc-hdr{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem;}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--w08);border:1px solid var(--w08);}
-.svc-card{background:var(--s1);padding:2.5rem 2rem;position:relative;overflow:hidden;transition:background .3s;}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
-.svc-card:hover{background:var(--s2);}
-.svc-card:hover::before{transform:scaleX(1);}
-.svc-n{font-family:var(--fd);font-size:3rem;color:var(--w04);line-height:1;margin-bottom:1.25rem;}
-.svc-tag{font-family:var(--fc);font-size:.58rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:.3rem;}
-.svc-name{font-family:var(--fd);font-size:var(--t-card);letter-spacing:.04em;color:var(--w100);margin-bottom:.75rem;}
-.svc-desc{font-size:var(--t-sm);color:var(--w40);line-height:1.75;margin-bottom:1.5rem;}
-.svc-list{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
-.svc-list li{font-family:var(--fc);font-size:.78rem;font-weight:500;color:var(--w40);display:flex;align-items:center;gap:.6rem;}
-.svc-list li::before{content:'';display:block;width:12px;height:1px;background:var(--red);flex-shrink:0;}
-
-/* ── WHY ── */
-#why{background:var(--s1);}
-.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem;}
-.why-pts{display:flex;flex-direction:column;margin-top:.5rem;}
-.why-pt{padding:1.5rem 0;border-bottom:1px solid var(--w08);}
-.why-pt:first-child{border-top:1px solid var(--w08);}
-.why-lbl{font-family:var(--fc);font-size:.58rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:.3rem;}
-.why-title{font-family:var(--fc);font-size:.95rem;font-weight:700;letter-spacing:.03em;color:var(--w100);margin-bottom:.3rem;}
-.why-body{font-size:var(--t-sm);color:var(--w40);line-height:1.72;}
-/* Quote box — one accent element, restrained */
-.why-box{background:var(--s2);border:1px solid var(--w08);padding:2.5rem;position:relative;}
-.why-box::before{content:'"';position:absolute;top:.25rem;left:1.75rem;font-family:var(--fd);font-size:6rem;color:var(--red);line-height:1;opacity:.07;}
-.why-quote{font-family:var(--fc);font-size:1.15rem;font-weight:600;line-height:1.5;letter-spacing:.02em;color:var(--w100);padding-top:1.5rem;margin-bottom:2rem;}
-.why-stats{display:flex;flex-direction:column;}
-.wstat{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--w08);}
-.wstat:last-child{border-bottom:none;}
-.wstat-lbl{font-family:var(--fc);font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--w40);}
-.wstat-val{font-family:var(--fd);font-size:1.3rem;color:var(--red);letter-spacing:.05em;}
-
-/* ── PROCESS ── */
-#process{background:var(--black);}
-.proc-hdr{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem;}
-.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--w08);border:1px solid var(--w08);}
-.proc-step{background:var(--s1);padding:2.25rem 1.75rem;position:relative;overflow:hidden;transition:background .3s;}
-.proc-step:hover{background:var(--s2);}
-.proc-step::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
-.proc-step:hover::after{transform:scaleX(1);}
-.proc-n{font-family:var(--fd);font-size:3rem;color:var(--w04);line-height:1;margin-bottom:.75rem;}
-.proc-title{font-family:var(--fc);font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--w100);margin-bottom:.5rem;}
-.proc-desc{font-size:var(--t-sm);color:var(--w40);line-height:1.72;}
-/* CTA strip at base of process */
-.proc-cta{border:1px solid var(--w08);border-top:none;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;background:var(--s1);}
-.proc-cta-text{font-family:var(--fc);font-size:1rem;font-weight:600;letter-spacing:.03em;color:var(--w60);max-width:600px;line-height:1.45;}
-.proc-cta-text em{color:var(--w100);font-style:normal;}
-
-/* ── CTA BAND ── */
-#cta-band{background:var(--red);padding:5.5rem 3rem;position:relative;overflow:hidden;}
-.cta-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.06) 1px,transparent 1px);background-size:56px 56px;}
-.cta-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;text-align:center;}
-.cta-eye{font-family:var(--fc);font-size:var(--t-label);font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:1.25rem;}
-/* CTA headline — THIS is where we go big again, but only here */
-.cta-hl{font-family:var(--fd);font-size:clamp(2.8rem,6.5vw,6.5rem);letter-spacing:.02em;line-height:.92;color:var(--w100);margin-bottom:1.5rem;}
-.cta-sub{font-size:var(--t-body);color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto;}
-.cta-acts{display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap;}
-
-/* ── CONTACT ── */
-#contact{background:var(--s1);}
-.contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;margin-top:3rem;}
-.c-deets{display:flex;flex-direction:column;gap:1.75rem;}
-.cdl{font-family:var(--fc);font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:.3rem;}
-.cdv{font-family:var(--fc);font-size:.95rem;font-weight:600;letter-spacing:.04em;color:var(--w100);}
-.cdv a{color:var(--w100);text-decoration:none;transition:color .2s;}
-.cdv a:hover{color:var(--red);}
-.c-note{padding:1.4rem;border-left:2px solid var(--red);background:var(--s2);}
-.c-note p{font-size:var(--t-sm);color:var(--w40);line-height:1.75;font-style:italic;}
-.c-note strong{color:var(--w100);font-weight:400;font-style:normal;}
-.quinn-link{background:none;border:none;color:var(--red);font-family:var(--fc);font-size:.82rem;font-weight:700;letter-spacing:.05em;text-decoration:underline;text-underline-offset:3px;padding:0;display:inline-block;margin-top:.25rem;}
-.c-right{display:flex;flex-direction:column;gap:2rem;}
-.booking-card{background:var(--s2);border:1px solid var(--w08);padding:2rem;}
-.booking-card h3{font-family:var(--fd);font-size:var(--t-card);letter-spacing:.05em;color:var(--w100);margin-bottom:.5rem;}
-.booking-card p{font-size:var(--t-sm);color:var(--w40);line-height:1.7;margin-bottom:.6rem;}
-.booking-note{font-family:var(--fc);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--w20);margin-bottom:1.5rem!important;}
-.email-block{display:flex;flex-direction:column;gap:.5rem;}
-.email-block label{font-family:var(--fc);font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--w40);}
-.email-row{display:flex;}
-.email-row input{flex:1;background:var(--s2);border:1px solid var(--w08);border-right:none;color:var(--w100);font-family:var(--fb);font-size:.88rem;padding:.82rem 1rem;outline:none;transition:border-color .2s;border-radius:0;}
-.email-row input:focus{border-color:var(--red);}
-.email-row input::placeholder{color:var(--w20);}
-.email-row button{font-family:var(--fc);font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--red);color:var(--black);border:1px solid var(--red);padding:.82rem 1.25rem;transition:all .2s;}
-.email-row button:hover{background:var(--w100);border-color:var(--w100);}
-#email-ok{display:none;font-family:var(--fc);font-size:.8rem;color:var(--w40);padding-top:.35rem;}
-
-/* ── FOOTER ── */
-footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3rem;}
-.footer-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;}
-.footer-logo img{height:20px;width:auto;max-width:160px;object-fit:contain;object-position:left;}
-.footer-tag{font-family:var(--fc);font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--w20);text-align:center;}
-.footer-tag em{color:var(--red);font-style:normal;}
-.footer-copy{font-family:var(--fc);font-size:.6rem;letter-spacing:.1em;color:rgba(255,255,255,.15);text-align:right;}
-.footer-copy a{color:inherit;text-decoration:none;}
-
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.rd1{transition-delay:.1s;}.rd2{transition-delay:.2s;}.rd3{transition-delay:.3s;}
-
-/* ── QUINN ── */
-.quinn-bubble{position:fixed;bottom:2rem;right:2rem;z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:.75rem;}
-.q-proactive{background:var(--w100);color:var(--black);padding:.7rem 1rem;font-family:var(--fc);font-size:.8rem;font-weight:600;letter-spacing:.03em;white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.5);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;pointer-events:none;position:relative;}
-.q-proactive::after{content:'';position:absolute;bottom:-6px;right:20px;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--w100);}
-.q-proactive.visible{opacity:1;transform:translateY(0);pointer-events:all;}
-.q-panel{width:340px;background:var(--s1);border:1px solid var(--w08);display:flex;flex-direction:column;overflow:hidden;opacity:0;pointer-events:none;transform:translateY(10px) scale(.97);transition:opacity .3s,transform .3s;box-shadow:0 16px 56px rgba(0,0,0,.8);max-height:540px;}
-.q-panel.open{opacity:1;pointer-events:all;transform:translateY(0) scale(1);}
-.q-hd{background:var(--s2);padding:.9rem 1.2rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid var(--w08);flex-shrink:0;}
-.q-av{width:32px;height:32px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1rem;color:var(--w100);flex-shrink:0;}
-.q-nm{font-family:var(--fc);font-size:.85rem;font-weight:700;letter-spacing:.08em;color:var(--w100);}
-.q-st{font-family:var(--fc);font-size:.6rem;letter-spacing:.1em;color:var(--w40);display:flex;align-items:center;gap:.3rem;}
-.q-st::before{content:'';display:block;width:5px;height:5px;border-radius:50%;background:#22c55e;}
-.q-msgs{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.75rem;min-height:200px;}
-.q-msgs::-webkit-scrollbar{width:2px;}
-.q-msgs::-webkit-scrollbar-thumb{background:var(--w08);}
-.qm{max-width:88%;}
-.qm.qq{align-self:flex-start;}
-.qm.qu{align-self:flex-end;}
-.qm p{font-size:.82rem;font-weight:300;line-height:1.6;padding:.6rem .9rem;}
-.qm.qq p{background:var(--s2);color:var(--w100);border-radius:0 8px 8px 8px;}
-.qm.qu p{background:var(--red);color:var(--w100);border-radius:8px 8px 0 8px;}
-.q-typing{display:none;align-self:flex-start;padding:.65rem .9rem;background:var(--s2);border-radius:0 8px 8px 8px;gap:4px;flex-shrink:0;}
-.q-typing span{display:inline-block;width:5px;height:5px;background:var(--w40);border-radius:50%;animation:db .8s ease-in-out infinite;}
-.q-typing span:nth-child(2){animation-delay:.15s;}
-.q-typing span:nth-child(3){animation-delay:.3s;}
-@keyframes db{0%,80%,100%{opacity:.3;transform:translateY(0);}40%{opacity:1;transform:translateY(-3px);}}
-.q-chips{padding:.55rem .7rem;display:flex;flex-wrap:wrap;gap:.35rem;border-top:1px solid var(--w08);flex-shrink:0;}
-.q-chips.hidden{display:none;}
-.q-chip{font-family:var(--fc);font-size:.7rem;font-weight:700;letter-spacing:.05em;background:var(--w04);border:1px solid var(--w08);color:var(--w100);padding:.35rem .75rem;transition:background .2s,border-color .2s;}
-.q-chip:hover{background:var(--red);border-color:var(--red);color:var(--black);}
-.q-input-row{display:flex;border-top:1px solid var(--w08);flex-shrink:0;}
-.q-input{flex:1;background:transparent;border:none;color:var(--w100);font-family:var(--fb);font-size:.82rem;font-weight:300;padding:.8rem 1rem;outline:none;}
-.q-input::placeholder{color:var(--w20);}
-.q-send{background:none;border:none;border-left:1px solid var(--w08);color:var(--red);font-size:1rem;padding:.8rem 1rem;transition:background .2s;}
-.q-send:hover{background:var(--red);color:var(--black);}
-.q-toggle{width:50px;height:50px;border-radius:50%;background:var(--red);border:none;display:flex;align-items:center;justify-content:center;position:relative;transition:background .2s,transform .18s;flex-shrink:0;}
-.q-toggle:hover{background:var(--red-dk);transform:scale(1.05);}
-.q-toggle-q{font-family:var(--fd);font-size:1.3rem;color:var(--w100);line-height:1;}
-.q-badge{position:absolute;top:2px;right:2px;width:9px;height:9px;background:#22c55e;border-radius:50%;border:2px solid var(--black);}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  nav{padding:0 1.5rem;}
-  .nav-links{display:none;}
-  .hamburger{display:flex;}
-  #hero{padding:0 1.5rem 4rem;min-height:100svh;}
-  .hero-content{padding-top:7rem;}
-  .hero-row{flex-direction:column;align-items:flex-start;gap:1.75rem;}
-  .hero-acts{align-items:flex-start;flex-direction:row;}
-  .sec{padding:4.5rem 1.5rem;}
-  .prob-layout,.svc-hdr,.why-layout,.proc-hdr,.contact-layout{grid-template-columns:1fr;gap:2.5rem;}
-  .svc-grid{grid-template-columns:1fr;}
-  .proc-steps{grid-template-columns:1fr 1fr;}
-  .proc-cta{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem;}
-  #cta-band{padding:4.5rem 1.5rem;}
-  .footer-inner{grid-template-columns:1fr;text-align:center;gap:1rem;}
-  .footer-logo{display:flex;justify-content:center;}
-  .footer-logo img{object-position:center;}
-  .footer-copy{text-align:center;}
-  .q-panel{width:calc(100vw - 3rem);max-width:340px;}
-}
-</style>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":["LocalBusiness","MarketingAgency"],
+  "name":"Qurated",
+  "description":"Perth-based growth systems agency building lead generation systems — website, AI automation, CRM, and content — for businesses in Perth WA and Adelaide SA.",
+  "url":"https://www.quratedagency.com",
+  "telephone":"+61456847420",
+  "email":"info@quratedagency.com",
+  "logo":"https://www.quratedagency.com/logo_long_white.png",
+  "address":{"@type":"PostalAddress","addressLocality":"Perth","addressRegion":"WA","addressCountry":"AU"},
+  "areaServed":[{"@type":"City","name":"Perth"},{"@type":"City","name":"Adelaide"}],
+  "sameAs":["https://www.instagram.com/quratedagency"]
+}</script>
 </head>
 <body>
-
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
 
-<!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo"><img src="logo_long_white.png" alt="Qurated"/></a>
+  <a href="/" class="nav-logo"><img src="logo_long_white.png" alt="Qurated — Lead Generation Agency Perth" width="170" height="24"/></a>
   <ul class="nav-links">
-    <li><a href="#problem">The Problem</a></li>
-    <li><a href="#services">What You Get</a></li>
+    <li><a href="/trades">For Tradies</a></li>
+    <li><a href="/real-estate">For Real Estate</a></li>
     <li><a href="#process">How It Works</a></li>
     <li><a href="#contact" class="nav-cta">Book a Free Diagnosis</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#problem" onclick="closeMobile()">The Problem</a>
-  <a href="#services" onclick="closeMobile()">What You Get</a>
+  <a href="/trades" onclick="closeMobile()">For Tradies</a>
+  <a href="/real-estate" onclick="closeMobile()">For Real Estate</a>
   <a href="#process" onclick="closeMobile()">How It Works</a>
   <a href="#contact" class="m-cta" onclick="closeMobile()">Book a Free Diagnosis</a>
 </div>
@@ -347,7 +66,7 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
     <div class="hero-eye">Growth Systems Agency — Perth, WA</div>
     <h1 class="hero-hl">We Build<br>The System.<br><span class="r">You Build<br>The Business.</span></h1>
     <div class="hero-row">
-      <p class="hero-sub">You're already good at what you do. The problem is <strong>your pipeline doesn't reflect it.</strong> Qurated builds the lead generation system and runs it for you — website, automation, AI, and content — so you stay focused on the work that pays.</p>
+      <p class="hero-sub">You're already good at what you do. The problem is <strong>your pipeline doesn't reflect it.</strong> Qurated builds the lead generation system — website, automation, AI, and content — and runs it for Perth businesses so you stay focused on the work that pays.</p>
       <div class="hero-acts">
         <button class="btn btn-red" onclick="openCalendly()">Book a Free Diagnosis →</button>
         <a href="#problem" class="btn btn-ghost">See why it matters</a>
@@ -357,24 +76,23 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
   <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-txt">Scroll</span></div>
 </section>
 
-<!-- MARQUEE -->
-<div class="mq"><div class="mq-track">
-  <span class="mq-item">We build the system</span><span class="mq-item mq-dot">·</span>
-  <span class="mq-item">You build the business</span><span class="mq-item mq-dot">·</span>
-  <span class="mq-item">Lead capture automation</span><span class="mq-item mq-dot">·</span>
+<div class="mq" aria-hidden="true"><div class="mq-track">
+  <span class="mq-item">Lead generation Perth</span><span class="mq-item mq-dot">·</span>
   <span class="mq-item">AI enquiry handling</span><span class="mq-item mq-dot">·</span>
   <span class="mq-item">Automated follow-up</span><span class="mq-item mq-dot">·</span>
-  <span class="mq-item">Content that converts</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Website design Perth</span><span class="mq-item mq-dot">·</span>
   <span class="mq-item">CRM automation</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Content that converts</span><span class="mq-item mq-dot">·</span>
   <span class="mq-item">Growth systems</span><span class="mq-item mq-dot">·</span>
-  <span class="mq-item">We build the system</span><span class="mq-item mq-dot">·</span>
-  <span class="mq-item">You build the business</span><span class="mq-item mq-dot">·</span>
-  <span class="mq-item">Lead capture automation</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Marketing for tradies Perth</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Lead generation Perth</span><span class="mq-item mq-dot">·</span>
   <span class="mq-item">AI enquiry handling</span><span class="mq-item mq-dot">·</span>
   <span class="mq-item">Automated follow-up</span><span class="mq-item mq-dot">·</span>
-  <span class="mq-item">Content that converts</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Website design Perth</span><span class="mq-item mq-dot">·</span>
   <span class="mq-item">CRM automation</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Content that converts</span><span class="mq-item mq-dot">·</span>
   <span class="mq-item">Growth systems</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Marketing for tradies Perth</span><span class="mq-item mq-dot">·</span>
 </div></div>
 
 <!-- PROBLEM -->
@@ -382,7 +100,7 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
   <div class="inner">
     <div class="prob-headline-wrap reveal">
       <div class="ew">Sound familiar?</div>
-      <h2 class="prob-headline">You're losing work to businesses<br><span class="r">half as good</span> as yours.</h2>
+      <h2 class="prob-headline">Perth businesses are losing work to competitors<br><span class="r">half as good</span> as them.</h2>
     </div>
     <div class="prob-layout">
       <div class="prob-list reveal">
@@ -396,7 +114,7 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
         </div>
         <div class="prob-item">
           <div class="p-n">03</div>
-          <div class="p-t"><strong>Marketing takes time you simply don't have</strong><p>Running a business is already a full-time job. Managing content, ads, and your online presence is another one. You can't do both well — and it's always the lead generation that falls behind.</p></div>
+          <div class="p-t"><strong>Marketing takes time you simply don't have</strong><p>Running a business is already a full-time job. Managing content, ads, and your online presence is another one. Something always falls behind — and it's always the lead generation.</p></div>
         </div>
         <div class="prob-item">
           <div class="p-n">04</div>
@@ -433,20 +151,20 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
         <div class="svc-n">01</div>
         <div class="svc-tag">The Foundation</div>
         <div class="svc-name">Web &amp; AI Systems</div>
-        <p class="svc-desc">A website that converts visitors into enquiries — with AI layered in to handle follow-up so nothing falls through the cracks.</p>
+        <p class="svc-desc">A website that works for you every hour — built to convert visitors into enquiries, with AI layered in to handle follow-up so no lead goes cold.</p>
         <ul class="svc-list">
           <li>High-converting website design &amp; build</li>
           <li>AI chatbot &amp; lead qualification</li>
           <li>CRM setup &amp; pipeline management</li>
           <li>Lead capture funnels</li>
-          <li>SEO foundation &amp; Google Business</li>
+          <li>Local SEO &amp; Google Business Profile</li>
         </ul>
       </div>
       <div class="svc-card reveal rd1">
         <div class="svc-n">02</div>
         <div class="svc-tag">The Authority</div>
         <div class="svc-name">Content &amp; Social</div>
-        <p class="svc-desc">Content that represents the quality of your work — published consistently, without you managing it. Every month, without being asked twice.</p>
+        <p class="svc-desc">Content that represents the quality of your work — published consistently without you managing it. Strategy, creative, and calendar handled every month.</p>
         <ul class="svc-list">
           <li>Monthly content strategy &amp; calendar</li>
           <li>Social media management</li>
@@ -459,7 +177,7 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
         <div class="svc-n">03</div>
         <div class="svc-tag">The Full Engine</div>
         <div class="svc-name">Growth Systems</div>
-        <p class="svc-desc">Web, content, and AI running as one compounding system. Not a retainer that delivers the same thing on repeat — a machine that builds momentum.</p>
+        <p class="svc-desc">Web, content, and AI running as one compounding system — getting sharper every month. A machine that builds momentum, not a retainer on repeat.</p>
         <ul class="svc-list">
           <li>Everything in Web &amp; AI + Content &amp; Social</li>
           <li>Integrated AI growth stack</li>
@@ -481,23 +199,11 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
       <div>
         <div class="ew reveal">Why we're different</div>
         <h2 class="sh reveal" style="margin-bottom:1rem;">We diagnose<br>before we<br><span class="r">prescribe.</span></h2>
-        <p class="sb reveal" style="margin-bottom:2.5rem;">Most agencies pitch a package before they've asked a single question. We don't. Every engagement starts with understanding exactly where you are and what will genuinely move the needle.</p>
+        <p class="sb reveal" style="margin-bottom:2.5rem;">Most agencies pitch a package before asking a single question. We don't. Every engagement starts with understanding exactly where your Perth business is, what's costing you, and what will genuinely move the needle.</p>
         <div class="why-pts reveal">
-          <div class="why-pt">
-            <div class="why-lbl">Our model</div>
-            <div class="why-title">One partner. The entire system.</div>
-            <p class="why-body">Website, content, ads, CRM, and automation under one roof — connected. No brief lost between agencies. One strategy, executed end-to-end.</p>
-          </div>
-          <div class="why-pt">
-            <div class="why-lbl">Our edge</div>
-            <div class="why-title">AI built in from day one. Not bolted on later.</div>
-            <p class="why-body">Every system we build has automation in the foundation. Leads followed up. Enquiries handled. Workflows running — without you lifting a finger.</p>
-          </div>
-          <div class="why-pt">
-            <div class="why-lbl">Our standard</div>
-            <div class="why-title">Priced on value. No apology.</div>
-            <p class="why-body">Our clients don't come to us for a bargain — they come because they're tired of paying for things that don't work.</p>
-          </div>
+          <div class="why-pt"><div class="why-lbl">Our model</div><div class="why-title">One partner. The entire system.</div><p class="why-body">Website, content, ads, CRM, and automation under one roof — connected. No brief lost between agencies. One strategy, executed end-to-end.</p></div>
+          <div class="why-pt"><div class="why-lbl">Our edge</div><div class="why-title">AI built in from day one. Not bolted on later.</div><p class="why-body">Every system we build has automation in the foundation. Leads followed up. Enquiries handled. Workflows running — without you lifting a finger.</p></div>
+          <div class="why-pt"><div class="why-lbl">Our standard</div><div class="why-title">Priced on value. No apology.</div><p class="why-body">Our clients don't come to us for a bargain — they come because they're tired of paying for things that don't work.</p></div>
         </div>
       </div>
       <div class="why-box reveal">
@@ -526,26 +232,10 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
       <p class="sb reveal">Every engagement runs the same system. No shortcuts, no strategy decks that live in a Google Drive and never get executed.</p>
     </div>
     <div class="proc-steps">
-      <div class="proc-step reveal">
-        <div class="proc-n">01</div>
-        <div class="proc-title">Diagnose</div>
-        <p class="proc-desc">We don't pitch packages. We ask questions. Only when we understand the problem do we prescribe the solution — and we'll say so honestly if we're not the right fit.</p>
-      </div>
-      <div class="proc-step reveal rd1">
-        <div class="proc-n">02</div>
-        <div class="proc-title">Prescribe</div>
-        <p class="proc-desc">One clear recommendation. Specific rationale. You'll know exactly what we're building and what it should deliver — before you commit to anything.</p>
-      </div>
-      <div class="proc-step reveal rd2">
-        <div class="proc-n">03</div>
-        <div class="proc-title">Build</div>
-        <p class="proc-desc">One point of contact. One voice across everything. You never feel the complexity running behind the scenes.</p>
-      </div>
-      <div class="proc-step reveal rd3">
-        <div class="proc-n">04</div>
-        <div class="proc-title">Compound</div>
-        <p class="proc-desc">Monthly reviews aren't admin — they're the system getting sharper. We cut what isn't working, double down on what is. Good systems compound.</p>
-      </div>
+      <div class="proc-step reveal"><div class="proc-n">01</div><div class="proc-title">Diagnose</div><p class="proc-desc">We don't pitch packages. We ask questions. Only when we understand the problem do we prescribe the solution — and we'll say so honestly if we're not the right fit.</p></div>
+      <div class="proc-step reveal rd1"><div class="proc-n">02</div><div class="proc-title">Prescribe</div><p class="proc-desc">One clear recommendation. Specific rationale. You'll know exactly what we're building and what it should deliver — before you commit to anything.</p></div>
+      <div class="proc-step reveal rd2"><div class="proc-n">03</div><div class="proc-title">Build</div><p class="proc-desc">One point of contact. One voice across everything. You never feel the complexity running behind the scenes.</p></div>
+      <div class="proc-step reveal rd3"><div class="proc-n">04</div><div class="proc-title">Compound</div><p class="proc-desc">Monthly reviews aren't admin — they're the system getting sharper. We cut what isn't working, double down on what is. Good systems compound.</p></div>
     </div>
     <div class="proc-cta reveal">
       <p class="proc-cta-text">The first step is free. A 30-minute call where we tell you <em>exactly what your business needs</em> — whether you work with us or not.</p>
@@ -560,7 +250,7 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
   <div class="cta-inner">
     <div class="cta-eye">Ready to grow?</div>
     <h2 class="cta-hl">Thirty minutes.<br>No pitch.<br>Real answers.</h2>
-    <p class="cta-sub">No prep needed. Just show up, tell us where your business is at, and we'll tell you exactly what we'd do about it.</p>
+    <p class="cta-sub">No prep needed. Just show up, tell us where your Perth business is at, and we'll tell you exactly what we'd do about it.</p>
     <div class="cta-acts">
       <button class="btn btn-white" onclick="openCalendly()">Book Your Free Diagnosis →</button>
       <button class="btn btn-ghost-w" onclick="openQuinn()">Talk to Quinn first</button>
@@ -578,7 +268,7 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
         <div><div class="cdl">Based in</div><div class="cdv">Perth, Western Australia</div></div>
         <div><div class="cdl">Email</div><div class="cdv"><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></div></div>
         <div><div class="cdl">Phone</div><div class="cdv"><a href="tel:0456847420">0456 847 420</a></div></div>
-        <div><div class="cdl">Instagram</div><div class="cdv"><a href="https://instagram.com/quratedagency" target="_blank">@quratedagency</a></div></div>
+        <div><div class="cdl">Instagram</div><div class="cdv"><a href="https://instagram.com/quratedagency" target="_blank" rel="noopener">@quratedagency</a></div></div>
         <div class="c-note"><p>Not ready for a call? <strong>Quinn can help right now.</strong> Ask anything — how we work, what we'd recommend, whether we're the right fit.</p></div>
         <button class="quinn-link" onclick="openQuinn()">Talk to Quinn →</button>
       </div>
@@ -602,16 +292,20 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <a href="#hero" class="footer-logo"><img src="logo_long_white.png" alt="Qurated"/></a>
+    <a href="/" class="footer-logo"><img src="logo_long_white.png" alt="Qurated" width="160" height="20"/></a>
     <p class="footer-tag">We build the system. <em>You build the business.</em></p>
-    <p class="footer-copy">© 2026 Qurated · Perth, WA · Adelaide, SA<br><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></p>
+    <div>
+      <p class="footer-copy">© 2026 Qurated · Perth, WA · Adelaide, SA · <a href="mailto:info@quratedagency.com">info@quratedagency.com</a></p>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/trades">For Tradies</a></li>
+        <li><a href="/real-estate">For Real Estate</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
-
-<!-- QUINN -->
 <div class="quinn-bubble" id="quinn-bubble">
   <div class="q-proactive" id="q-proactive" onclick="openQuinn()">Not sure if we're the right fit? Ask Quinn →</div>
   <div class="q-panel" id="q-panel">
@@ -622,256 +316,8 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
   </div>
   <button class="q-toggle" id="q-toggle" aria-label="Chat with Quinn"><span class="q-toggle-q">Q</span><span class="q-badge"></span></button>
 </div>
-
 <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
-<script>
-const cur=document.getElementById('cursor'),rng=document.getElementById('cursor-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function ar(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;rng.style.left=rx+'px';rng.style.top=ry+'px';requestAnimationFrame(ar);})();
-document.querySelectorAll('a,button,input').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.classList.add('h');rng.classList.add('h');});el.addEventListener('mouseleave',()=>{cur.classList.remove('h');rng.classList.remove('h');});});
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
-document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
-function closeMobile(){document.getElementById('mobile-menu').classList.remove('open');}
-const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-// ⚠ VERIFY THIS URL matches your live Calendly link before going live
-function openCalendly(){Calendly.initPopupWidget({url:'https://calendly.com/quratedagency-info/30min'});}
-async function submitEmail(){
-  const v=document.getElementById('email-cap').value;
-  if(!v||!v.includes('@'))return;
-  try{await fetch('https://formspree.io/f/mreovojd',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:v,source:'Email capture'})});}catch(e){}
-  document.getElementById('email-ok').style.display='block';document.getElementById('email-cap').value='';
-}
-// ── QUINN STATE ──────────────────────────────────────────────────────────────
-const qPanel=document.getElementById('q-panel'),
-      qMsgs=document.getElementById('q-msgs'),
-      qInput=document.getElementById('q-input'),
-      qTyping=document.getElementById('q-typing'),
-      qChips=document.getElementById('q-chips');
-
-let qOpen=false, qStarted=false;
-let collecting=false, dStep=0, dData={};
-let qH=[];
-let businessType='', mainChallenge='';
-let quinnStage=0;
-
-// ── OPEN / TOGGLE ─────────────────────────────────────────────────────────────
-setTimeout(()=>{
-  const p=document.getElementById('q-proactive');
-  if(!qOpen){p.classList.add('visible');setTimeout(()=>p.classList.remove('visible'),9000);}
-},10000);
-
-function openQuinn(){
-  document.getElementById('q-proactive').classList.remove('visible');
-  qOpen=true; qPanel.classList.add('open');
-  if(!qStarted) initQ();
-  setTimeout(()=>qInput.focus(),300);
-}
-document.getElementById('q-toggle').addEventListener('click',()=>{
-  qOpen=!qOpen; qPanel.classList.toggle('open',qOpen);
-  document.getElementById('q-proactive').classList.remove('visible');
-  if(qOpen&&!qStarted) initQ();
-  if(qOpen) setTimeout(()=>qInput.focus(),300);
-});
-
-// ── SCRIPTED RESPONSES ────────────────────────────────────────────────────────
-// Turn 1 — one line acknowledgement + one focused question
-const T1={
-  'Trades or Construction': "Got it. What's the biggest thing stopping your phone from ringing consistently?",
-  'Real Estate':            "Got it. What's the biggest gap in your pipeline right now?",
-  'Professional Services':  "Got it. What's holding back consistent enquiries for you?",
-  'Something else':         "Got it. What's your biggest challenge with getting leads online?"
-};
-
-// Turn 2 — validate their answer + one punchy line + go straight to CTA
-const T2={
-  'Not enough inbound leads':      "That's the core of what we fix. Most clients have a lead generation system live and generating within 30 days.",
-  'No time to manage marketing':   "That's exactly what we're built for — the system runs without you managing it. Setup takes 30 days.",
-  "Website isn't converting":      "We rebuild for conversion — high-converting site plus AI follow-up so no lead goes cold. Live within 30 days.",
-  'Need more visibility online':   "Consistent presence is part of the system — content managed every month, handled end to end."
-};
-
-// ── HELPERS ───────────────────────────────────────────────────────────────────
-function addQ(t){
-  const d=document.createElement('div'); d.className='qm qq';
-  const p=document.createElement('p'); p.textContent=t;
-  d.appendChild(p); qMsgs.insertBefore(d,qTyping);
-  qMsgs.scrollTop=qMsgs.scrollHeight;
-}
-function addU(t){
-  const d=document.createElement('div'); d.className='qm qu';
-  const p=document.createElement('p'); p.textContent=t;
-  d.appendChild(p); qMsgs.insertBefore(d,qTyping);
-  qMsgs.scrollTop=qMsgs.scrollHeight;
-}
-function showT(){qTyping.style.display='flex'; qMsgs.scrollTop=qMsgs.scrollHeight;}
-function hideT(){qTyping.style.display='none';}
-function dl(ms){return new Promise(r=>setTimeout(r,ms));}
-
-// CTA chips — shown after stage 2, keep consistent
-const CTA_CHIPS=[
-  {l:'Book a free call', a:'book'},
-  {l:'Leave my details', a:'details'}
-];
-
-function showChips(chips){
-  qChips.innerHTML='';
-  chips.forEach(c=>{
-    const b=document.createElement('button');
-    b.className='q-chip'; b.textContent=c.l;
-    b.addEventListener('click',()=>{
-      hideChips();
-      if     (c.a==='book')     openCalendly();
-      else if(c.a==='details')  startCollect();
-      else if(c.a==='business'){businessType=c.l;   handleInput(c.l);}
-      else if(c.a==='challenge'){mainChallenge=c.l; handleInput(c.l);}
-      else handleInput(c.l);
-    });
-    qChips.appendChild(b);
-  });
-  qChips.classList.remove('hidden');
-}
-function hideChips(){qChips.classList.add('hidden'); qChips.innerHTML='';}
-
-// ── INIT ──────────────────────────────────────────────────────────────────────
-async function initQ(){
-  qStarted=true;
-  showT(); await dl(900); hideT();
-  addQ("Hey — I'm Quinn. Two quick questions and I'll know if Qurated's the right fit for you.");
-  showT(); await dl(700); hideT();
-  addQ("What kind of business do you run?");
-  quinnStage=1;
-  showChips([
-    {l:'Trades or Construction',  a:'business'},
-    {l:'Real Estate',             a:'business'},
-    {l:'Professional Services',   a:'business'},
-    {l:'Something else',          a:'business'}
-  ]);
-}
-
-// ── MAIN INPUT HANDLER ────────────────────────────────────────────────────────
-async function handleInput(text){
-  if(!text.trim()) return;
-  hideChips(); addU(text);
-  qH.push({role:'user', content:text});
-  if(collecting){handleCollect(text); return;}
-
-  // Stage 1 → business type received → ask challenge
-  if(quinnStage===1){
-    const reply=T1[businessType]||T1['Something else'];
-    showT(); await dl(700); hideT();
-    addQ(reply);
-    qH.push({role:'assistant', content:reply});
-    quinnStage=2;
-    showChips([
-      {l:'Not enough inbound leads',   a:'challenge'},
-      {l:'No time to manage marketing',a:'challenge'},
-      {l:"Website isn't converting",   a:'challenge'},
-      {l:'Need more visibility online',a:'challenge'}
-    ]);
-    return;
-  }
-
-  // Stage 2 → challenge received → one validation line → straight to CTA
-  if(quinnStage===2){
-    const reply=T2[mainChallenge]||T2['Not enough inbound leads'];
-    showT(); await dl(700); hideT();
-    addQ(reply);
-    qH.push({role:'assistant', content:reply});
-    showT(); await dl(600); hideT();
-    addQ("What's the best next step for you?");
-    quinnStage=3;
-    showChips(CTA_CHIPS);
-    return;
-  }
-
-  // Stage 3+ → if they typed instead of clicking CTA, AI handles it briefly
-  showT();
-  const rep=await callAPI();
-  hideT();
-  if(rep){addQ(rep); qH.push({role:'assistant', content:rep});}
-  showChips(CTA_CHIPS);
-}
-
-// ── AI API — context-aware, CTA-focused ───────────────────────────────────────
-async function callAPI(){
-  try{
-    const r=await fetch('/.netlify/functions/quinn',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({messages:qH, context:{businessType, mainChallenge}})
-    });
-    const d=await r.json();
-    return d.reply||"Reach us at info@quratedagency.com.";
-  }catch{
-    return "Reach us at info@quratedagency.com.";
-  }
-}
-
-// ── DETAIL COLLECTION ─────────────────────────────────────────────────────────
-function startCollect(){
-  collecting=true; dStep=0; dData={}; hideChips();
-  showT(); setTimeout(()=>{hideT(); addQ("What's your name?");}, 600);
-}
-function handleCollect(t){
-  if(dStep===0){
-    dData.name=t; dStep=1; showT();
-    setTimeout(()=>{hideT(); addQ("And your email?");}, 600);
-  } else if(dStep===1){
-    dData.email=t; dStep=2; showT();
-    setTimeout(()=>{hideT(); addQ("Best phone number?");}, 600);
-  } else if(dStep===2){
-    dData.phone=t; dStep=3; showT();
-    setTimeout(()=>{hideT(); addQ("What's your business called?");}, 600);
-  } else if(dStep===3){
-    dData.business=t; submitLead();
-  }
-}
-
-// ── LEAD SUBMISSION — HubSpot + Formspree with Quinn context ──────────────────
-async function submitLead(){
-  showT();
-  const payload={
-    name:dData.name, email:dData.email, phone:dData.phone, business:dData.business,
-    businessType: businessType||'Not specified',
-    challenge:    mainChallenge||'Not specified',
-    source:'Quinn AI Chat'
-  };
-  try{
-    await fetch('/.netlify/functions/submit-lead',{
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(payload)
-    });
-  }catch(e){}
-  try{
-    await fetch('https://formspree.io/f/mreovojd',{
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        _subject:        'New Quinn Lead: '+dData.business,
-        Name:            dData.name,
-        Email:           dData.email,
-        Phone:           dData.phone,
-        Business:        dData.business,
-        'Business Type': businessType||'Not specified',
-        'Main Challenge':mainChallenge||'Not specified',
-        Source:          'Quinn AI Chat'
-      })
-    });
-  }catch(e){}
-  hideT(); collecting=false;
-  addQ("Done, "+dData.name+" — we'll be in touch within 24 hours.");
-  showChips([{l:'Book a call now →', a:'book'}]);
-}
-
-// ── SEND ──────────────────────────────────────────────────────────────────────
-async function send(){
-  const t=qInput.value.trim(); if(!t) return;
-  qInput.value=''; await handleInput(t);
-}
-document.getElementById('q-send').addEventListener('click',send);
-qInput.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
-</script>
+<script src="main.js"></script>
+<script src="quinn-widget.js"></script>
 </body>
 </html>
