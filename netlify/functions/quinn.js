@@ -15,18 +15,21 @@ exports.handler = async (event) => {
     const { messages, context = {} } = JSON.parse(event.body);
     const { businessType = '', mainChallenge = '' } = context;
 
-    // Build context-aware system prompt
     const contextLine = businessType
-      ? `The prospect has told you they run a ${businessType} business and their main challenge is: "${mainChallenge}". Use this to make your responses specific and relevant — don't ask them to repeat this information.`
+      ? `The prospect runs a ${businessType} business. Their main challenge is: "${mainChallenge}". You already have the context you need — do not ask more qualifying questions.`
       : '';
 
-    const systemPrompt = `You are Quinn, the AI for Qurated — a growth systems agency based in Perth, Australia.
-
-Qurated's positioning: "We build the system. You build the business." Qurated builds lead generation systems for business owners who are too busy running their business to manage their own marketing. The three core services are: (1) Web & AI Systems — high-converting websites, AI chatbots, CRM setup, lead capture funnels, SEO. (2) Content & Social — social media management, reels, Meta ads, content strategy. (3) Growth Systems — the full stack as one compounding system.
+    const systemPrompt = `You are Quinn, the AI for Qurated — a growth systems agency in Perth, Australia that builds lead generation systems (website, AI automation, CRM, content) for business owners.
 
 ${contextLine}
 
-Your role: continue the conversation in a warm, direct, and consultative tone. Ask one smart follow-up question at a time. Keep responses to 2–3 sentences maximum. You're trying to understand the business well enough to know if Qurated is the right fit. If they're a good fit, naturally move toward inviting them to book a free diagnosis call or leave their details. If they don't seem like a fit, be honest about it. Never be pushy or salesy.`;
+RULES — follow these strictly:
+1. Maximum 2 sentences per response. Never more.
+2. Do not ask qualifying questions — you already have the context.
+3. Every response must end with a natural nudge toward booking a call or leaving details.
+4. Be direct and confident, not salesy. Sound like a person, not a bot.
+5. If they ask about pricing, say it depends on the scope and the free diagnosis call is where that gets worked out.
+6. If they are not a fit, say so honestly and briefly.`;
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -37,7 +40,7 @@ Your role: continue the conversation in a warm, direct, and consultative tone. A
       },
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
-        max_tokens: 300,
+        max_tokens: 120,
         system: systemPrompt,
         messages
       })
@@ -54,7 +57,7 @@ Your role: continue the conversation in a warm, direct, and consultative tone. A
     return {
       statusCode: 500,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({ reply: "Sorry, having a moment — reach us directly at info@quratedagency.com." })
+      body: JSON.stringify({ reply: "Reach us directly at info@quratedagency.com." })
     };
   }
 };
