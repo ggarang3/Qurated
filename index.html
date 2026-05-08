@@ -3,833 +3,521 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Qurated — Content. Systems. Growth.</title>
-<meta name="description" content="Qurated is a growth systems partner for businesses serious about being found, trusted, and chosen online. Content, AI automation, and web — handled end to end."/>
-<meta property="og:title" content="Qurated — Your Business Deserves To Be Found."/>
-<meta property="og:description" content="Content, systems, and AI built around your business — running while you work."/>
+<title>Qurated — We Build the System. You Build the Business.</title>
+<meta name="description" content="Qurated builds lead generation systems — website, automation, AI, and content — for businesses that are too busy to chase their own growth. Perth, WA."/>
+<meta property="og:title" content="Qurated — We Build the System. You Build the Business."/>
+<meta property="og:description" content="Lead capture, AI automation, content and web — running as one system, managed for you. Perth, WA."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://www.quratedagency.com"/>
 <link rel="canonical" href="https://www.quratedagency.com"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <style>
-:root {
-  --red: #e50000;
-  --red-dark: #b00000;
-  --black: #0a0a0a;
-  --black-2: #111111;
-  --black-3: #1a1a1a;
-  --black-4: #242424;
-  --grey-1: #333;
-  --grey-2: #555;
-  --grey-3: #888;
-  --white: #ffffff;
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-condensed: 'Barlow Condensed', sans-serif;
-  --font-body: 'Barlow', sans-serif;
+:root{
+  --red:#e50000;--red-dk:#b00000;
+  --black:#0d0d0d;--off:#f5f5f3;
+  --g1:#e8e8e6;--g2:#aaa;--g3:#666;
+  --white:#fff;
+  --fd:'Bebas Neue',sans-serif;
+  --fc:'Barlow Condensed',sans-serif;
+  --fb:'Barlow',sans-serif;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
-::selection { background: var(--red); color: var(--white); }
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--black); }
-::-webkit-scrollbar-thumb { background: var(--red); }
-* { cursor: none !important; }
-.cursor { position: fixed; width: 8px; height: 8px; background: var(--red); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s, height .3s; }
-.cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(229,0,0,.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .3s, height .3s, opacity .3s; }
-.cursor.hovered { width: 14px; height: 14px; }
-.cursor-ring.hovered { width: 50px; height: 50px; opacity: .5; }
-body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 999; opacity: .3; }
-
-/* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; transition: background .4s, border-color .4s; border-bottom: 1px solid transparent; }
-nav.scrolled { background: rgba(10,10,10,.95); backdrop-filter: blur(16px); border-bottom-color: var(--black-3); }
-.nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { height: 28px; width: auto; max-width: 200px; object-fit: contain; object-position: left center; display: block; }
-.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
-.nav-links a { font-family: var(--font-condensed); font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-2); text-decoration: none; transition: color .2s; }
-.nav-links a:hover { color: var(--white); }
-.nav-cta { color: var(--black) !important; background: var(--red); padding: .55rem 1.4rem; transition: background .2s !important; }
-.nav-cta:hover { background: var(--white) !important; color: var(--black) !important; }
-.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
-.hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all .3s; }
-.mobile-menu { position: fixed; inset: 0; background: var(--black); z-index: 800; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
-.mobile-menu.open { opacity: 1; pointer-events: all; }
-.mobile-menu a { font-family: var(--font-display); font-size: 3rem; letter-spacing: .1em; color: var(--white); text-decoration: none; transition: color .2s; }
-.mobile-menu a:hover { color: var(--red); }
-.mobile-menu .m-cta { font-family: var(--font-condensed); font-size: .85rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--black); background: var(--red); padding: .9rem 2.5rem; }
-
-/* HERO */
-#hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
-.hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(229,0,0,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(229,0,0,.025) 1px, transparent 1px); background-size: 64px 64px; pointer-events: none; }
-.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 10rem 3rem 6rem; position: relative; z-index: 2; }
-.hero-right { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--black) 0%, transparent 35%); z-index: 1; pointer-events: none; }
-.hero-bg-mark { position: absolute; font-family: var(--font-display); font-size: 55vw; color: var(--white); opacity: .03; line-height: 1; animation: drift 18s ease-in-out infinite alternate; user-select: none; }
-@keyframes drift { from { transform: translateX(-4%) rotate(-3deg); } to { transform: translateX(3%) rotate(2deg); } }
-.hero-eyebrow { font-family: var(--font-condensed); font-size: .7rem; font-weight: 700; letter-spacing: .35em; text-transform: uppercase; color: var(--red); margin-bottom: 1.2rem; display: flex; align-items: center; gap: .7rem; opacity: 0; animation: fade-up .8s .2s forwards; }
-.hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--red); }
-.hero-headline { font-family: var(--font-display); font-size: clamp(4rem, 7.5vw, 8rem); line-height: .88; letter-spacing: .02em; margin-bottom: 1.5rem; opacity: 0; animation: fade-up .8s .35s forwards; }
-.q-drop { color: var(--red); }
-.hero-sub { font-size: 1rem; font-weight: 300; color: var(--grey-3); max-width: 460px; line-height: 1.8; margin-bottom: 2.5rem; opacity: 0; animation: fade-up .8s .5s forwards; }
-.hero-sub strong { color: var(--white); font-weight: 400; }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fade-up .8s .65s forwards; }
-.hero-stat-row { display: flex; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--black-3); opacity: 0; animation: fade-up .8s .8s forwards; }
-.h-stat { flex: 1; padding-right: 1.5rem; border-right: 1px solid var(--black-3); margin-right: 1.5rem; }
-.h-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
-.h-stat-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--red); line-height: 1; letter-spacing: .05em; }
-.h-stat-label { font-family: var(--font-condensed); font-size: .65rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-2); margin-top: .2rem; }
-@keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-/* BUTTONS */
-.btn-primary { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--black); background: var(--red); padding: .9rem 2rem; text-decoration: none; border: 1px solid var(--red); transition: all .25s; }
-.btn-primary:hover { background: var(--white); border-color: var(--white); color: var(--black); }
-.btn-ghost { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--white); background: transparent; padding: .9rem 2rem; text-decoration: none; border: 1px solid var(--black-3); transition: border-color .25s; }
-.btn-ghost:hover { border-color: var(--grey-2); }
-
-/* MARQUEE */
-.marquee-wrap { overflow: hidden; background: var(--red); padding: .68rem 0; border-top: 1px solid var(--red-dark); border-bottom: 1px solid var(--red-dark); }
-.marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
-.marquee-item { font-family: var(--font-condensed); font-size: .68rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--black); padding: 0 2rem; white-space: nowrap; }
-.marquee-sep { opacity: .25; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* SECTIONS */
-section { padding: 7rem 3rem; }
-.inner { max-width: 1140px; margin: 0 auto; }
-.s-eyebrow { font-family: var(--font-condensed); font-size: .65rem; font-weight: 700; letter-spacing: .35em; text-transform: uppercase; color: var(--red); margin-bottom: .7rem; display: flex; align-items: center; gap: .65rem; }
-.s-eyebrow::before { content: ''; display: block; width: 18px; height: 1px; background: var(--red); }
-.s-title { font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 5rem); line-height: .93; letter-spacing: .02em; margin-bottom: 1rem; }
-.s-title .red { color: var(--red); }
-.s-body { font-size: .93rem; font-weight: 300; color: var(--grey-3); line-height: 1.8; max-width: 500px; }
-.s-body strong { color: var(--white); font-weight: 400; }
-.divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--red), transparent); opacity: .18; }
-
-/* SERVICES */
-#services { background: var(--black); }
-.services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--black-3); border: 1px solid var(--black-3); }
-.service-card { background: var(--black-2); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: background .3s; }
-.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
-.service-card:hover { background: var(--black-3); }
-.service-card:hover::before { transform: scaleX(1); }
-.svc-num { font-family: var(--font-display); font-size: 4rem; color: var(--black-3); line-height: 1; margin-bottom: 1rem; transition: color .3s; }
-.service-card:hover .svc-num { color: var(--black-4); }
-.svc-tag { font-family: var(--font-condensed); font-size: .6rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--red); margin-bottom: .3rem; }
-.svc-name { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: .05em; margin-bottom: .7rem; }
-.svc-desc { font-size: .83rem; font-weight: 300; color: var(--grey-2); line-height: 1.75; margin-bottom: 1.5rem; }
-.svc-list { list-style: none; display: flex; flex-direction: column; gap: .38rem; }
-.svc-list li { font-family: var(--font-condensed); font-size: .78rem; font-weight: 500; letter-spacing: .03em; color: var(--grey-2); display: flex; align-items: center; gap: .6rem; }
-.svc-list li::before { content: ''; display: block; width: 14px; height: 1px; background: var(--red); flex-shrink: 0; }
-
-/* WHY */
-#why { background: var(--black-2); }
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
-.why-points { display: flex; flex-direction: column; }
-.why-point { padding: 1.75rem 0; border-bottom: 1px solid var(--black-3); }
-.why-point:first-child { border-top: 1px solid var(--black-3); }
-.why-point-label { font-family: var(--font-condensed); font-size: .6rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--red); margin-bottom: .35rem; }
-.why-point-title { font-family: var(--font-condensed); font-size: 1.05rem; font-weight: 700; letter-spacing: .05em; margin-bottom: .35rem; }
-.why-point-body { font-size: .83rem; font-weight: 300; color: var(--grey-2); line-height: 1.72; }
-.why-callout { background: var(--black-3); border: 1px solid var(--black-4); padding: 3rem; position: relative; }
-.why-callout::before { content: '"'; position: absolute; top: .5rem; left: 2rem; font-family: var(--font-display); font-size: 7rem; color: var(--red); line-height: 1; opacity: .1; }
-.why-quote { font-family: var(--font-condensed); font-size: 1.3rem; font-weight: 600; line-height: 1.4; letter-spacing: .02em; padding-top: 1.75rem; margin-bottom: 2rem; }
-.stat-stack { display: flex; flex-direction: column; }
-.stat-row { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; border-bottom: 1px solid var(--black-4); }
-.stat-row:last-child { border-bottom: none; }
-.stat-label { font-family: var(--font-condensed); font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--grey-2); }
-.stat-val { font-family: var(--font-display); font-size: 1.5rem; color: var(--red); letter-spacing: .05em; }
-
-/* PROCESS */
-#process { background: var(--black); }
-.process-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
-.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--black-3); border: 1px solid var(--black-3); }
-.process-step { background: var(--black-2); padding: 2rem 1.75rem; position: relative; transition: background .3s; overflow: hidden; }
-.process-step:hover { background: var(--black-3); }
-.process-step::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .4s; }
-.process-step:hover::after { transform: scaleX(1); }
-.process-step-num { font-family: var(--font-display); font-size: 3.5rem; color: var(--black-3); line-height: 1; margin-bottom: .75rem; transition: color .3s; }
-.process-step:hover .process-step-num { color: var(--black-4); }
-.process-step-title { font-family: var(--font-condensed); font-size: .85rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .5rem; }
-.process-step-body { font-size: .8rem; font-weight: 300; color: var(--grey-2); line-height: 1.7; }
-
-/* CONTACT */
-#contact { background: var(--black-2); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; margin-top: 3.5rem; }
-.contact-info { display: flex; flex-direction: column; gap: 2rem; }
-.contact-detail-label { font-family: var(--font-condensed); font-size: .6rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--red); margin-bottom: .3rem; }
-.contact-detail-value { font-family: var(--font-condensed); font-size: 1rem; font-weight: 500; letter-spacing: .04em; }
-.contact-detail-value a { color: var(--white); text-decoration: none; transition: color .2s; }
-.contact-detail-value a:hover { color: var(--red); }
-.contact-note { padding: 1.5rem; border-left: 2px solid var(--red); background: var(--black-3); }
-.contact-note p { font-size: .83rem; font-weight: 300; color: var(--grey-3); line-height: 1.75; font-style: italic; }
-.contact-note strong { color: var(--white); font-weight: 400; font-style: normal; }
-.quinn-inline-btn { background: none; border: none; color: var(--red); font-family: var(--font-condensed); font-size: .82rem; font-weight: 700; letter-spacing: .05em; text-decoration: underline; text-underline-offset: 3px; padding: 0; margin-top: .25rem; display: inline-block; }
-.contact-right { display: flex; flex-direction: column; gap: 2.5rem; }
-.booking-block { background: var(--black-3); border: 1px solid var(--black-4); padding: 2rem; }
-.booking-block h3 { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: .05em; margin-bottom: .4rem; }
-.booking-block p { font-size: .83rem; font-weight: 300; color: var(--grey-3); line-height: 1.7; margin-bottom: .6rem; }
-.booking-note { font-family: var(--font-condensed); font-size: .7rem; font-weight: 600; letter-spacing: .1em; color: var(--grey-1); text-transform: uppercase; margin-bottom: 1.5rem !important; }
-.email-block { display: flex; flex-direction: column; gap: .5rem; }
-.email-block label { font-family: var(--font-condensed); font-size: .62rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: var(--grey-2); }
-.email-row { display: flex; }
-.email-row input { flex: 1; background: var(--black-3); border: 1px solid var(--black-4); border-right: none; color: var(--white); font-family: var(--font-body); font-size: .88rem; font-weight: 300; padding: .82rem 1rem; outline: none; transition: border-color .2s; border-radius: 0; }
-.email-row input:focus { border-color: var(--red); }
-.email-row input::placeholder { color: var(--grey-1); }
-.email-row button { font-family: var(--font-condensed); font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; background: var(--red); color: var(--black); border: 1px solid var(--red); padding: .82rem 1.25rem; transition: all .2s; }
-.email-row button:hover { background: var(--white); border-color: var(--white); }
-#email-success { display: none; font-family: var(--font-condensed); font-size: .82rem; color: var(--grey-3); padding-top: .35rem; }
-
-/* FOOTER */
-footer { background: var(--black); border-top: 1px solid var(--black-3); padding: 2.5rem 3rem; }
-.footer-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; }
-.footer-logo { display: flex; align-items: center; text-decoration: none; }
-.footer-logo img { height: 24px; width: auto; max-width: 180px; object-fit: contain; object-position: left center; display: block; }
-.footer-tagline { font-family: var(--font-body); font-size: .82rem; font-weight: 300; color: var(--grey-2); font-style: italic; text-align: center; }
-.footer-tagline em { color: var(--white); font-style: normal; }
-.footer-copy { font-family: var(--font-condensed); font-size: .65rem; font-weight: 500; letter-spacing: .12em; color: var(--grey-1); text-align: right; }
-
-/* REVEAL */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: .12s; }
-.reveal-delay-2 { transition-delay: .24s; }
-.reveal-delay-3 { transition-delay: .36s; }
-
-/* QUINN WIDGET */
-.quinn-bubble { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: .75rem; }
-.quinn-proactive { background: var(--white); color: var(--black); padding: .75rem 1.1rem; font-family: var(--font-condensed); font-size: .82rem; font-weight: 600; letter-spacing: .03em; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,.4); opacity: 0; transform: translateY(8px); transition: opacity .4s, transform .4s; pointer-events: none; position: relative; }
-.quinn-proactive::after { content: ''; position: absolute; bottom: -6px; right: 22px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--white); }
-.quinn-proactive.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
-.quinn-panel { width: 340px; background: var(--black-2); border: 1px solid var(--black-3); display: flex; flex-direction: column; overflow: hidden; opacity: 0; pointer-events: none; transform: translateY(12px) scale(.97); transition: opacity .3s, transform .3s; box-shadow: 0 16px 48px rgba(0,0,0,.6); max-height: 540px; }
-.quinn-panel.open { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
-.quinn-header { background: var(--black-3); padding: 1rem 1.25rem; display: flex; align-items: center; gap: .75rem; border-bottom: 1px solid var(--black-4); flex-shrink: 0; }
-.quinn-avatar { width: 34px; height: 34px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.1rem; color: var(--white); flex-shrink: 0; }
-.quinn-name { font-family: var(--font-condensed); font-size: .88rem; font-weight: 700; letter-spacing: .08em; }
-.quinn-status { font-family: var(--font-condensed); font-size: .62rem; letter-spacing: .1em; color: var(--grey-3); display: flex; align-items: center; gap: .35rem; }
-.quinn-status::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
-.quinn-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; min-height: 200px; }
-.quinn-messages::-webkit-scrollbar { width: 2px; }
-.quinn-messages::-webkit-scrollbar-thumb { background: var(--black-4); }
-.q-msg { max-width: 88%; }
-.q-msg.quinn { align-self: flex-start; }
-.q-msg.user { align-self: flex-end; }
-.q-msg p { font-size: .82rem; font-weight: 300; line-height: 1.6; padding: .65rem .9rem; }
-.q-msg.quinn p { background: var(--black-3); color: var(--white); border-radius: 0 8px 8px 8px; }
-.q-msg.user p { background: var(--red); color: var(--white); border-radius: 8px 8px 0 8px; }
-.quinn-typing { display: none; align-self: flex-start; padding: .7rem .9rem; background: var(--black-3); border-radius: 0 8px 8px 8px; gap: 4px; flex-shrink: 0; }
-.quinn-typing span { display: inline-block; width: 6px; height: 6px; background: var(--grey-2); border-radius: 50%; animation: dot-bounce .8s ease-in-out infinite; }
-.quinn-typing span:nth-child(2) { animation-delay: .15s; }
-.quinn-typing span:nth-child(3) { animation-delay: .3s; }
-@keyframes dot-bounce { 0%,80%,100% { opacity:.3; transform:translateY(0); } 40% { opacity:1; transform:translateY(-4px); } }
-.quinn-quick-replies { padding: .6rem .75rem; display: flex; flex-wrap: wrap; gap: .4rem; border-top: 1px solid var(--black-3); flex-shrink: 0; }
-.quinn-quick-replies.hidden { display: none; }
-.q-chip { font-family: var(--font-condensed); font-size: .75rem; font-weight: 600; letter-spacing: .04em; color: var(--white); background: var(--black-3); border: 1px solid var(--black-4); padding: .4rem .8rem; border-radius: 20px; transition: all .2s; white-space: nowrap; }
-.q-chip:hover { border-color: var(--red); color: var(--red); }
-.quinn-input-row { display: flex; border-top: 1px solid var(--black-3); flex-shrink: 0; }
-.quinn-input { flex: 1; background: transparent; border: none; padding: .85rem 1rem; color: var(--white); font-family: var(--font-body); font-size: .82rem; font-weight: 300; outline: none; }
-.quinn-input::placeholder { color: var(--grey-1); }
-.quinn-send { background: none; border: none; padding: .85rem 1rem; color: var(--grey-2); transition: color .2s; font-size: 1.1rem; line-height: 1; }
-.quinn-send:hover { color: var(--red); }
-.quinn-toggle { width: 56px; height: 56px; background: var(--red); border-radius: 50%; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(229,0,0,.35); transition: transform .2s, box-shadow .2s; position: relative; }
-.quinn-toggle:hover { transform: scale(1.06); box-shadow: 0 6px 28px rgba(229,0,0,.5); }
-.quinn-toggle-q { font-family: var(--font-display); font-size: 1.6rem; color: var(--white); line-height: 1; }
-.quinn-badge { position: absolute; top: 0; right: 0; width: 13px; height: 13px; background: #22c55e; border-radius: 50%; border: 2px solid var(--black); }
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  #hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .hero-left { padding: 8rem 1.5rem 4rem; }
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  section { padding: 5rem 1.5rem; }
-  .services-header, .process-header { grid-template-columns: 1fr; gap: 1.5rem; }
-  .services-grid { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
-  .why-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .footer-inner { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
-  .footer-logo { justify-content: center; }
-  .footer-copy { text-align: center; }
-  .hero-stat-row { flex-wrap: wrap; }
-  .h-stat { border-right: none; flex-basis: 45%; border-bottom: 1px solid var(--black-3); padding-bottom: 1rem; }
-  .h-stat:last-child { border-bottom: none; }
-  .quinn-panel { width: 300px; }
-  .quinn-bubble { bottom: 1.25rem; right: 1.25rem; }
-}
-@media (max-width: 600px) {
-  .hero-headline { font-size: 3.6rem; }
-  .s-title { font-size: 2.6rem; }
-  .process-steps { grid-template-columns: 1fr; }
-  .email-row { flex-direction: column; }
-  .email-row input { border-right: 1px solid var(--black-4); }
-  .email-row button { width: 100%; }
-  .quinn-panel { width: calc(100vw - 2.5rem); }
-  .quinn-proactive { display: none; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:var(--fb);font-weight:300;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+::selection{background:var(--red);color:var(--white);}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--black);}::-webkit-scrollbar-thumb{background:var(--red);}
+*{cursor:none!important;}
+.cursor{position:fixed;width:8px;height:8px;background:var(--red);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s;}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(229,0,0,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,opacity .3s;}
+.cursor.h{width:14px;height:14px;}.cursor-ring.h{width:50px;height:50px;opacity:.5;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:998;opacity:.3;}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:72px;border-bottom:1px solid transparent;transition:background .4s,border-color .4s;}
+nav.scrolled{background:rgba(13,13,13,.96);backdrop-filter:blur(16px);border-bottom-color:rgba(255,255,255,.06);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:26px;width:auto;max-width:180px;object-fit:contain;object-position:left center;}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:var(--fc);font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{background:var(--red)!important;color:var(--black)!important;padding:.5rem 1.4rem!important;}
+.nav-cta:hover{background:var(--white)!important;color:var(--black)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all .3s;}
+.mobile-menu{position:fixed;inset:0;background:var(--black);z-index:800;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;pointer-events:none;transition:opacity .3s;}
+.mobile-menu.open{opacity:1;pointer-events:all;}
+.mobile-menu a{font-family:var(--fd);font-size:3rem;letter-spacing:.1em;color:var(--white);text-decoration:none;transition:color .2s;}
+.mobile-menu a:hover{color:var(--red);}
+.mobile-menu .m-cta{font-family:var(--fc);font-size:.85rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--red);padding:.9rem 2.5rem;}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 5rem;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.5) 40%,transparent 100%);}
+.hero-glow{position:absolute;top:15%;right:-80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(229,0,0,.07) 0%,transparent 70%);pointer-events:none;}
+.hero-bg-q{position:absolute;right:-4vw;bottom:-8vh;font-family:var(--fd);font-size:60vw;color:var(--white);opacity:.025;line-height:1;user-select:none;animation:qdrift 20s ease-in-out infinite alternate;}
+@keyframes qdrift{from{transform:translateX(-2%) rotate(-2deg);}to{transform:translateX(1%) rotate(1.5deg);}}
+.hero-eyebrow{font-family:var(--fc);font-size:.68rem;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem;opacity:0;animation:fu .8s .15s forwards;}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--red);}
+.hero-hl{font-family:var(--fd);font-size:clamp(4.5rem,10vw,13rem);line-height:.88;letter-spacing:.02em;margin-bottom:2rem;opacity:0;animation:fu .9s .3s forwards;}
+.r{color:var(--red);}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;opacity:0;animation:fu .9s .5s forwards;}
+.hero-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.5);max-width:480px;line-height:1.8;}
+.hero-sub strong{color:var(--white);font-weight:400;}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:1rem;flex-shrink:0;}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fu .8s .9s forwards;}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(229,0,0,.9),transparent);animation:sp 2s ease-in-out infinite;}
+.scroll-lbl{font-family:var(--fc);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.2);}
+@keyframes fu{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes sp{0%,100%{opacity:.4;}50%{opacity:1;}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fc);font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.9rem 2rem;text-decoration:none;border:1px solid;transition:all .25s;white-space:nowrap;}
+.btn-red{background:var(--red);border-color:var(--red);color:var(--black);}
+.btn-red:hover{background:var(--white);border-color:var(--white);color:var(--black);}
+.btn-outline{background:transparent;border-color:rgba(255,255,255,.15);color:var(--white);}
+.btn-outline:hover{border-color:rgba(255,255,255,.5);}
+.mq-wrap{overflow:hidden;background:var(--red);padding:.65rem 0;border-top:1px solid var(--red-dk);border-bottom:1px solid var(--red-dk);}
+.mq-track{display:flex;width:max-content;animation:mq 38s linear infinite;}
+.mq-item{font-family:var(--fc);font-size:.65rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--black);padding:0 2rem;white-space:nowrap;}
+.mq-dot{opacity:.3;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.sec{padding:7rem 3rem;}
+.inner{max-width:1160px;margin:0 auto;}
+.ew{font-family:var(--fc);font-size:.65rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.65rem;}
+.ew::before{content:'';display:block;width:20px;height:1px;flex-shrink:0;}
+.ew-red{color:var(--red);}.ew-red::before{background:var(--red);}
+.ew-dk{color:var(--red);}.ew-dk::before{background:var(--red);}
+.stitle{font-family:var(--fd);line-height:.93;letter-spacing:.02em;}
+.st-lg{font-size:clamp(3rem,5.5vw,5.5rem);}
+.st-md{font-size:clamp(2.4rem,4vw,4rem);}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(229,0,0,.25),transparent);}
+#problem{background:var(--off);}
+.prob-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem;}
+.prob-list{display:flex;flex-direction:column;}
+.prob-item{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--g1);}
+.prob-item:first-child{border-top:1px solid var(--g1);}
+.pn{font-family:var(--fd);font-size:1.2rem;color:var(--red);line-height:1;margin-top:.1rem;min-width:24px;}
+.pt strong{font-family:var(--fc);font-size:.95rem;font-weight:700;letter-spacing:.04em;color:var(--black);display:block;margin-bottom:.3rem;}
+.pt p{font-size:.85rem;color:var(--g3);line-height:1.72;}
+.prob-box{background:var(--black);padding:3rem;}
+.prob-box h3{font-family:var(--fd);font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.02;letter-spacing:.03em;color:var(--white);margin-bottom:1.25rem;}
+.prob-box h3 span{color:var(--red);}
+.prob-box-body{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:2rem;}
+.prob-box-body strong{color:var(--white);font-weight:400;}
+.ps{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.ps:first-of-type{border-top:1px solid rgba(255,255,255,.06);}
+.ps:last-of-type{border-bottom:none;}
+.ps-lbl{font-family:var(--fc);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.ps-val{font-family:var(--fd);font-size:1.4rem;color:var(--red);letter-spacing:.05em;}
+#services{background:var(--black);}
+.svc-hdr{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem;}
+.svc-body{font-size:.93rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.8;}
+.svc-body strong{color:var(--white);font-weight:400;}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);}
+.svc-card{background:#111;padding:2.5rem 2rem;position:relative;overflow:hidden;transition:background .3s;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.svc-card:hover{background:#161616;}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-n{font-family:var(--fd);font-size:4rem;color:rgba(255,255,255,.05);line-height:1;margin-bottom:1rem;transition:color .3s;}
+.svc-card:hover .svc-n{color:rgba(255,255,255,.08);}
+.svc-tag{font-family:var(--fc);font-size:.58rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:.3rem;}
+.svc-name{font-family:var(--fd);font-size:1.6rem;letter-spacing:.05em;margin-bottom:.7rem;color:var(--white);}
+.svc-desc{font-size:.83rem;font-weight:300;color:rgba(255,255,255,.4);line-height:1.75;margin-bottom:1.5rem;}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
+.svc-list li{font-family:var(--fc);font-size:.78rem;font-weight:500;letter-spacing:.03em;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:.65rem;}
+.svc-list li::before{content:'';display:block;width:14px;height:1px;background:var(--red);flex-shrink:0;}
+#why{background:var(--off);}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem;}
+.why-pts{display:flex;flex-direction:column;}
+.why-pt{padding:1.75rem 0;border-bottom:1px solid var(--g1);}
+.why-pt:first-child{border-top:1px solid var(--g1);}
+.why-lbl{font-family:var(--fc);font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:.35rem;}
+.why-pt-title{font-family:var(--fc);font-size:1.05rem;font-weight:700;letter-spacing:.04em;color:var(--black);margin-bottom:.35rem;}
+.why-pt-body{font-size:.83rem;font-weight:300;color:var(--g3);line-height:1.72;}
+.why-box{background:var(--black);padding:3rem;position:relative;}
+.why-box::before{content:'"';position:absolute;top:.5rem;left:2rem;font-family:var(--fd);font-size:7rem;color:var(--red);line-height:1;opacity:.08;}
+.why-quote{font-family:var(--fc);font-size:1.3rem;font-weight:600;line-height:1.4;letter-spacing:.02em;color:var(--white);padding-top:1.75rem;margin-bottom:2rem;}
+.stat-stack{display:flex;flex-direction:column;}
+.stat-row{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.stat-row:last-child{border-bottom:none;}
+.stat-lbl{font-family:var(--fc);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.stat-val{font-family:var(--fd);font-size:1.5rem;color:var(--red);letter-spacing:.05em;}
+#process{background:var(--black);}
+.proc-hdr{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem;}
+.proc-body{font-size:.93rem;color:rgba(255,255,255,.45);line-height:1.8;}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);}
+.proc-step{background:#111;padding:2.25rem 1.75rem;position:relative;transition:background .3s;overflow:hidden;}
+.proc-step:hover{background:#161616;}
+.proc-step::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.proc-step:hover::after{transform:scaleX(1);}
+.proc-n{font-family:var(--fd);font-size:3.5rem;color:rgba(255,255,255,.05);line-height:1;margin-bottom:.75rem;transition:color .3s;}
+.proc-step:hover .proc-n{color:rgba(255,255,255,.08);}
+.proc-title{font-family:var(--fc);font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:.5rem;}
+.proc-desc{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.4);line-height:1.72;}
+.proc-cta{border:1px solid rgba(255,255,255,.06);border-top:none;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;background:#111;}
+.proc-cta-text{font-family:var(--fc);font-size:1.1rem;font-weight:600;letter-spacing:.03em;color:var(--white);max-width:580px;line-height:1.4;}
+.proc-cta-text em{color:var(--red);font-style:normal;}
+#cta-band{background:var(--red);padding:6rem 3rem;position:relative;overflow:hidden;}
+.cta-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.07) 1px,transparent 1px);background-size:60px 60px;}
+.cta-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;text-align:center;}
+.cta-eye{font-family:var(--fc);font-size:.65rem;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1.25rem;}
+.cta-hl{font-family:var(--fd);font-size:clamp(3rem,7vw,7.5rem);letter-spacing:.02em;line-height:.92;color:var(--white);margin-bottom:1.5rem;}
+.cta-sub{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto;}
+.cta-acts{display:flex;justify-content:center;align-items:center;gap:1.25rem;flex-wrap:wrap;}
+.btn-white{background:var(--white);border-color:var(--white);color:var(--red);}
+.btn-white:hover{background:var(--off);border-color:var(--off);}
+.btn-ghost-w{background:transparent;border-color:rgba(255,255,255,.4);color:var(--white);}
+.btn-ghost-w:hover{border-color:var(--white);}
+#contact{background:var(--off);}
+.contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;margin-top:3.5rem;}
+.c-deets{display:flex;flex-direction:column;gap:1.75rem;}
+.cdl{font-family:var(--fc);font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:.25rem;}
+.cdv{font-family:var(--fc);font-size:1rem;font-weight:600;letter-spacing:.04em;color:var(--black);}
+.cdv a{color:var(--black);text-decoration:none;transition:color .2s;}
+.cdv a:hover{color:var(--red);}
+.c-note{padding:1.5rem;border-left:2px solid var(--red);background:var(--black);}
+.c-note p{font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.75;font-style:italic;}
+.c-note strong{color:var(--white);font-weight:400;font-style:normal;}
+.quinn-link{background:none;border:none;color:var(--red);font-family:var(--fc);font-size:.82rem;font-weight:700;letter-spacing:.05em;text-decoration:underline;text-underline-offset:3px;padding:0;margin-top:.25rem;display:inline-block;}
+.c-right{display:flex;flex-direction:column;gap:2rem;}
+.booking-card{background:var(--black);padding:2rem;}
+.booking-card h3{font-family:var(--fd);font-size:1.4rem;letter-spacing:.05em;color:var(--white);margin-bottom:.5rem;}
+.booking-card p{font-size:.83rem;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:.6rem;}
+.booking-note{font-family:var(--fc);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:1.5rem!important;}
+.email-block{display:flex;flex-direction:column;gap:.5rem;}
+.email-block label{font-family:var(--fc);font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--g3);}
+.email-row{display:flex;}
+.email-row input{flex:1;background:var(--white);border:1px solid var(--g1);border-right:none;color:var(--black);font-family:var(--fb);font-size:.88rem;padding:.82rem 1rem;outline:none;transition:border-color .2s;border-radius:0;}
+.email-row input:focus{border-color:var(--red);}
+.email-row input::placeholder{color:rgba(0,0,0,.3);}
+.email-row button{font-family:var(--fc);font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--red);color:var(--white);border:1px solid var(--red);padding:.82rem 1.25rem;transition:all .2s;}
+.email-row button:hover{background:var(--black);border-color:var(--black);}
+#email-ok{display:none;font-family:var(--fc);font-size:.82rem;color:var(--g3);padding-top:.35rem;}
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:2.5rem 3rem;}
+.footer-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;}
+.footer-logo img{height:22px;width:auto;max-width:170px;object-fit:contain;object-position:left;}
+.footer-tag{font-family:var(--fc);font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);text-align:center;}
+.footer-tag em{color:var(--red);font-style:normal;}
+.footer-copy{font-family:var(--fc);font-size:.62rem;letter-spacing:.1em;color:rgba(255,255,255,.2);text-align:right;}
+.footer-copy a{color:inherit;text-decoration:none;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:.1s;}.rd2{transition-delay:.2s;}.rd3{transition-delay:.3s;}
+.quinn-bubble{position:fixed;bottom:2rem;right:2rem;z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:.75rem;}
+.q-proactive{background:var(--white);color:var(--black);padding:.75rem 1.1rem;font-family:var(--fc);font-size:.82rem;font-weight:600;letter-spacing:.03em;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.4);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;pointer-events:none;position:relative;}
+.q-proactive::after{content:'';position:absolute;bottom:-6px;right:22px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid var(--white);}
+.q-proactive.visible{opacity:1;transform:translateY(0);pointer-events:all;}
+.q-panel{width:340px;background:#111;border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;overflow:hidden;opacity:0;pointer-events:none;transform:translateY(12px) scale(.97);transition:opacity .3s,transform .3s;box-shadow:0 16px 48px rgba(0,0,0,.7);max-height:540px;}
+.q-panel.open{opacity:1;pointer-events:all;transform:translateY(0) scale(1);}
+.q-hd{background:#1a1a1a;padding:1rem 1.25rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;}
+.q-av{width:34px;height:34px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.1rem;color:var(--white);flex-shrink:0;}
+.q-nm{font-family:var(--fc);font-size:.88rem;font-weight:700;letter-spacing:.08em;color:var(--white);}
+.q-st{font-family:var(--fc);font-size:.62rem;letter-spacing:.1em;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:.35rem;}
+.q-st::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:#22c55e;}
+.q-msgs{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.75rem;min-height:200px;}
+.q-msgs::-webkit-scrollbar{width:2px;}
+.q-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);}
+.qm{max-width:88%;}
+.qm.qq{align-self:flex-start;}
+.qm.qu{align-self:flex-end;}
+.qm p{font-size:.82rem;font-weight:300;line-height:1.6;padding:.65rem .9rem;}
+.qm.qq p{background:#1a1a1a;color:var(--white);border-radius:0 8px 8px 8px;}
+.qm.qu p{background:var(--red);color:var(--white);border-radius:8px 8px 0 8px;}
+.q-typing{display:none;align-self:flex-start;padding:.7rem .9rem;background:#1a1a1a;border-radius:0 8px 8px 8px;gap:4px;flex-shrink:0;}
+.q-typing span{display:inline-block;width:6px;height:6px;background:rgba(255,255,255,.3);border-radius:50%;animation:db .8s ease-in-out infinite;}
+.q-typing span:nth-child(2){animation-delay:.15s;}
+.q-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes db{0%,80%,100%{opacity:.3;transform:translateY(0);}40%{opacity:1;transform:translateY(-4px);}}
+.q-chips{padding:.6rem .75rem;display:flex;flex-wrap:wrap;gap:.4rem;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0;}
+.q-chips.hidden{display:none;}
+.q-chip{font-family:var(--fc);font-size:.72rem;font-weight:700;letter-spacing:.06em;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:.38rem .8rem;transition:background .2s,border-color .2s;}
+.q-chip:hover{background:var(--red);border-color:var(--red);color:var(--black);}
+.q-input-row{display:flex;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0;}
+.q-input{flex:1;background:transparent;border:none;color:var(--white);font-family:var(--fb);font-size:.82rem;font-weight:300;padding:.8rem 1rem;outline:none;}
+.q-input::placeholder{color:rgba(255,255,255,.2);}
+.q-send{background:none;border:none;border-left:1px solid rgba(255,255,255,.06);color:var(--red);font-family:var(--fc);font-size:1rem;font-weight:700;padding:.8rem 1rem;transition:background .2s;}
+.q-send:hover{background:var(--red);color:var(--black);}
+.q-toggle{width:52px;height:52px;border-radius:50%;background:var(--red);border:none;display:flex;align-items:center;justify-content:center;position:relative;transition:background .2s,transform .2s;flex-shrink:0;}
+.q-toggle:hover{background:var(--red-dk);transform:scale(1.05);}
+.q-toggle-q{font-family:var(--fd);font-size:1.4rem;color:var(--white);line-height:1;}
+.q-badge{position:absolute;top:2px;right:2px;width:10px;height:10px;background:#22c55e;border-radius:50%;border:2px solid var(--black);}
+@media(max-width:900px){
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  #hero{padding:0 1.5rem 4rem;min-height:100svh;}
+  .hero-bottom{flex-direction:column;align-items:flex-start;gap:2rem;}
+  .hero-actions{align-items:flex-start;}
+  .sec{padding:5rem 1.5rem;}
+  .prob-layout,.svc-hdr,.why-layout,.proc-hdr,.contact-layout{grid-template-columns:1fr;gap:2.5rem;}
+  .svc-grid{grid-template-columns:1fr;}
+  .proc-steps{grid-template-columns:1fr 1fr;}
+  .proc-cta{flex-direction:column;align-items:flex-start;padding:2rem 1.5rem;}
+  #cta-band{padding:5rem 1.5rem;}
+  .footer-inner{grid-template-columns:1fr;text-align:center;gap:1rem;}
+  .footer-logo{justify-content:center;}
+  .footer-logo img{object-position:center;}
+  .footer-copy{text-align:center;}
+  .q-panel{width:calc(100vw - 3rem);max-width:340px;}
 }
 </style>
 </head>
 <body>
-
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
-
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#services" onclick="closeMobile()">Services</a>
-  <a href="#why" onclick="closeMobile()">Why Qurated</a>
-  <a href="#process" onclick="closeMobile()">How It Works</a>
-  <a href="#contact" class="m-cta" onclick="closeMobile()">Get Started</a>
-</div>
-
 <nav id="nav">
-  <a href="#hero" class="nav-logo">
-    <img src="logo_long_white.png" alt="Qurated"/>
-  </a>
+  <a href="#hero" class="nav-logo"><img src="logo_long_white.png" alt="Qurated"/></a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Qurated</a></li>
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#services">What You Get</a></li>
     <li><a href="#process">How It Works</a></li>
-    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Free Diagnosis</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-left">
-    <div class="hero-eyebrow">Growth Systems Partner · Perth, WA</div>
-    <h1 class="hero-headline">YOUR<br>BUSINESS<br>DESERVES<br>TO BE <span class="q-drop">FOUND.</span></h1>
-    <p class="hero-sub">Most businesses are run by people who are <strong>exceptional at their craft</strong> — and completely overlooked online. We change that. Content, systems, and AI built around your business and running while you work.</p>
-    <div class="hero-actions">
-      <button class="btn-primary" onclick="openCalendly()">Book Your Free Diagnosis →</button>
-      <a href="#services" class="btn-ghost">See how it works</a>
-    </div>
-    <div class="hero-stat-row">
-      <div class="h-stat"><div class="h-stat-num">100%</div><div class="h-stat-label">Done For You</div></div>
-      <div class="h-stat"><div class="h-stat-num">30D</div><div class="h-stat-label">To First Results</div></div>
-      <div class="h-stat"><div class="h-stat-num">AI</div><div class="h-stat-label">Powered By Default</div></div>
-    </div>
-  </div>
-  <div class="hero-right"><div class="hero-bg-mark">Q</div></div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span class="marquee-item">Content Strategy</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Social Media Management</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Web Design &amp; Development</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">AI Automation</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Meta Ads</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">CRM Systems</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">AI Chatbots</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Reels &amp; Short-Form Video</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Copywriting</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Lead Automation</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Content Strategy</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Social Media Management</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Web Design &amp; Development</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">AI Automation</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Meta Ads</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">CRM Systems</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">AI Chatbots</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Reels &amp; Short-Form Video</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Copywriting</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">Lead Automation</span><span class="marquee-item marquee-sep">✦</span>
-  </div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#problem" onclick="closeMobile()">The Problem</a>
+  <a href="#services" onclick="closeMobile()">What You Get</a>
+  <a href="#process" onclick="closeMobile()">How It Works</a>
+  <a href="#contact" class="m-cta" onclick="closeMobile()">Book a Free Diagnosis</a>
 </div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="inner">
-    <div class="services-header">
-      <div>
-        <div class="s-eyebrow">What we do</div>
-        <h2 class="s-title">THREE<br>CAPABILITIES.<br><span class="red">ONE SYSTEM.</span></h2>
-      </div>
-      <p class="s-body">We're not a generalist agency. We do three things with precision — and we deploy all of them inside a system built specifically for your business. Not a template. Not a package. Yours.</p>
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-bg-q">Q</div>
+  <div class="hero-eyebrow">Growth Systems Agency — Perth, WA</div>
+  <h1 class="hero-hl">We Build<br>The System.<br><span class="r">You Build<br>The Business.</span></h1>
+  <div class="hero-bottom">
+    <p class="hero-sub">You're already good at what you do. The problem is <strong>your pipeline doesn't reflect it.</strong> Qurated builds the lead generation system — website, automation, AI, and content — and runs it for you, so you stay focused on the work that pays.</p>
+    <div class="hero-actions">
+      <button class="btn btn-red" onclick="openCalendly()">Book a Free Diagnosis →</button>
+      <a href="#problem" class="btn btn-outline">See why it matters</a>
     </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="svc-num">01</div>
-        <div class="svc-tag">Build</div>
-        <div class="svc-name">Web &amp; AI Systems</div>
-        <p class="svc-desc">Most websites exist. Yours should work. We build sites that convert visitors into enquiries — then layer in AI that handles the follow-up so nothing falls through the cracks.</p>
-        <ul class="svc-list">
-          <li>High-converting website design &amp; build</li>
-          <li>AI chatbots &amp; automated lead qualification</li>
-          <li>CRM setup &amp; workflow automation</li>
-          <li>Lead capture funnels</li>
-          <li>SEO foundation &amp; Google Business</li>
-        </ul>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-lbl">Scroll</span></div>
+</section>
+<div class="mq-wrap"><div class="mq-track">
+  <span class="mq-item">We build the system</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">You build the business</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Lead capture automation</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">AI enquiry handling</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Automated follow-up</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Content that converts</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">CRM automation</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Growth systems</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">We build the system</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">You build the business</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Lead capture automation</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">AI enquiry handling</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Automated follow-up</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Content that converts</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">CRM automation</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Growth systems</span><span class="mq-item mq-dot">·</span>
+</div></div>
+<section id="problem" class="sec">
+  <div class="inner">
+    <div class="ew ew-dk reveal">Sound familiar?</div>
+    <h2 class="stitle st-lg reveal" style="color:var(--black);margin-bottom:0">You're losing work to businesses<br><span class="r">half as good</span> as yours.</h2>
+    <div class="prob-layout">
+      <div class="prob-list reveal">
+        <div class="prob-item"><div class="pn">01</div><div class="pt"><strong>Your online presence doesn't match your quality</strong><p>You do great work — but your website and socials look like you started and gave up. Prospects judge before they call. First impressions cost you jobs before you even get a chance to quote.</p></div></div>
+        <div class="prob-item"><div class="pn">02</div><div class="pt"><strong>Leads go cold because no one follows up fast enough</strong><p>An enquiry comes in Wednesday night. You see it Thursday morning. They've already called someone else. Every hour without a response is revenue walking out the door.</p></div></div>
+        <div class="prob-item"><div class="pn">03</div><div class="pt"><strong>Marketing takes time you simply don't have</strong><p>Running a business is already a full-time job. Managing content, ads, and your online presence is another one. You can't do both well — and it's always the lead generation that falls behind.</p></div></div>
+        <div class="prob-item"><div class="pn">04</div><div class="pt"><strong>You're relying on word of mouth and hoping it holds</strong><p>Referrals are great — until they're not consistent. A system that generates inbound leads regardless of who you know is the difference between a business that grows and one that flatlines.</p></div></div>
       </div>
-      <div class="service-card reveal reveal-delay-1">
-        <div class="svc-num">02</div>
-        <div class="svc-tag">Grow</div>
-        <div class="svc-name">Content &amp; Social</div>
-        <p class="svc-desc">Content that actually represents the quality of your work — published consistently, without you managing it. We handle the strategy, the creative, and the calendar. Every month. Without being chased.</p>
-        <ul class="svc-list">
-          <li>Monthly content strategy &amp; calendar</li>
-          <li>Social media management</li>
-          <li>Reels &amp; short-form video</li>
-          <li>Captions &amp; copywriting</li>
-          <li>Meta ad campaigns</li>
-        </ul>
-      </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="svc-num">03</div>
-        <div class="svc-tag">Scale</div>
-        <div class="svc-name">Growth Systems</div>
-        <p class="svc-desc">The full stack. Web, content, and AI running as one compounding system — getting sharper every month, not just ticking boxes.</p>
-        <ul class="svc-list">
-          <li>Everything in Web &amp; AI + Content &amp; Social</li>
-          <li>Integrated AI growth stack</li>
-          <li>Automated lead nurture &amp; follow-up</li>
-          <li>Monthly performance review &amp; strategy</li>
-          <li>Priority access &amp; dedicated support</li>
-        </ul>
+      <div class="prob-box reveal">
+        <h3>The businesses winning online aren't <span>better than you.</span> They just have a better system.</h3>
+        <p class="prob-box-body">The good news: <strong>a system is something we can build.</strong> Within 30 days you can have a website that converts, AI that handles enquiries before your competitors open their emails, and content that makes you the obvious choice in your market.</p>
+        <div class="ps"><span class="ps-lbl">Lead response</span><span class="ps-val">Instant</span></div>
+        <div class="ps"><span class="ps-lbl">Content published</span><span class="ps-val">Every month</span></div>
+        <div class="ps"><span class="ps-lbl">Time to first results</span><span class="ps-val">30 days</span></div>
+        <div class="ps"><span class="ps-lbl">Work added to your week</span><span class="ps-val">Zero</span></div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
-<!-- WHY QURATED -->
-<section id="why">
+<section id="services" class="sec">
   <div class="inner">
-    <div class="why-grid">
+    <div class="svc-hdr">
       <div>
-        <div class="s-eyebrow">Why Qurated</div>
-        <h2 class="s-title">SYSTEMS.<br>NOT<br><span class="red">GENERIC<br>PACKAGES.</span></h2>
-        <p class="s-body" style="margin-top:1rem; margin-bottom: 2.5rem;">Most agencies sell you deliverables. We sell you outcomes. The difference is a system built around your business — not a template built around their workflow.</p>
-        <div class="why-points">
-          <div class="why-point">
-            <div class="why-point-label">Our model</div>
-            <div class="why-point-title">The Right People, Every Time</div>
-            <p class="why-point-body">Every project gets the right specialist for the job — not whoever happens to be available. We run a curated network of the best creative and technical talent in the market, assembled specifically around your brief.</p>
-          </div>
-          <div class="why-point">
-            <div class="why-point-label">Our edge</div>
-            <div class="why-point-title">AI-First by Default</div>
-            <p class="why-point-body">We don't bolt AI on at the end. It's in the foundation. Every system we build includes automation that makes your business run smarter — leads followed up, enquiries handled, workflows running — without adding to your workload.</p>
-          </div>
-          <div class="why-point">
-            <div class="why-point-label">Our standard</div>
-            <div class="why-point-title">One Brand. One Voice. Zero Compromise.</div>
-            <p class="why-point-body">Whether it's your website, your Instagram, or your automated responses — it all looks, sounds, and feels like you. One standard across everything we touch.</p>
-          </div>
+        <div class="ew ew-red reveal">Here's what you get</div>
+        <h2 class="stitle st-lg reveal">THREE THINGS.<br><span class="r">ONE SYSTEM.</span><br>ZERO GAPS.</h2>
+      </div>
+      <p class="svc-body reveal">We don't sell components — we build a system where every piece connects. Your website feeds your CRM. Your content feeds your funnel. Your AI handles what slips through. <strong>Nothing leaks.</strong></p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal"><div class="svc-n">01</div><div class="svc-tag">The Foundation</div><div class="svc-name">Web &amp; AI Systems</div><p class="svc-desc">Your website should work for you every hour of the day — not just exist. We build sites that convert visitors into enquiries, then layer in AI that handles follow-up so nothing falls through the cracks.</p><ul class="svc-list"><li>High-converting website design &amp; build</li><li>AI chatbot &amp; automated lead qualification</li><li>CRM setup &amp; pipeline management</li><li>Lead capture funnels</li><li>SEO foundation &amp; Google Business</li></ul></div>
+      <div class="svc-card reveal rd1"><div class="svc-n">02</div><div class="svc-tag">The Authority</div><div class="svc-name">Content &amp; Social</div><p class="svc-desc">Content that represents the quality of your work — published consistently, without you chasing it. Strategy, creative, and calendar handled every month. Without being asked twice.</p><ul class="svc-list"><li>Monthly content strategy &amp; calendar</li><li>Social media management</li><li>Reels &amp; short-form video</li><li>Captions &amp; copywriting</li><li>Meta ad campaigns</li></ul></div>
+      <div class="svc-card reveal rd2"><div class="svc-n">03</div><div class="svc-tag">The Full Engine</div><div class="svc-name">Growth Systems</div><p class="svc-desc">Web, content, and AI running as one compounding system — getting sharper every month. Not a retainer delivering the same thing on repeat. A machine that builds momentum.</p><ul class="svc-list"><li>Everything in Web &amp; AI + Content &amp; Social</li><li>Integrated AI growth stack</li><li>Automated lead nurture &amp; follow-up</li><li>Monthly performance review &amp; strategy</li><li>Priority access &amp; dedicated support</li></ul></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="why" class="sec">
+  <div class="inner">
+    <div class="why-layout">
+      <div>
+        <div class="ew ew-dk reveal">Why we're different</div>
+        <h2 class="stitle st-lg reveal" style="color:var(--black);margin-bottom:1rem;">WE DIAGNOSE<br>BEFORE WE<br><span class="r">PRESCRIBE.</span></h2>
+        <p class="reveal" style="font-size:.93rem;color:var(--g3);line-height:1.8;max-width:480px;margin-bottom:2.5rem;">Most agencies pitch a package before they've asked a single question about your business. We don't. Every engagement starts with understanding exactly where you are, what's costing you, and what will genuinely move the needle.</p>
+        <div class="why-pts reveal">
+          <div class="why-pt"><div class="why-lbl">Our model</div><div class="why-pt-title">One partner. The entire system.</div><p class="why-pt-body">Website, content, ads, CRM, and automation under one roof — connected and talking to each other. No brief lost between agencies. One strategy, executed end-to-end.</p></div>
+          <div class="why-pt"><div class="why-lbl">Our edge</div><div class="why-pt-title">AI built in from day one. Not bolted on later.</div><p class="why-pt-body">Every system we build has automation embedded from the start. Leads followed up. Enquiries handled. Workflows running — without you lifting a finger. Not AI as a feature. AI as infrastructure.</p></div>
+          <div class="why-pt"><div class="why-lbl">Our standard</div><div class="why-pt-title">Priced on value. No apology.</div><p class="why-pt-body">We're not the cheap option and we don't pretend to be. Our clients don't come to us for a bargain — they come because they're tired of paying for things that don't work.</p></div>
         </div>
       </div>
-      <div class="why-callout reveal">
-        <p class="why-quote">A doctor doesn't let the patient choose their own prescription. We diagnose your business, prescribe what it actually needs, and build it — no guessing, no generic packages.</p>
+      <div class="why-box reveal">
+        <p class="why-quote">A doctor doesn't let the patient choose their own prescription. We diagnose your business, tell you exactly what it needs, and build it — no guesswork, no generic packages.</p>
         <div class="stat-stack">
-          <div class="stat-row"><span class="stat-label">Time to first results</span><span class="stat-val">30 Days</span></div>
-          <div class="stat-row"><span class="stat-label">Content managed for you</span><span class="stat-val">100%</span></div>
-          <div class="stat-row"><span class="stat-label">AI built into every system</span><span class="stat-val">Always</span></div>
-          <div class="stat-row"><span class="stat-label">Stress added to your week</span><span class="stat-val">Zero</span></div>
+          <div class="stat-row"><span class="stat-lbl">Time to first results</span><span class="stat-val">30 Days</span></div>
+          <div class="stat-row"><span class="stat-lbl">Content managed for you</span><span class="stat-val">100%</span></div>
+          <div class="stat-row"><span class="stat-lbl">AI built into every system</span><span class="stat-val">Always</span></div>
+          <div class="stat-row"><span class="stat-lbl">Stress added to your week</span><span class="stat-val">Zero</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
-<!-- PROCESS -->
-<section id="process">
+<section id="process" class="sec">
   <div class="inner">
-    <div class="process-header">
+    <div class="proc-hdr">
       <div>
-        <div class="s-eyebrow">How we work</div>
-        <h2 class="s-title">THE QURATED <span class="red">WAY.</span></h2>
+        <div class="ew ew-red reveal">Here's exactly what happens</div>
+        <h2 class="stitle st-lg reveal">FOUR STEPS.<br><span class="r">NO GUESSWORK.</span></h2>
       </div>
-      <p class="s-body">Every engagement runs the same four-step system. No exceptions. No shortcuts. No generic strategy decks that collect dust after the first meeting.</p>
+      <p class="proc-body reveal">Every engagement runs the same system. No exceptions, no shortcuts, no strategy decks that live in a Google Drive and never get executed.</p>
     </div>
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="process-step-num">01</div>
-        <div class="process-step-title">Diagnose</div>
-        <p class="process-step-body">We don't pitch packages. We ask questions. Where are you losing clients? What does your brand say right now? Only when we understand the problem do we prescribe the solution.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-1">
-        <div class="process-step-num">02</div>
-        <div class="process-step-title">Prescribe</div>
-        <p class="process-step-body">One recommendation. Clear rationale. Expected outcome. We tell you what your business needs and why — not what's easiest to sell you. If we're not the right fit, we'll say so.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="process-step-num">03</div>
-        <div class="process-step-title">Build</div>
-        <p class="process-step-body">We assemble the right people for your project and execute under one standard — Qurated's. One voice, one visual identity, one point of contact. You never feel the complexity behind it.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="process-step-num">04</div>
-        <div class="process-step-title">Compound</div>
-        <p class="process-step-body">Monthly reviews aren't admin — they're the system getting smarter. We cut what isn't working, double down on what is, and keep building momentum. Good brands don't peak. They compound.</p>
-      </div>
+    <div class="proc-steps">
+      <div class="proc-step reveal"><div class="proc-n">01</div><div class="proc-title">Diagnose</div><p class="proc-desc">We don't pitch packages. We ask questions. Where are you losing clients? What does your presence say about you right now? Only when we understand the problem do we prescribe the solution — and we'll say so honestly if we're not the right fit.</p></div>
+      <div class="proc-step reveal rd1"><div class="proc-n">02</div><div class="proc-title">Prescribe</div><p class="proc-desc">One clear recommendation. Specific rationale. Expected outcome. You'll know exactly what we're building, why we're building it, and what it should deliver — before you commit to anything.</p></div>
+      <div class="proc-step reveal rd2"><div class="proc-n">03</div><div class="proc-title">Build</div><p class="proc-desc">We build to one standard — Qurated's. One point of contact. One voice and visual identity across everything. You never feel the complexity running behind the scenes.</p></div>
+      <div class="proc-step reveal rd3"><div class="proc-n">04</div><div class="proc-title">Compound</div><p class="proc-desc">Monthly reviews aren't admin — they're the system getting smarter. We cut what isn't working, double down on what is, and build momentum month after month. Good systems compound.</p></div>
+    </div>
+    <div class="proc-cta reveal">
+      <p class="proc-cta-text">The first step is free. A 30-minute diagnosis call where we tell you <em>exactly what your business needs</em> — whether you work with us or not.</p>
+      <button class="btn btn-red" onclick="openCalendly()">Book Your Free Diagnosis →</button>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<section id="contact">
+<section id="cta-band">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-eye">Ready to grow?</div>
+    <h2 class="cta-hl">THIRTY MINUTES.<br>NO PITCH.<br>REAL ANSWERS.</h2>
+    <p class="cta-sub">No prep needed. No pitch from our side. Just show up, tell us where your business is at, and we'll tell you exactly what we'd do — and why.</p>
+    <div class="cta-acts">
+      <button class="btn btn-white" onclick="openCalendly()">Book Your Free Diagnosis →</button>
+      <button class="btn btn-ghost-w" onclick="openQuinn()">Talk to Quinn first</button>
+    </div>
+  </div>
+</section>
+<section id="contact" class="sec">
   <div class="inner">
-    <div class="s-eyebrow">Get started</div>
-    <h2 class="s-title">LET'S BUILD<br><span class="red">SOMETHING<br>THAT WORKS.</span></h2>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div><div class="contact-detail-label">Based in</div><div class="contact-detail-value">Perth, Western Australia</div></div>
-        <div><div class="contact-detail-label">Email</div><div class="contact-detail-value"><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></div></div>
-        <div><div class="contact-detail-label">Instagram</div><div class="contact-detail-value"><a href="https://instagram.com/quratedagency" target="_blank">@quratedagency</a></div></div>
-        <div><div class="contact-detail-label">Phone</div><div class="contact-detail-value"><a href="tel:0456847420">0456 847 420</a></div></div>
-        <div class="contact-note">
-          <p>Not sure if we're the right fit? <strong>That's exactly what Quinn is for.</strong> Have a conversation first — no commitment, no sales pitch.</p>
-        </div>
-        <button class="quinn-inline-btn" onclick="openQuinn()">Talk to Quinn →</button>
+    <div class="ew ew-dk reveal">Your first move costs nothing</div>
+    <h2 class="stitle st-md reveal" style="color:var(--black);margin-bottom:0;">GET IN TOUCH</h2>
+    <div class="contact-layout">
+      <div class="c-deets reveal">
+        <div><div class="cdl">Based in</div><div class="cdv">Perth, Western Australia</div></div>
+        <div><div class="cdl">Email</div><div class="cdv"><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></div></div>
+        <div><div class="cdl">Phone</div><div class="cdv"><a href="tel:0456847420">0456 847 420</a></div></div>
+        <div><div class="cdl">Instagram</div><div class="cdv"><a href="https://instagram.com/quratedagency" target="_blank">@quratedagency</a></div></div>
+        <div class="c-note"><p>Not ready for a call? <strong>Quinn can help right now.</strong> Ask anything about how we work, what we'd recommend, or whether we're the right fit.</p></div>
+        <button class="quinn-link" onclick="openQuinn()">Talk to Quinn →</button>
       </div>
-      <div class="contact-right reveal">
-        <div class="booking-block">
+      <div class="c-right reveal">
+        <div class="booking-card">
           <h3>Book a Free Diagnosis Call</h3>
-          <p>No prep needed. No pitch on our end. Show up, tell us what's going on with your business, and we'll tell you exactly what we'd do about it.</p>
+          <p>No prep needed. No pitch from our side. Show up, tell us where your business is at, and we'll tell you exactly what we'd do — and why.</p>
           <p class="booking-note">We keep our client list intentionally small. Quality over volume — always.</p>
-          <button class="btn-primary" onclick="openCalendly()">Book Your Free Diagnosis →</button>
+          <button class="btn btn-red" onclick="openCalendly()">Book Your Free Diagnosis →</button>
         </div>
         <div class="email-block">
-          <label for="email-capture">Not ready for a call yet? Leave your email.</label>
+          <label for="email-cap">Not ready for a call yet? Leave your email.</label>
           <div class="email-row">
-            <input type="email" id="email-capture" placeholder="your@email.com"/>
+            <input type="email" id="email-cap" placeholder="your@email.com"/>
             <button onclick="submitEmail()">Send it →</button>
           </div>
-          <div id="email-success">Got it — we'll be in touch within 24 hours.</div>
+          <div id="email-ok">Got it — we'll follow up within 24 hours.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <a href="#hero" class="footer-logo">
-      <img src="logo_long_white.png" alt="Qurated"/>
-    </a>
-    <p class="footer-tagline">Your brand, <em>Qurated</em>.</p>
-    <p class="footer-copy">© 2026 Qurated. Perth, WA. · <a href="mailto:info@quratedagency.com" style="color:inherit;text-decoration:none;">info@quratedagency.com</a></p>
+    <a href="#hero" class="footer-logo"><img src="logo_long_white.png" alt="Qurated"/></a>
+    <p class="footer-tag">We build the system. <em>You build the business.</em></p>
+    <p class="footer-copy">2026 Qurated · Perth, WA · Adelaide, SA<br><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></p>
   </div>
 </footer>
-
-<!-- QUINN WIDGET -->
 <div class="quinn-bubble" id="quinn-bubble">
-  <div class="quinn-proactive" id="quinn-proactive" onclick="openQuinn()">
-    Not sure if we're the right fit? Let's find out. →
+  <div class="q-proactive" id="q-proactive" onclick="openQuinn()">Not sure if we're the right fit? Ask Quinn →</div>
+  <div class="q-panel" id="q-panel">
+    <div class="q-hd"><div class="q-av">Q</div><div><div class="q-nm">Quinn</div><div class="q-st">Online now · Qurated AI</div></div></div>
+    <div class="q-msgs" id="q-msgs"><div class="q-typing" id="q-typing"><span></span><span></span><span></span></div></div>
+    <div class="q-chips hidden" id="q-chips"></div>
+    <div class="q-input-row"><input class="q-input" id="q-input" type="text" placeholder="Or type a message..." autocomplete="off"/><button class="q-send" id="q-send" aria-label="Send">→</button></div>
   </div>
-  <div class="quinn-panel" id="quinn-panel">
-    <div class="quinn-header">
-      <div class="quinn-avatar">Q</div>
-      <div>
-        <div class="quinn-name">Quinn</div>
-        <div class="quinn-status">Online now · Qurated AI</div>
-      </div>
-    </div>
-    <div class="quinn-messages" id="quinn-messages">
-      <div class="quinn-typing" id="quinn-typing"><span></span><span></span><span></span></div>
-    </div>
-    <div class="quinn-quick-replies hidden" id="quinn-chips"></div>
-    <div class="quinn-input-row">
-      <input class="quinn-input" id="quinn-input" type="text" placeholder="Or type a message..." autocomplete="off"/>
-      <button class="quinn-send" id="quinn-send" aria-label="Send">→</button>
-    </div>
-  </div>
-  <button class="quinn-toggle" id="quinn-toggle" aria-label="Chat with Quinn">
-    <span class="quinn-toggle-q">Q</span>
-    <span class="quinn-badge"></span>
-  </button>
+  <button class="q-toggle" id="q-toggle" aria-label="Chat with Quinn"><span class="q-toggle-q">Q</span><span class="q-badge"></span></button>
 </div>
-
 <script async src="https://assets.calendly.com/assets/external/widget.js"></script>
 <script>
-// ─── CURSOR ───────────────────────────────────────────────────────────────────
-const cursor = document.getElementById('cursor'), ring = document.getElementById('cursor-ring');
+const cur=document.getElementById('cursor'),rng=document.getElementById('cursor-ring');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
-(function ar(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ar);})();
-document.querySelectorAll('a,button,input,select,textarea').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.classList.add('hovered');ring.classList.add('hovered');});
-  el.addEventListener('mouseleave',()=>{cursor.classList.remove('hovered');ring.classList.remove('hovered');});
-});
-
-// ─── NAV ──────────────────────────────────────────────────────────────────────
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function ar(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;rng.style.left=rx+'px';rng.style.top=ry+'px';requestAnimationFrame(ar);})();
+document.querySelectorAll('a,button,input').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.classList.add('h');rng.classList.add('h');});el.addEventListener('mouseleave',()=>{cur.classList.remove('h');rng.classList.remove('h');});});
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
 document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
 function closeMobile(){document.getElementById('mobile-menu').classList.remove('open');}
-
-// ─── REVEAL ───────────────────────────────────────────────────────────────────
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
-},{threshold:0.1});
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-
-// ─── CALENDLY ─────────────────────────────────────────────────────────────────
-function openCalendly(){
-  Calendly.initPopupWidget({url:'https://calendly.com/quratedagency-info/30min'});
-}
-
-// ─── EMAIL CAPTURE ────────────────────────────────────────────────────────────
-function submitEmail(){
-  const v=document.getElementById('email-capture').value;
+function openCalendly(){Calendly.initPopupWidget({url:'https://calendly.com/quratedagency-info/30min'});}
+async function submitEmail(){
+  const v=document.getElementById('email-cap').value;
   if(!v||!v.includes('@'))return;
-  // Optional: POST to Formspree here too
-  document.getElementById('email-success').style.display='block';
-  document.getElementById('email-capture').value='';
+  try{await fetch('https://formspree.io/f/mreovojd',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:v,source:'Email capture'})});}catch(e){}
+  document.getElementById('email-ok').style.display='block';document.getElementById('email-cap').value='';
 }
-
-// ─── QUINN ────────────────────────────────────────────────────────────────────
-const qPanel=document.getElementById('quinn-panel');
-const qMessages=document.getElementById('quinn-messages');
-const qInput=document.getElementById('quinn-input');
-const qTyping=document.getElementById('quinn-typing');
-const qChips=document.getElementById('quinn-chips');
-
-let qHistory=[], qOpen=false, qStarted=false;
-let collectingDetails=false, detailStep=0;
-let collectedDetails={};
-let quinnTurnCount=0;
-
-// Proactive bubble after 8s
-setTimeout(()=>{
-  const p=document.getElementById('quinn-proactive');
-  if(!qOpen) p.classList.add('visible');
-  setTimeout(()=>p.classList.remove('visible'), 8000);
-},8000);
-
-function openQuinn(){
-  document.getElementById('quinn-proactive').classList.remove('visible');
-  qOpen=true;
-  qPanel.classList.add('open');
-  if(!qStarted) initQuinn();
-  setTimeout(()=>qInput.focus(),300);
-}
-
-document.getElementById('quinn-toggle').addEventListener('click',()=>{
-  qOpen=!qOpen;
-  qPanel.classList.toggle('open',qOpen);
-  document.getElementById('quinn-proactive').classList.remove('visible');
-  if(qOpen&&!qStarted) initQuinn();
-  if(qOpen) setTimeout(()=>qInput.focus(),300);
-});
-
-// Scripted turns — chips always match the question
-const QUINN_SCRIPT = [
-  {
-    msg: "To start — what kind of business do you run?",
-    chips: [
-      {label:'Real Estate',action:'msg'},
-      {label:'Trades & Construction',action:'msg'},
-      {label:'Professional Services',action:'msg'},
-      {label:'Something else',action:'msg'}
-    ]
-  },
-  {
-    msg: "Got it. What\'s the biggest challenge with your online presence right now?",
-    chips: [
-      {label:'Weak social media presence',action:'msg'},
-      {label:'No website or poor website',action:'msg'},
-      {label:'Not getting enough leads',action:'msg'},
-      {label:'No time to manage it all',action:'msg'}
-    ]
-  },
-  {
-    msg: "Are you currently working with anyone on your marketing?",
-    chips: [
-      {label:'No, doing it myself',action:'msg'},
-      {label:'Not happy with current agency',action:'msg'},
-      {label:'Starting fresh',action:'msg'},
-      {label:'Never had help before',action:'msg'}
-    ]
-  }
+const qPanel=document.getElementById('q-panel'),qMsgs=document.getElementById('q-msgs'),qInput=document.getElementById('q-input'),qTyping=document.getElementById('q-typing'),qChips=document.getElementById('q-chips');
+let qH=[],qOpen=false,qStarted=false,collecting=false,dStep=0,dData={},qTurn=0;
+setTimeout(()=>{const p=document.getElementById('q-proactive');if(!qOpen){p.classList.add('visible');setTimeout(()=>p.classList.remove('visible'),9000);}},10000);
+function openQuinn(){document.getElementById('q-proactive').classList.remove('visible');qOpen=true;qPanel.classList.add('open');if(!qStarted)initQ();setTimeout(()=>qInput.focus(),300);}
+document.getElementById('q-toggle').addEventListener('click',()=>{qOpen=!qOpen;qPanel.classList.toggle('open',qOpen);document.getElementById('q-proactive').classList.remove('visible');if(qOpen&&!qStarted)initQ();if(qOpen)setTimeout(()=>qInput.focus(),300);});
+const SCRIPT=[
+  {msg:"To start — what kind of business do you run?",chips:[{l:'Trades or Construction',a:'msg'},{l:'Real Estate',a:'msg'},{l:'Professional Services',a:'msg'},{l:'Something else',a:'msg'}]},
+  {msg:"Got it. What's the biggest thing holding your growth back right now?",chips:[{l:'Not getting enough leads',a:'msg'},{l:'No time for marketing',a:'msg'},{l:"Website isn't converting",a:'msg'},{l:'Inconsistent online presence',a:'msg'}]}
 ];
-
-async function initQuinn(){
-  qStarted=true;
-  showT();
-  await delay(1200);
-  hideT();
-  addQMsg("Hey, I\'m Quinn — Qurated\'s AI. I\'m not here to sell you anything. I just want to understand your business and see if we\'re actually the right fit.");
-  await delay(900);
-  showT();
-  await delay(900);
-  hideT();
-  addQMsg(QUINN_SCRIPT[0].msg);
-  showChips(QUINN_SCRIPT[0].chips);
-}
-
-function addQMsg(text){
-  const d=document.createElement('div');
-  d.className='q-msg quinn';
-  const p=document.createElement('p');
-  p.textContent=text;
-  d.appendChild(p);
-  qMessages.insertBefore(d,qTyping);
-  qMessages.scrollTop=qMessages.scrollHeight;
-}
-
-function addUserMsg(text){
-  const d=document.createElement('div');
-  d.className='q-msg user';
-  const p=document.createElement('p');
-  p.textContent=text;
-  d.appendChild(p);
-  qMessages.insertBefore(d,qTyping);
-  qMessages.scrollTop=qMessages.scrollHeight;
-}
-
-function showT(){qTyping.style.display='flex';qMessages.scrollTop=qMessages.scrollHeight;}
+async function initQ(){qStarted=true;showT();await dl(1100);hideT();addQ("Hey — I'm Quinn, Qurated's AI. I'm not here to sell you anything. I just want to understand your business and see if we're genuinely the right fit.");await dl(800);showT();await dl(900);hideT();addQ(SCRIPT[0].msg);showChips(SCRIPT[0].chips);}
+function addQ(t){const d=document.createElement('div');d.className='qm qq';const p=document.createElement('p');p.textContent=t;d.appendChild(p);qMsgs.insertBefore(d,qTyping);qMsgs.scrollTop=qMsgs.scrollHeight;}
+function addU(t){const d=document.createElement('div');d.className='qm qu';const p=document.createElement('p');p.textContent=t;d.appendChild(p);qMsgs.insertBefore(d,qTyping);qMsgs.scrollTop=qMsgs.scrollHeight;}
+function showT(){qTyping.style.display='flex';qMsgs.scrollTop=qMsgs.scrollHeight;}
 function hideT(){qTyping.style.display='none';}
-function delay(ms){return new Promise(r=>setTimeout(r,ms));}
-
-function showChips(chips){
-  qChips.innerHTML='';
-  chips.forEach(c=>{
-    const btn=document.createElement('button');
-    btn.className='q-chip';
-    btn.textContent=c.label;
-    btn.addEventListener('click',()=>{
-      hideChips();
-      if(c.action==='msg') handleUserInput(c.label);
-      else if(c.action==='book') openCalendly();
-      else if(c.action==='details') startDetailCollection();
-    });
-    qChips.appendChild(btn);
-  });
-  qChips.classList.remove('hidden');
-}
-
+function dl(ms){return new Promise(r=>setTimeout(r,ms));}
+function showChips(chips){qChips.innerHTML='';chips.forEach(c=>{const b=document.createElement('button');b.className='q-chip';b.textContent=c.l;b.addEventListener('click',()=>{hideChips();if(c.a==='msg')handleInput(c.l);else if(c.a==='book')openCalendly();else if(c.a==='details')startCollect();});qChips.appendChild(b);});qChips.classList.remove('hidden');}
 function hideChips(){qChips.classList.add('hidden');qChips.innerHTML='';}
-
-// Detail collection (bypasses AI for reliability)
-function startDetailCollection(){
-  collectingDetails=true;
-  detailStep=0;
-  collectedDetails={};
-  hideChips();
-  showT();
-  setTimeout(()=>{hideT();addQMsg("What's your name?");},800);
+function startCollect(){collecting=true;dStep=0;dData={};hideChips();showT();setTimeout(()=>{hideT();addQ("What's your name?");},800);}
+function handleCollect(t){
+  if(dStep===0){dData.name=t;dStep=1;showT();setTimeout(()=>{hideT();addQ("Nice to meet you, "+dData.name+". What's your email address?");},800);}
+  else if(dStep===1){dData.email=t;dStep=2;showT();setTimeout(()=>{hideT();addQ("And a phone number?");},800);}
+  else if(dStep===2){dData.phone=t;dStep=3;showT();setTimeout(()=>{hideT();addQ("Last one — what's your business called?");},800);}
+  else if(dStep===3){dData.business=t;submitLead();}
 }
-
-function handleDetailStep(input){
-  if(detailStep===0){
-    collectedDetails.name=input;
-    detailStep=1;
-    showT();
-    setTimeout(()=>{hideT();addQMsg("Nice to meet you, "+collectedDetails.name+". What's your email address?");},800);
-  } else if(detailStep===1){
-    collectedDetails.email=input;
-    detailStep=2;
-    showT();
-    setTimeout(()=>{hideT();addQMsg("And your phone number? We'll only use it to reach out about your enquiry.");},800);
-  } else if(detailStep===2){
-    collectedDetails.phone=input;
-    detailStep=3;
-    showT();
-    setTimeout(()=>{hideT();addQMsg("Last one — what's your business called?");},800);
-  } else if(detailStep===3){
-    collectedDetails.business=input;
-    submitLead();
-  }
+async function submitLead(){showT();try{await fetch('/.netlify/functions/submit-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(dData)});}catch(e){}hideT();collecting=false;addQ("Done, "+dData.name+" — we'll be in touch within 24 hours. Want to fast-track it? Book a call below.");showChips([{l:'Book a call →',a:'book'}]);}
+async function handleInput(text){
+  if(!text.trim())return;hideChips();addU(text);qH.push({role:'user',content:text});
+  if(collecting){handleCollect(text);return;}
+  qTurn++;
+  if(qTurn<2){const s=SCRIPT[qTurn];showT();await dl(900);hideT();addQ(s.msg);qH.push({role:'assistant',content:s.msg});showChips(s.chips);return;}
+  showT();const rep=await callAPI();hideT();
+  if(rep){addQ(rep);qH.push({role:'assistant',content:rep});}
+  showChips([{l:'Book a free call',a:'book'},{l:'Leave my details',a:'details'},{l:'Tell me more',a:'msg'}]);
 }
-
-async function submitLead(){
-  showT();
-  try{
-    await fetch('/.netlify/functions/submit-lead',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        name:collectedDetails.name,
-        email:collectedDetails.email,
-        phone:collectedDetails.phone,
-        business:collectedDetails.business
-      })
-    });
-  }catch(e){console.error('Lead submission error:',e);}
-  hideT();
-  collectingDetails=false;
-  addQMsg("All done, "+collectedDetails.name+" — we'll be in touch within 24 hours. If you'd rather fast-track it, book a call directly below.");
-  showChips([{label:'Book a call →',action:'book'}]);
-}
-
-async function handleUserInput(text){
-  if(!text.trim()) return;
-  hideChips();
-  addUserMsg(text);
-  qHistory.push({role:'user',content:text});
-
-  if(collectingDetails){ handleDetailStep(text); return; }
-
-  quinnTurnCount++;
-
-  // Turns 1 & 2 — scripted response + matching chips (no AI needed)
-  if(quinnTurnCount < 3){
-    const script = QUINN_SCRIPT[quinnTurnCount];
-    showT();
-    await delay(900);
-    hideT();
-    addQMsg(script.msg);
-    qHistory.push({role:'assistant',content:script.msg});
-    showChips(script.chips);
-    return;
-  }
-
-  // Turn 3 — AI responds with full context, then show action chips
-  showT();
-  const reply=await callQuinnAPI();
-  hideT();
-  if(reply){
-    addQMsg(reply);
-    qHistory.push({role:'assistant',content:reply});
-  }
-  showChips([
-    {label:'Book a free call',action:'book'},
-    {label:'Leave my details',action:'details'},
-    {label:'Tell me more first',action:'msg'}
-  ]);
-}
-
-async function callQuinnAPI(){
-  try{
-    const res=await fetch('/.netlify/functions/quinn',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({messages:qHistory})
-    });
-    const d=await res.json();
-    return d.reply||"Sorry, having a moment — reach us at info@quratedagency.com.";
-  }catch{
-    return "Sorry, having a moment — reach us at info@quratedagency.com.";
-  }
-}
-
-async function sendMsg(){
-  const text=qInput.value.trim();
-  if(!text) return;
-  qInput.value='';
-  await handleUserInput(text);
-}
-
-document.getElementById('quinn-send').addEventListener('click',sendMsg);
-qInput.addEventListener('keydown',e=>{if(e.key==='Enter')sendMsg();});
+async function callAPI(){try{const r=await fetch('/.netlify/functions/quinn',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:qH})});const d=await r.json();return d.reply||"Sorry, having a moment — reach us at info@quratedagency.com.";}catch{return "Sorry, having a moment — reach us at info@quratedagency.com.";}}
+async function send(){const t=qInput.value.trim();if(!t)return;qInput.value='';await handleInput(t);}
+document.getElementById('q-send').addEventListener('click',send);
+qInput.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
 </script>
 </body>
 </html>
