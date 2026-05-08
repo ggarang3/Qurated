@@ -1,0 +1,6 @@
+# Redirect non-www to www
+http://quratedagency.com/* https://www.quratedagency.com/:splat 301!
+
+# Clean URLs — serve .html files without extension
+/trades        /trades.html       200
+/real-estate   /real-estate.html  200
