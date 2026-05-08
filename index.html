@@ -18,8 +18,8 @@
 <style>
 :root{
   --red:#e50000;--red-dk:#b00000;
-  --black:#0d0d0d;--off:#f5f5f3;
-  --g1:#e8e8e6;--g2:#aaa;--g3:#666;
+  --black:#0d0d0d;--off:#111111;
+  --g1:rgba(255,255,255,.08);--g2:rgba(255,255,255,.5);--g3:rgba(255,255,255,.4);
   --white:#fff;
   --fd:'Bebas Neue',sans-serif;
   --fc:'Barlow Condensed',sans-serif;
@@ -51,14 +51,14 @@ nav.scrolled{background:rgba(13,13,13,.96);backdrop-filter:blur(16px);border-bot
 .mobile-menu a{font-family:var(--fd);font-size:3rem;letter-spacing:.1em;color:var(--white);text-decoration:none;transition:color .2s;}
 .mobile-menu a:hover{color:var(--red);}
 .mobile-menu .m-cta{font-family:var(--fc);font-size:.85rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--red);padding:.9rem 2.5rem;}
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 5rem;position:relative;overflow:hidden;}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 3rem 5rem;position:relative;overflow:hidden;}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.5) 40%,transparent 100%);}
 .hero-glow{position:absolute;top:15%;right:-80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(229,0,0,.07) 0%,transparent 70%);pointer-events:none;}
 .hero-bg-q{position:absolute;right:-4vw;bottom:-8vh;font-family:var(--fd);font-size:60vw;color:var(--white);opacity:.025;line-height:1;user-select:none;animation:qdrift 20s ease-in-out infinite alternate;}
 @keyframes qdrift{from{transform:translateX(-2%) rotate(-2deg);}to{transform:translateX(1%) rotate(1.5deg);}}
 .hero-eyebrow{font-family:var(--fc);font-size:.68rem;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem;opacity:0;animation:fu .8s .15s forwards;}
 .hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--red);}
-.hero-hl{font-family:var(--fd);font-size:clamp(4.5rem,10vw,13rem);line-height:.88;letter-spacing:.02em;margin-bottom:2rem;opacity:0;animation:fu .9s .3s forwards;}
+.hero-hl{font-family:var(--fd);font-size:clamp(3rem,6.5vw,8rem);line-height:.88;letter-spacing:.02em;margin-bottom:2rem;opacity:0;animation:fu .9s .3s forwards;}
 .r{color:var(--red);}
 .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;opacity:0;animation:fu .9s .5s forwards;}
 .hero-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.5);max-width:480px;line-height:1.8;}
@@ -89,15 +89,15 @@ nav.scrolled{background:rgba(13,13,13,.96);backdrop-filter:blur(16px);border-bot
 .st-lg{font-size:clamp(3rem,5.5vw,5.5rem);}
 .st-md{font-size:clamp(2.4rem,4vw,4rem);}
 .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(229,0,0,.25),transparent);}
-#problem{background:var(--off);}
+#problem{background:#111;}
 .prob-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem;}
 .prob-list{display:flex;flex-direction:column;}
-.prob-item{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--g1);}
-.prob-item:first-child{border-top:1px solid var(--g1);}
+.prob-item{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.prob-item:first-child{border-top:1px solid rgba(255,255,255,.08);}
 .pn{font-family:var(--fd);font-size:1.2rem;color:var(--red);line-height:1;margin-top:.1rem;min-width:24px;}
-.pt strong{font-family:var(--fc);font-size:.95rem;font-weight:700;letter-spacing:.04em;color:var(--black);display:block;margin-bottom:.3rem;}
-.pt p{font-size:.85rem;color:var(--g3);line-height:1.72;}
-.prob-box{background:var(--black);padding:3rem;}
+.pt strong{font-family:var(--fc);font-size:.95rem;font-weight:700;letter-spacing:.04em;color:var(--white);display:block;margin-bottom:.3rem;}
+.pt p{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.72;}
+.prob-box{background:#1a1a1a;border:1px solid rgba(255,255,255,.06);padding:3rem;}
 .prob-box h3{font-family:var(--fd);font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.02;letter-spacing:.03em;color:var(--white);margin-bottom:1.25rem;}
 .prob-box h3 span{color:var(--red);}
 .prob-box-body{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:2rem;}
@@ -124,15 +124,15 @@ nav.scrolled{background:rgba(13,13,13,.96);backdrop-filter:blur(16px);border-bot
 .svc-list{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
 .svc-list li{font-family:var(--fc);font-size:.78rem;font-weight:500;letter-spacing:.03em;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:.65rem;}
 .svc-list li::before{content:'';display:block;width:14px;height:1px;background:var(--red);flex-shrink:0;}
-#why{background:var(--off);}
+#why{background:#111;}
 .why-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem;}
 .why-pts{display:flex;flex-direction:column;}
-.why-pt{padding:1.75rem 0;border-bottom:1px solid var(--g1);}
-.why-pt:first-child{border-top:1px solid var(--g1);}
+.why-pt{padding:1.75rem 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.why-pt:first-child{border-top:1px solid rgba(255,255,255,.08);}
 .why-lbl{font-family:var(--fc);font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:.35rem;}
-.why-pt-title{font-family:var(--fc);font-size:1.05rem;font-weight:700;letter-spacing:.04em;color:var(--black);margin-bottom:.35rem;}
-.why-pt-body{font-size:.83rem;font-weight:300;color:var(--g3);line-height:1.72;}
-.why-box{background:var(--black);padding:3rem;position:relative;}
+.why-pt-title{font-family:var(--fc);font-size:1.05rem;font-weight:700;letter-spacing:.04em;color:var(--white);margin-bottom:.35rem;}
+.why-pt-body{font-size:.83rem;font-weight:300;color:rgba(255,255,255,.4);line-height:1.72;}
+.why-box{background:#1a1a1a;border:1px solid rgba(255,255,255,.06);padding:3rem;position:relative;}
 .why-box::before{content:'"';position:absolute;top:.5rem;left:2rem;font-family:var(--fd);font-size:7rem;color:var(--red);line-height:1;opacity:.08;}
 .why-quote{font-family:var(--fc);font-size:1.3rem;font-weight:600;line-height:1.4;letter-spacing:.02em;color:var(--white);padding-top:1.75rem;margin-bottom:2rem;}
 .stat-stack{display:flex;flex-direction:column;}
@@ -166,14 +166,14 @@ nav.scrolled{background:rgba(13,13,13,.96);backdrop-filter:blur(16px);border-bot
 .btn-white:hover{background:var(--off);border-color:var(--off);}
 .btn-ghost-w{background:transparent;border-color:rgba(255,255,255,.4);color:var(--white);}
 .btn-ghost-w:hover{border-color:var(--white);}
-#contact{background:var(--off);}
+#contact{background:#111;}
 .contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;margin-top:3.5rem;}
 .c-deets{display:flex;flex-direction:column;gap:1.75rem;}
 .cdl{font-family:var(--fc);font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:.25rem;}
-.cdv{font-family:var(--fc);font-size:1rem;font-weight:600;letter-spacing:.04em;color:var(--black);}
-.cdv a{color:var(--black);text-decoration:none;transition:color .2s;}
+.cdv{font-family:var(--fc);font-size:1rem;font-weight:600;letter-spacing:.04em;color:var(--white);}
+.cdv a{color:var(--white);text-decoration:none;transition:color .2s;}
 .cdv a:hover{color:var(--red);}
-.c-note{padding:1.5rem;border-left:2px solid var(--red);background:var(--black);}
+.c-note{padding:1.5rem;border-left:2px solid var(--red);background:#1a1a1a;}
 .c-note p{font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.75;font-style:italic;}
 .c-note strong{color:var(--white);font-weight:400;font-style:normal;}
 .quinn-link{background:none;border:none;color:var(--red);font-family:var(--fc);font-size:.82rem;font-weight:700;letter-spacing:.05em;text-decoration:underline;text-underline-offset:3px;padding:0;margin-top:.25rem;display:inline-block;}
@@ -185,9 +185,9 @@ nav.scrolled{background:rgba(13,13,13,.96);backdrop-filter:blur(16px);border-bot
 .email-block{display:flex;flex-direction:column;gap:.5rem;}
 .email-block label{font-family:var(--fc);font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--g3);}
 .email-row{display:flex;}
-.email-row input{flex:1;background:var(--white);border:1px solid var(--g1);border-right:none;color:var(--black);font-family:var(--fb);font-size:.88rem;padding:.82rem 1rem;outline:none;transition:border-color .2s;border-radius:0;}
+.email-row input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-right:none;color:var(--white);font-family:var(--fb);font-size:.88rem;padding:.82rem 1rem;outline:none;transition:border-color .2s;border-radius:0;}
 .email-row input:focus{border-color:var(--red);}
-.email-row input::placeholder{color:rgba(0,0,0,.3);}
+.email-row input::placeholder{color:rgba(255,255,255,.25);}
 .email-row button{font-family:var(--fc);font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--red);color:var(--white);border:1px solid var(--red);padding:.82rem 1.25rem;transition:all .2s;}
 .email-row button:hover{background:var(--black);border-color:var(--black);}
 #email-ok{display:none;font-family:var(--fc);font-size:.82rem;color:var(--g3);padding-top:.35rem;}
@@ -243,7 +243,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
   nav{padding:0 1.5rem;}
   .nav-links{display:none;}
   .hamburger{display:flex;}
-  #hero{padding:0 1.5rem 4rem;min-height:100svh;}
+  #hero{padding:8rem 1.5rem 4rem;min-height:100svh;}
   .hero-bottom{flex-direction:column;align-items:flex-start;gap:2rem;}
   .hero-actions{align-items:flex-start;}
   .sec{padding:5rem 1.5rem;}
@@ -315,7 +315,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <section id="problem" class="sec">
   <div class="inner">
     <div class="ew ew-dk reveal">Sound familiar?</div>
-    <h2 class="stitle st-lg reveal" style="color:var(--black);margin-bottom:0">You're losing work to businesses<br><span class="r">half as good</span> as yours.</h2>
+    <h2 class="stitle st-lg reveal" style="color:var(--white);margin-bottom:0">You're losing work to businesses<br><span class="r">half as good</span> as yours.</h2>
     <div class="prob-layout">
       <div class="prob-list reveal">
         <div class="prob-item"><div class="pn">01</div><div class="pt"><strong>Your online presence doesn't match your quality</strong><p>You do great work — but your website and socials look like you started and gave up. Prospects judge before they call. First impressions cost you jobs before you even get a chance to quote.</p></div></div>
@@ -357,8 +357,8 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
     <div class="why-layout">
       <div>
         <div class="ew ew-dk reveal">Why we're different</div>
-        <h2 class="stitle st-lg reveal" style="color:var(--black);margin-bottom:1rem;">WE DIAGNOSE<br>BEFORE WE<br><span class="r">PRESCRIBE.</span></h2>
-        <p class="reveal" style="font-size:.93rem;color:var(--g3);line-height:1.8;max-width:480px;margin-bottom:2.5rem;">Most agencies pitch a package before they've asked a single question about your business. We don't. Every engagement starts with understanding exactly where you are, what's costing you, and what will genuinely move the needle.</p>
+        <h2 class="stitle st-lg reveal" style="color:var(--white);margin-bottom:1rem;">WE DIAGNOSE<br>BEFORE WE<br><span class="r">PRESCRIBE.</span></h2>
+        <p class="reveal" style="font-size:.93rem;color:rgba(255,255,255,.45);line-height:1.8;max-width:480px;margin-bottom:2.5rem;">Most agencies pitch a package before they've asked a single question about your business. We don't. Every engagement starts with understanding exactly where you are, what's costing you, and what will genuinely move the needle.</p>
         <div class="why-pts reveal">
           <div class="why-pt"><div class="why-lbl">Our model</div><div class="why-pt-title">One partner. The entire system.</div><p class="why-pt-body">Website, content, ads, CRM, and automation under one roof — connected and talking to each other. No brief lost between agencies. One strategy, executed end-to-end.</p></div>
           <div class="why-pt"><div class="why-lbl">Our edge</div><div class="why-pt-title">AI built in from day one. Not bolted on later.</div><p class="why-pt-body">Every system we build has automation embedded from the start. Leads followed up. Enquiries handled. Workflows running — without you lifting a finger. Not AI as a feature. AI as infrastructure.</p></div>
@@ -414,7 +414,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <section id="contact" class="sec">
   <div class="inner">
     <div class="ew ew-dk reveal">Your first move costs nothing</div>
-    <h2 class="stitle st-md reveal" style="color:var(--black);margin-bottom:0;">GET IN TOUCH</h2>
+    <h2 class="stitle st-md reveal" style="color:var(--white);margin-bottom:0;">GET IN TOUCH</h2>
     <div class="contact-layout">
       <div class="c-deets reveal">
         <div><div class="cdl">Based in</div><div class="cdv">Perth, Western Australia</div></div>
