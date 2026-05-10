@@ -430,3 +430,57 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
   .cover-logo-wrap img{max-width:220px;}
   .cover-tagline{font-size:.55rem;letter-spacing:.35em;}
 }
+
+/* ── TOUCH DEVICES ───────────────────────────────────────── */
+@media (hover:none),(pointer:coarse){
+  /* Restore native cursor — custom cursor is JS-hidden but belt-and-braces */
+  *{cursor:auto!important;}
+  .cursor,.cursor-ring{display:none!important;}
+
+  /* Kill 300ms tap delay on all interactive elements */
+  a,button,[onclick],.btn,.q-chip,.faq-q,.q-toggle,.hamburger,
+  .cover-btn,.nav-cta,.quinn-link{
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  /* Ensure minimum 44×44px tap targets */
+  .hamburger{
+    min-width:44px;
+    min-height:44px;
+    align-items:center;
+    justify-content:center;
+  }
+  .q-toggle{
+    width:56px;
+    height:56px;
+  }
+  .btn{
+    min-height:48px;
+    padding:.9rem 1.75rem;
+  }
+  .nav-cta{
+    padding:.65rem 1.25rem!important;
+    min-height:40px;
+  }
+
+  /* Mobile menu links — large tap targets */
+  .mobile-menu a{
+    padding:.5rem 0;
+    min-height:56px;
+    display:flex;
+    align-items:center;
+  }
+
+  /* Proc CTA button full-width on touch */
+  .proc-cta .btn{width:100%;justify-content:center;}
+
+  /* FAQ questions need bigger hit area */
+  .faq-q{padding:1.25rem 1.5rem;min-height:56px;}
+
+  /* Q chips easier to tap */
+  .q-chip{padding:.5rem 1rem;min-height:40px;}
+
+  /* Cover page button comfortable on small screens */
+  .cover-btn{padding:1rem 2rem;min-height:52px;}
+}

@@ -1,9 +1,19 @@
-/* ── CURSOR ─────────────────────────────────────────────── */
+/* ── TOUCH DETECTION ─────────────────────────────────────── */
+const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+
+/* ── CURSOR (desktop only) ───────────────────────────────── */
 const cursor = document.getElementById('cursor');
 const ring   = document.getElementById('cursor-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
-if(cursor && ring){
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+
+if(!isTouch && cursor && ring){
+  cursor.style.display = 'block';
+  ring.style.display   = 'block';
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top  = my + 'px';
+  });
   (function animRing(){
     rx += (mx - rx) * .12; ry += (my - ry) * .12;
     ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
@@ -13,6 +23,10 @@ if(cursor && ring){
     el.addEventListener('mouseenter', () => { cursor.classList.add('h'); ring.classList.add('h'); });
     el.addEventListener('mouseleave', () => { cursor.classList.remove('h'); ring.classList.remove('h'); });
   });
+} else if(cursor && ring){
+  /* Touch device — hide custom cursor, restore native pointer */
+  cursor.style.display = 'none';
+  ring.style.display   = 'none';
 }
 
 /* ── NAV SCROLL + ACTIVE ────────────────────────────────── */
@@ -33,8 +47,17 @@ if(nav){
 const hamburger   = document.getElementById('hamburger');
 const mobileMenu  = document.getElementById('mobile-menu');
 function closeMobile(){ if(mobileMenu) mobileMenu.classList.remove('open'); }
+function toggleMobile(e){
+  if(e) e.preventDefault();
+  if(mobileMenu) mobileMenu.classList.toggle('open');
+}
 if(hamburger && mobileMenu){
-  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  // Use touchstart for instant response on mobile; click as fallback on desktop
+  if(isTouch){
+    hamburger.addEventListener('touchstart', toggleMobile, { passive: false });
+  } else {
+    hamburger.addEventListener('click', toggleMobile);
+  }
   mobileMenu.addEventListener('click', e => { if(e.target === mobileMenu) closeMobile(); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMobile(); });
 }
