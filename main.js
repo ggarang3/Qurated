@@ -1,48 +1,127 @@
-// CURSOR
-const cur=document.getElementById('cursor'),rng=document.getElementById('cursor-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function ar(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;rng.style.left=rx+'px';rng.style.top=ry+'px';requestAnimationFrame(ar);})();
-document.querySelectorAll('a,button,input').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.classList.add('h');rng.classList.add('h');});
-  el.addEventListener('mouseleave',()=>{cur.classList.remove('h');rng.classList.remove('h');});
-});
+/* ── CURSOR ─────────────────────────────────────────────── */
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+if(cursor && ring){
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+  (function animRing(){
+    rx += (mx - rx) * .12; ry += (my - ry) * .12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  })();
+  document.querySelectorAll('a, button, [onclick], .q-chip, .faq-q').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.classList.add('h'); ring.classList.add('h'); });
+    el.addEventListener('mouseleave', () => { cursor.classList.remove('h'); ring.classList.remove('h'); });
+  });
+}
 
-// NAV SCROLL
-const nav=document.getElementById('nav');
-if(nav) window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+/* ── NAV SCROLL + ACTIVE ────────────────────────────────── */
+const nav = document.getElementById('nav');
+if(nav){
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+  // Highlight active link based on current path
+  const path = window.location.pathname.replace(/\/$/, '') || '/home';
+  nav.querySelectorAll('.nav-links a').forEach(a => {
+    const href = a.getAttribute('href').replace(/\/$/, '');
+    if(path === href || path.endsWith(href)) a.classList.add('active');
+  });
+}
 
-// MOBILE MENU
-const ham=document.getElementById('hamburger');
-if(ham) ham.addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
-function closeMobile(){const m=document.getElementById('mobile-menu');if(m)m.classList.remove('open');}
+/* ── MOBILE MENU ────────────────────────────────────────── */
+const hamburger   = document.getElementById('hamburger');
+const mobileMenu  = document.getElementById('mobile-menu');
+function closeMobile(){ if(mobileMenu) mobileMenu.classList.remove('open'); }
+if(hamburger && mobileMenu){
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.addEventListener('click', e => { if(e.target === mobileMenu) closeMobile(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMobile(); });
+}
 
-// REVEAL ON SCROLL
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+/* ── SCROLL REVEAL ──────────────────────────────────────── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// CALENDLY — ⚠ verify URL matches your live Calendly booking page
+/* ── FAQ TOGGLE ─────────────────────────────────────────── */
+function toggleFaq(btn){
+  const item = btn.closest('.faq-item');
+  const ans  = item.querySelector('.faq-a');
+  const icon = btn.querySelector('.faq-icon');
+  const open = ans.classList.contains('open');
+  // Close all first
+  document.querySelectorAll('.faq-a.open').forEach(a => {
+    a.classList.remove('open');
+    a.closest('.faq-item').querySelector('.faq-icon').textContent = '+';
+  });
+  if(!open){ ans.classList.add('open'); icon.textContent = '−'; }
+}
+
+/* ── CALENDLY ────────────────────────────────────────────── */
 function openCalendly(){
-  if(typeof Calendly!=='undefined'){
-    Calendly.initPopupWidget({url:'https://calendly.com/quratedagency-info/30min'});
+  if(window.Calendly){
+    Calendly.initPopupWidget({ url: 'https://calendly.com/quratedagency-info/30min' });
+  } else {
+    window.open('https://calendly.com/quratedagency-info/30min', '_blank');
   }
 }
 
-// EMAIL CAPTURE
+/* ── EMAIL CAPTURE ───────────────────────────────────────── */
 async function submitEmail(){
-  const input=document.getElementById('email-cap');
-  if(!input) return;
-  const v=input.value.trim();
-  if(!v||!v.includes('@')) return;
-  try{
-    await fetch('https://formspree.io/f/mreovojd',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({email:v,source:'Email capture — '+window.location.pathname})
+  const inp = document.getElementById('email-cap');
+  if(!inp) return;
+  const email = inp.value.trim();
+  if(!email || !email.includes('@')){ inp.focus(); return; }
+  try {
+    await fetch('/.netlify/functions/submit-lead', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ email, source: window.location.pathname })
     });
-  }catch(e){}
-  const ok=document.getElementById('email-ok');
-  if(ok) ok.style.display='block';
-  input.value='';
+  } catch(e){}
+  inp.value = '';
+  const ok = document.getElementById('email-ok');
+  if(ok){ ok.style.display = 'block'; }
+}
+
+/* ── CONTACT FORM ────────────────────────────────────────── */
+async function submitContact(){
+  const name      = document.getElementById('f-name')?.value.trim()      || '';
+  const biz       = document.getElementById('f-biz')?.value.trim()       || '';
+  const email     = document.getElementById('f-email')?.value.trim()     || '';
+  const phone     = document.getElementById('f-phone')?.value.trim()     || '';
+  const type      = document.getElementById('f-type')?.value             || '';
+  const challenge = document.getElementById('f-challenge')?.value        || '';
+  const msg       = document.getElementById('f-msg')?.value.trim()       || '';
+
+  if(!name || !email){ document.getElementById('f-email')?.focus(); return; }
+
+  const payload = { name, biz, email, phone, type, challenge, msg, source: 'contact-form' };
+
+  try {
+    // Try Netlify function first, fall back to Formspree
+    const res = await fetch('/.netlify/functions/submit-lead', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if(!res.ok) throw new Error('Netlify fn failed');
+  } catch(e){
+    try {
+      await fetch('https://formspree.io/f/mreovojd', {
+        method:'POST', headers:{'Accept':'application/json','Content-Type':'application/json'},
+        body: JSON.stringify({ name, email, phone, message: `Biz: ${biz}\nType: ${type}\nChallenge: ${challenge}\n\n${msg}` })
+      });
+    } catch(e2){}
+  }
+
+  const ok = document.getElementById('form-ok');
+  if(ok){ ok.style.display = 'block'; }
+  // Clear form
+  ['f-name','f-biz','f-email','f-phone','f-msg'].forEach(id => {
+    const el = document.getElementById(id); if(el) el.value = '';
+  });
+  ['f-type','f-challenge'].forEach(id => {
+    const el = document.getElementById(id); if(el) el.selectedIndex = 0;
+  });
 }

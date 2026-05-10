@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="index, follow"/>
+<title>Qurate Now | Contact Qurated — Perth Growth Systems</title>
+<meta name="description" content="Book a free 30-minute diagnosis call or send us a message. Tell us where your Perth business is at — we'll tell you exactly what it needs."/>
+<meta property="og:title" content="Qurate Now | Contact Qurated"/>
+<meta property="og:description" content="Thirty minutes. No pitch. Real answers."/>
+<meta property="og:image" content="https://www.quratedagency.com/og-image.png"/>
+<link rel="canonical" href="https://www.quratedagency.com/contact"/>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="image" href="logo_long_white.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<nav id="nav">
+  <a href="/home" class="nav-logo"><img src="logo_long_white.png" alt="Qurated" width="200" height="28"/></a>
+  <ul class="nav-links">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/trades">Trades</a></li>
+    <li><a href="/real-estate">Real Estate</a></li>
+    <li><a href="/capabilities">Capabilities</a></li>
+    <li><a href="/contact" class="nav-cta active">Qurate Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/home" onclick="closeMobile()">Home</a>
+  <a href="/about" onclick="closeMobile()">About</a>
+  <a href="/trades" onclick="closeMobile()">Trades</a>
+  <a href="/real-estate" onclick="closeMobile()">Real Estate</a>
+  <a href="/capabilities" onclick="closeMobile()">Capabilities</a>
+  <a href="/contact" class="m-cta" onclick="closeMobile()">Qurate Now →</a>
+</div>
+
+<!-- HERO -->
+<section class="vhero" style="min-height:52vh;">
+  <div class="hero-grid"></div>
+  <div class="vhero-content">
+    <div class="vhero-crumb"><a href="/home">Home</a> / Qurate Now</div>
+    <div class="vhero-eye">Get started</div>
+    <h1 class="vhero-hl">Let's Build<br><span class="r">Something.</span></h1>
+    <div class="vhero-row">
+      <p class="vhero-sub">No prep needed. No pitch from our side. Tell us where your business is at — we'll tell you exactly what it needs. <strong>The call is free.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT LAYOUT -->
+<section class="sec" style="background:var(--s1);">
+  <div class="inner">
+    <div class="contact-page-layout">
+
+      <!-- LEFT: FORM -->
+      <div class="cp-left">
+        <div>
+          <div class="ew">Send us a message</div>
+          <h2 class="sh" style="margin-bottom:.5rem;">Tell us about<br>your business.</h2>
+          <p class="sb" style="margin-top:.75rem;">Fill this in and we'll follow up within one business day. Or if you'd rather talk — book a call on the right.</p>
+        </div>
+
+        <div class="cp-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" type="text" placeholder="First & last name"/>
+            </div>
+            <div class="form-field">
+              <label for="f-biz">Business name</label>
+              <input id="f-biz" type="text" placeholder="Your business"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-email">Email address</label>
+              <input id="f-email" type="email" placeholder="you@yourbusiness.com"/>
+            </div>
+            <div class="form-field">
+              <label for="f-phone">Phone number</label>
+              <input id="f-phone" type="tel" placeholder="04xx xxx xxx"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-type">Business type</label>
+              <select id="f-type">
+                <option value="" disabled selected>Select your industry</option>
+                <option>Trades or Construction</option>
+                <option>Real Estate</option>
+                <option>Professional Services</option>
+                <option>Retail or Hospitality</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="f-challenge">Main challenge</label>
+              <select id="f-challenge">
+                <option value="" disabled selected>What's the biggest gap?</option>
+                <option>Not enough inbound leads</option>
+                <option>No time to manage marketing</option>
+                <option>Website isn't converting</option>
+                <option>Need more visibility online</option>
+                <option>Leads go cold before follow-up</option>
+                <option>Not sure — need advice</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="f-msg">Anything else? (optional)</label>
+            <textarea id="f-msg" placeholder="Tell us anything else about your situation — we read every message personally."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitContact()">Send Message →</button>
+          <div id="form-ok">Done — we'll be in touch within one business day.</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: BOOKING + INFO -->
+      <div class="cp-right">
+        <div class="cp-card">
+          <h3>Book a Free Diagnosis Call</h3>
+          <p>30 minutes. No pitch, no pressure. Show up, tell us where your business is at, and we'll tell you exactly what we'd build — and whether we're the right fit. We keep our client list intentionally small.</p>
+          <button class="btn btn-red" style="width:100%;justify-content:center;margin-bottom:.75rem;" onclick="openCalendly()">Book a 30-Minute Call →</button>
+          <p style="font-family:var(--fc);font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--w20);text-align:center;">No credit card. No commitment. Just clarity.</p>
+        </div>
+
+        <div class="cp-card">
+          <div class="c-deets">
+            <div><div class="cdl">Based in</div><div class="cdv">Perth, Western Australia</div></div>
+            <div><div class="cdl">Email</div><div class="cdv"><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></div></div>
+            <div><div class="cdl">Phone</div><div class="cdv"><a href="tel:0456847420">0456 847 420</a></div></div>
+            <div><div class="cdl">Instagram</div><div class="cdv"><a href="https://instagram.com/quratedagency" target="_blank">@quratedagency</a></div></div>
+          </div>
+        </div>
+
+        <div class="cp-card cp-quinn-card">
+          <h3>Not ready for a call?</h3>
+          <p>Quinn — our AI assistant — can answer questions about how we work, what we'd recommend for your business type, and whether we're the right fit. Two minutes and you'll know more than most.</p>
+          <button class="btn" style="background:none;border:1px solid rgba(0,0,0,.25);color:var(--black);font-family:var(--fc);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.85rem 1.9rem;width:100%;justify-content:center;" onclick="openQuinn()">Talk to Quinn →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/home" class="footer-logo"><img src="logo_long_white.png" alt="Qurated" width="180" height="24"/></a>
+    <p class="footer-tag">We build the system. <em>You build the business.</em></p>
+    <div>
+      <p class="footer-copy">© 2026 Qurated · Perth, WA · <a href="mailto:info@quratedagency.com">info@quratedagency.com</a></p>
+      <ul class="footer-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/trades">Trades</a></li>
+        <li><a href="/real-estate">Real Estate</a></li>
+        <li><a href="/capabilities">Capabilities</a></li>
+        <li><a href="/contact">Qurate Now</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>const QUINN_PAGE='contact';</script>
+<div class="quinn-bubble" id="quinn-bubble">
+  <div class="q-proactive" id="q-proactive" onclick="openQuinn()">Need help before you submit? Ask Quinn →</div>
+  <div class="q-panel" id="q-panel">
+    <div class="q-hd"><div class="q-av">Q</div><div><div class="q-nm">Quinn</div><div class="q-st">Online now · Qurated AI</div></div></div>
+    <div class="q-msgs" id="q-msgs"><div class="q-typing" id="q-typing"><span></span><span></span><span></span></div></div>
+    <div class="q-chips hidden" id="q-chips"></div>
+    <div class="q-input-row"><input class="q-input" id="q-input" type="text" placeholder="Or type a message..." autocomplete="off"/><button class="q-send" id="q-send" aria-label="Send">→</button></div>
+  </div>
+  <button class="q-toggle" id="q-toggle" aria-label="Chat with Quinn"><span class="q-toggle-q">Q</span><span class="q-badge"></span></button>
+</div>
+
+<script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script src="main.js"></script>
+<script src="quinn-widget.js"></script>
+</body>
+</html>
