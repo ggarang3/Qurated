@@ -53,14 +53,8 @@ function closeQuinn(){
 
 if(toggle){ toggle.addEventListener('click', () => isOpen ? closeQuinn() : openQuinn()); }
 
-/* ── PROACTIVE BUBBLE ────────────────────────────────────── */
-if(proactive && cfg.proactive){
-  proactive.textContent = cfg.proactive;
-  proactiveTimer = setTimeout(() => {
-    if(!isOpen) proactive.classList.add('visible');
-  }, cfg.delay);
-  proactive.addEventListener('click', () => { proactive.classList.remove('visible'); openQuinn(); });
-}
+/* ── PROACTIVE BUBBLE — disabled ────────────────────────── */
+// Proactive popup removed. Quinn is accessible via the toggle button only.
 
 /* ── MESSAGES ────────────────────────────────────────────── */
 function addMsg(text, who){

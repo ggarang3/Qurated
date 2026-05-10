@@ -1,5 +1,6 @@
-/* ── TOUCH DETECTION ─────────────────────────────────────── */
+/* ── TOUCH DETECTION — runs first, adds class before paint ── */
 const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+if(isTouch) document.body.classList.add('touch');
 
 /* ── CURSOR (desktop only) ───────────────────────────────── */
 const cursor = document.getElementById('cursor');
