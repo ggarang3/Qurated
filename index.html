@@ -3,45 +3,264 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="robots" content="noindex"/>
-<title>Qurated — Growth Systems Agency Perth</title>
+<meta name="robots" content="index, follow"/>
+<title>Lead Generation Agency Perth | Qurated — Growth Systems</title>
+<meta name="description" content="Qurated is Perth's growth systems agency. We build lead generation systems — website, AI automation, CRM, and content — for businesses too busy to chase their own growth."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.quratedagency.com/"/>
+<meta property="og:title" content="Lead Generation Agency Perth | Qurated — Growth Systems"/>
+<meta property="og:description" content="Qurated is Perth's growth systems agency. We build lead generation systems — website, AI automation, CRM, and content — for businesses too busy to chase their own growth."/>
+<meta property="og:image" content="https://www.quratedagency.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Lead Generation Agency Perth | Qurated — Growth Systems"/>
+<meta name="twitter:description" content="Qurated is Perth's growth systems agency. We build lead generation systems — website, AI automation, CRM, and content — for businesses too busy to chase their own growth."/>
+<meta name="twitter:image" content="https://www.quratedagency.com/og-image.png"/>
+<link rel="canonical" href="https://www.quratedagency.com/"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="image" href="logo_long_white.png"/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap"/></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css"/>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":["LocalBusiness","MarketingAgency"],
+  "name":"Qurated",
+  "description":"Perth growth systems agency building lead generation systems for businesses in Perth WA and Adelaide SA.",
+  "url":"https://www.quratedagency.com",
+  "telephone":"+61456847420",
+  "email":"info@quratedagency.com",
+  "logo":"https://www.quratedagency.com/logo_long_white.png",
+  "address":{"@type":"PostalAddress","addressLocality":"Perth","addressRegion":"WA","addressCountry":"AU"},
+  "areaServed":[{"@type":"City","name":"Perth"},{"@type":"City","name":"Adelaide"}],
+  "sameAs":["https://www.instagram.com/quratedagency"]
+}</script>
 </head>
-<body class="cover-page">
+<body>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
 
-<div class="cover-wrap">
-  <div class="cover-grid"></div>
-  <div class="cover-logo-wrap">
-    <img src="logo_long_white.png" alt="Qurated" width="280" height="40"/>
-    <p class="cover-tagline">Growth Systems Agency — Perth, WA</p>
-  </div>
-  <div class="cover-bottom">
-    <div class="cover-line"></div>
-    <a href="home" class="cover-btn">Welcome to Qurated</a>
-  </div>
+<!-- COVER OVERLAY — first visit only, hidden by JS on return visits -->
+<div id="cover-overlay">
+  <img class="cover-logo" src="logo_long_white.png" alt="Qurated"/>
+  <button class="cover-btn" id="enter-btn">Welcome to Qurated</button>
+  <span class="cover-scroll-hint">Perth, WA &nbsp;&middot;&nbsp; Growth Systems Agency</span>
 </div>
 
-<!-- QUINN on cover — minimal, delayed proactive -->
-<script>const QUINN_PAGE='cover';</script>
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="logo_long_white.png" alt="Qurated Agency Perth" width="160" height="22"/></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="real-estate.html">Real Estate</a></li>
+    <li><a href="trades.html">Trades</a></li>
+    <li><a href="capabilities.html">Capabilities</a></li>
+    <li><a href="qurate-now.html" class="nav-cta">Qurate Now &#x2192;</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="about.html">About</a>
+  <a href="real-estate.html">Real Estate</a>
+  <a href="trades.html">Trades</a>
+  <a href="capabilities.html">Capabilities</a>
+  <a href="qurate-now.html" class="m-cta">Qurate Now &#x2192;</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-q">Q</div>
+  <div class="hero-content">
+    <div class="hero-eye">Growth Systems Agency &mdash; Perth, WA</div>
+    <h1 class="hero-hl">We Build<br>The System.<br><span class="r">You Build<br>The Business.</span></h1>
+    <div class="hero-row">
+      <p class="hero-sub">You&rsquo;re already good at what you do. The problem is <strong>your pipeline doesn&rsquo;t reflect it.</strong> Qurated builds the lead generation system &mdash; website, automation, AI, and content &mdash; and runs it for Perth businesses so you stay focused on the work that pays.</p>
+      <div class="hero-acts">
+        <button class="btn btn-red" onclick="openCalendly()">Book a Free Diagnosis &rarr;</button>
+        <a href="#verticals" class="btn btn-ghost">See who we work with</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-txt">Scroll</span></div>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="mq-track">
+  <span class="mq-item">Lead generation Perth</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Marketing for tradies Perth</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Real estate marketing Perth</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">AI enquiry handling</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Automated follow-up</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Website design Perth</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">CRM automation</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Growth systems</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Lead generation Perth</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Marketing for tradies Perth</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Real estate marketing Perth</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">AI enquiry handling</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Automated follow-up</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Website design Perth</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">CRM automation</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Growth systems</span><span class="mq-item mq-dot">&middot;</span>
+</div></div>
+
+<!-- WHO WE WORK WITH -->
+<section id="verticals" class="sec" style="background:var(--s1);">
+  <div class="inner">
+    <div class="reveal">
+      <div class="ew">Who we work with</div>
+      <h2 class="sh" style="margin-bottom:.75rem;">Built for businesses<br>that <span class="r">do the work.</span></h2>
+      <p class="sb" style="margin-bottom:3rem;">We don&rsquo;t work with everyone. We&rsquo;re built for business owners who are specialists in their field and need a partner to build the system that fills their pipeline.</p>
+    </div>
+    <div class="vert-grid reveal">
+      <a href="trades.html" class="vert-card">
+        <div class="vert-card-n">01</div>
+        <div class="vert-label">Trades &amp; Construction</div>
+        <div class="vert-name">Perth &amp; Adelaide Tradies</div>
+        <p class="vert-desc">Plumbers, electricians, builders, and construction operators. High revenue, inconsistent pipeline. We build the system that makes your phone ring &mdash; without you managing it.</p>
+        <div class="vert-link">See what we build for tradies</div>
+      </a>
+      <a href="real-estate.html" class="vert-card">
+        <div class="vert-card-n">02</div>
+        <div class="vert-label">Real Estate</div>
+        <div class="vert-name">Perth Agents &amp; Principals</div>
+        <p class="vert-desc">Solo agents, small teams, and principals who want vendor leads and a personal brand that works for them between deals. Consistent presence. Consistent pipeline.</p>
+        <div class="vert-link">See what we build for agents</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE APPROACH -->
+<section id="approach" class="sec" style="background:var(--black);">
+  <div class="inner">
+    <div class="why-layout">
+      <div>
+        <div class="ew reveal">How we think</div>
+        <h2 class="sh reveal" style="margin-bottom:1rem;">We diagnose before<br>we <span class="r">prescribe.</span></h2>
+        <p class="sb reveal" style="margin-bottom:2.5rem;">Most agencies pitch a package before they&rsquo;ve understood your business. We diagnose first &mdash; where the gaps are, what&rsquo;s costing you, what will actually move the needle &mdash; then we build exactly what&rsquo;s needed.</p>
+        <div class="why-pts reveal">
+          <div class="why-pt">
+            <div class="why-lbl">Our model</div>
+            <div class="why-title">One partner. One system. Everything connected.</div>
+            <p class="why-body">Website, content, CRM, AI, and ads under one roof &mdash; built to talk to each other. No handoffs, no gaps, no brief lost between agencies.</p>
+          </div>
+          <div class="why-pt">
+            <div class="why-lbl">Our edge</div>
+            <div class="why-title">AI embedded from day one.</div>
+            <p class="why-body">Every system we build has automation in its foundation. Leads followed up instantly. Enquiries handled 24/7. The machine works while you sleep.</p>
+          </div>
+          <div class="why-pt">
+            <div class="why-lbl">Our standard</div>
+            <div class="why-title">Results over deliverables. Always.</div>
+            <p class="why-body">We don&rsquo;t count posts or pages. We measure pipeline. Every engagement is built around a business outcome, not an output.</p>
+          </div>
+        </div>
+        <div style="margin-top:2rem;" class="reveal">
+          <a href="about.html" class="btn btn-ghost">About Qurated &rarr;</a>
+        </div>
+      </div>
+      <div class="why-box reveal">
+        <p class="why-quote">A doctor doesn&rsquo;t let the patient choose their own prescription. We diagnose your business, tell you exactly what it needs, and build it &mdash; no guesswork, no generic packages.</p>
+        <div class="wstat"><span class="wstat-lbl">Time to first results</span><span class="wstat-val">30 Days</span></div>
+        <div class="wstat"><span class="wstat-lbl">Marketing managed for you</span><span class="wstat-val">100%</span></div>
+        <div class="wstat"><span class="wstat-lbl">AI built into every system</span><span class="wstat-val">Always</span></div>
+        <div class="wstat"><span class="wstat-lbl">Stress added to your week</span><span class="wstat-val">Zero</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE PROCESS — teaser, full on capabilities -->
+<section id="process" class="sec" style="background:var(--s1);">
+  <div class="inner">
+    <div class="proc-hdr">
+      <div>
+        <div class="ew reveal">How it works</div>
+        <h2 class="sh reveal">Four steps.<br><span class="r">No guesswork.</span></h2>
+      </div>
+      <p class="sb reveal">Every engagement runs the same system. No shortcuts, no strategy decks that live in a Google Drive. <a href="capabilities.html" style="color:var(--red);text-decoration:underline;text-underline-offset:3px;">See full capabilities &rarr;</a></p>
+    </div>
+    <div class="proc-steps">
+      <div class="proc-step reveal"><div class="proc-n">01</div><div class="proc-title">Diagnose</div><p class="proc-desc">We ask questions before we pitch. Only when we understand the problem do we prescribe the solution.</p></div>
+      <div class="proc-step reveal rd1"><div class="proc-n">02</div><div class="proc-title">Prescribe</div><p class="proc-desc">One clear recommendation. Scoped and costed before you commit to anything.</p></div>
+      <div class="proc-step reveal rd2"><div class="proc-n">03</div><div class="proc-title">Build</div><p class="proc-desc">One point of contact. One voice. The complexity stays behind the scenes.</p></div>
+      <div class="proc-step reveal rd3"><div class="proc-n">04</div><div class="proc-title">Compound</div><p class="proc-desc">Monthly optimisation. The system gets sharper every month. Good systems compound.</p></div>
+    </div>
+    <div class="proc-cta reveal">
+      <p class="proc-cta-text">The first step costs nothing. A 30-minute call where we tell you <em>exactly what your business needs</em> &mdash; no obligation.</p>
+      <button class="btn btn-red" onclick="openCalendly()">Book a Free Diagnosis &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-grid"></div>
+  <div class="cta-inner">
+    <div class="cta-eye">Perth &amp; Adelaide</div>
+    <h2 class="cta-hl">Ready to build<br>your system?</h2>
+    <p class="cta-sub">No pitch. No packages. Just a straight conversation about where your business is and what it would take to fix the pipeline.</p>
+    <div class="cta-acts">
+      <button class="btn btn-white" onclick="openCalendly()">Book a Free Diagnosis &rarr;</button>
+      <button class="btn btn-ghost-w" onclick="openQuinn()">Talk to Quinn first</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-logo"><img src="logo_long_white.png" alt="Qurated" width="160" height="20"/></div>
+      <p class="footer-tagline">We build the system. <em>You build the business.</em></p>
+      <p class="footer-desc">Growth systems agency &mdash; Perth, WA &amp; Adelaide, SA. Lead generation, AI automation, and content for businesses too busy to chase their own growth.</p>
+    </div>
+    <div>
+      <div class="footer-col-label">Company</div>
+      <ul class="footer-col-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="capabilities.html">Capabilities</a></li>
+        <li><a href="qurate-now.html">Qurate Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-label">Who We Serve</div>
+      <ul class="footer-col-links">
+        <li><a href="trades.html">Trades &amp; Construction</a></li>
+        <li><a href="real-estate.html">Real Estate Agents</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-label">Contact</div>
+      <ul class="footer-col-links">
+        <li><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></li>
+        <li><a href="tel:0456847420">0456 847 420</a></li>
+        <li><a href="https://instagram.com/quratedagency" target="_blank" rel="noopener">@quratedagency</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2026 Qurated &middot; Perth, WA &middot; Adelaide, SA &middot; <a href="mailto:info@quratedagency.com">info@quratedagency.com</a></p>
+    <p class="footer-copy"><a href="qurate-now.html">Start a conversation &#x2192;</a></p>
+  </div>
+</footer>
 <div class="quinn-bubble" id="quinn-bubble">
-  <div class="q-proactive" id="q-proactive" onclick="openQuinn()">Not sure where to start? Ask Quinn →</div>
+  <div class="q-proactive" id="q-proactive" onclick="openQuinn()">Not sure if we're the right fit? Ask Quinn &#x2192;</div>
   <div class="q-panel" id="q-panel">
-    <div class="q-hd"><div class="q-av">Q</div><div><div class="q-nm">Quinn</div><div class="q-st">Online now · Qurated AI</div></div></div>
+    <div class="q-hd"><div class="q-av">Q</div><div><div class="q-nm">Quinn</div><div class="q-st">Online &middot; Qurated AI</div></div></div>
     <div class="q-msgs" id="q-msgs"><div class="q-typing" id="q-typing"><span></span><span></span><span></span></div></div>
     <div class="q-chips hidden" id="q-chips"></div>
-    <div class="q-input-row"><input class="q-input" id="q-input" type="text" placeholder="Ask me anything..." autocomplete="off"/><button class="q-send" id="q-send" aria-label="Send">→</button></div>
+    <div class="q-input-row"><input class="q-input" id="q-input" type="text" placeholder="Or type a message..." autocomplete="off"/><button class="q-send" id="q-send" aria-label="Send">&#x2192;</button></div>
   </div>
   <button class="q-toggle" id="q-toggle" aria-label="Chat with Quinn"><span class="q-toggle-q">Q</span><span class="q-badge"></span></button>
 </div>
-
-<script src="main.js" defer></script>
-<script src="quinn-widget.js" defer></script>
+<script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script src="main.js"></script>
+<script src="quinn-widget.js"></script>
 </body>
 </html>
