@@ -59,13 +59,21 @@ function toggleFaq(btn){
   if(!open){ ans.classList.add('open'); icon.textContent = '−'; }
 }
 
-/* ── CALENDLY ────────────────────────────────────────────── */
+/* ── CALENDLY (lazy-loaded on demand) ───────────────────── */
 function openCalendly(){
-  if(window.Calendly){
-    Calendly.initPopupWidget({ url: 'https://calendly.com/quratedagency-info/30min' });
-  } else {
-    window.open('https://calendly.com/quratedagency-info/30min', '_blank');
+  const url = 'https://calendly.com/quratedagency-info/30min';
+  if(window.Calendly){ Calendly.initPopupWidget({ url }); return; }
+  if(!document.querySelector('link[href*="calendly"]')){
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(css);
   }
+  const js = document.createElement('script');
+  js.src = 'https://assets.calendly.com/assets/external/widget.js';
+  js.onload = () => Calendly.initPopupWidget({ url });
+  js.onerror = () => window.open(url, '_blank');
+  document.head.appendChild(js);
 }
 
 /* ── EMAIL CAPTURE ───────────────────────────────────────── */

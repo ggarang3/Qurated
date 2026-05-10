@@ -1,0 +1,38 @@
+# Static assets — long cache (1 year), versioned by filename
+/style.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/main.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/quinn-widget.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/logo_long_white.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages — always revalidate so deploys propagate instantly
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Sitemap
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

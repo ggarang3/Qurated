@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="image" href="logo_long_white.png"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap"/></noscript>
 <link rel="stylesheet" href="style.css"/>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
@@ -166,7 +166,7 @@
       <div class="reveal rd1">
         <p class="sb" style="max-width:100%;margin-bottom:2rem;">Qurated was founded by someone who came up through sales and business development — not a design school. We know what a pipeline looks like when it's working, and we know what it costs when it's not. That context shapes everything we build.</p>
         <p class="sb" style="max-width:100%;margin-bottom:2rem;">We're based in Perth. We work with Perth businesses. We understand the pace, the market, and the mentality of operators who are too busy doing great work to chase their own leads.</p>
-        <p class="sb" style="max-width:100%;">Every team member at Qurated is a specialist who runs deep — capable across design, copy, code, and strategy, with an AI-first mindset baked in. <strong>Nothing gets outsourced and forgotten.</strong></p>
+        <p class="sb" style="max-width:100%;">Every team member at Qurated is a generalist who runs deep — capable across design, copy, code, and strategy, with an AI-first mindset baked in. <strong>Nothing gets outsourced and forgotten.</strong></p>
         <div style="margin-top:2rem;">
           <a href="/contact" class="btn btn-red">Start a conversation →</a>
         </div>
@@ -219,8 +219,8 @@
   <button class="q-toggle" id="q-toggle" aria-label="Chat with Quinn"><span class="q-toggle-q">Q</span><span class="q-badge"></span></button>
 </div>
 
-<script async src="https://assets.calendly.com/assets/external/widget.js"></script>
-<script src="main.js"></script>
-<script src="quinn-widget.js"></script>
+
+<script src="main.js" defer></script>
+<script src="quinn-widget.js" defer></script>
 </body>
 </html>

@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="image" href="logo_long_white.png"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap"/></noscript>
 <link rel="stylesheet" href="style.css"/>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
@@ -183,8 +183,8 @@
   <button class="q-toggle" id="q-toggle" aria-label="Chat with Quinn"><span class="q-toggle-q">Q</span><span class="q-badge"></span></button>
 </div>
 
-<script async src="https://assets.calendly.com/assets/external/widget.js"></script>
-<script src="main.js"></script>
-<script src="quinn-widget.js"></script>
+
+<script src="main.js" defer></script>
+<script src="quinn-widget.js" defer></script>
 </body>
 </html>
