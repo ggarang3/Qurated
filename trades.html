@@ -4,291 +4,284 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="robots" content="index, follow"/>
-<title>Marketing &amp; Lead Generation for Tradies Perth | Qurated</title>
-<meta name="description" content="Qurated builds lead generation systems for Perth and Adelaide tradies. Stop relying on word of mouth. Get consistent inbound jobs with a website, AI follow-up, and content managed for you."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://www.quratedagency.com/trades"/>
-<meta property="og:title" content="Marketing &amp; Lead Generation for Tradies Perth | Qurated"/>
-<meta property="og:description" content="Qurated builds lead generation systems for Perth and Adelaide tradies. Stop relying on word of mouth. Get consistent inbound jobs with a website, AI follow-up, and content managed for you."/>
+<title>Lead Generation for Perth Tradies | Qurated</title>
+<meta name="description" content="Perth's best tradies do excellent work with quiet phones. Qurated builds the lead generation system — website, AI follow-up, and content — so your pipeline reflects your quality."/>
+<meta property="og:title" content="Lead Generation for Perth Tradies | Qurated"/>
+<meta property="og:description" content="Stop chasing jobs. Let the system do it."/>
 <meta property="og:image" content="https://www.quratedagency.com/og-image.png"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Marketing &amp; Lead Generation for Tradies Perth | Qurated"/>
-<meta name="twitter:description" content="Qurated builds lead generation systems for Perth and Adelaide tradies. Stop relying on word of mouth. Get consistent inbound jobs with a website, AI follow-up, and content managed for you."/>
 <link rel="canonical" href="https://www.quratedagency.com/trades"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="image" href="logo_long_white.png"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" onload="this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap"/></noscript>
 <link rel="stylesheet" href="style.css"/>
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Service","serviceType":"Lead Generation for Trades and Construction","provider":{{"@type":"LocalBusiness","name":"Qurated","url":"https://www.quratedagency.com"}},"areaServed":[{{"@type":"City","name":"Perth"}},{{"@type":"City","name":"Adelaide"}}],"description":"Lead generation and digital marketing systems for tradies, builders, plumbers, and electricians in Perth WA and Adelaide SA."}}</script>
+
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"Service",
+  "name":"Lead Generation for Perth Tradespeople",
+  "provider":{"@type":"LocalBusiness","name":"Qurated","url":"https://www.quratedagency.com"},
+  "description":"Lead generation systems for Perth trade and construction businesses — website, AI automation, CRM, and content.",
+  "areaServed":{"@type":"City","name":"Perth"}
+}</script>
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
+
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="logo_long_white.png" alt="Qurated Agency Perth" width="160" height="22"/></a>
+  <a href="/home" class="nav-logo"><img src="logo_long_white.png" alt="Qurated" width="200" height="28"/></a>
   <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="real-estate.html">Real Estate</a></li>
-    <li><a href="trades.html">Trades</a></li>
-    <li><a href="capabilities.html">Capabilities</a></li>
-    <li><a href="qurate-now.html" class="nav-cta">Qurate Now &#x2192;</a></li>
+    <li><a href="/home">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/trades" class="active">Trades</a></li>
+    <li><a href="/real-estate">Real Estate</a></li>
+    <li><a href="/capabilities">Capabilities</a></li>
+    <li><a href="/contact" class="nav-cta">Qurate Now</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="about.html">About</a>
-  <a href="real-estate.html">Real Estate</a>
-  <a href="trades.html">Trades</a>
-  <a href="capabilities.html">Capabilities</a>
-  <a href="qurate-now.html" class="m-cta">Qurate Now &#x2192;</a>
+  <a href="/home" onclick="closeMobile()">Home</a>
+  <a href="/about" onclick="closeMobile()">About</a>
+  <a href="/trades" onclick="closeMobile()">Trades</a>
+  <a href="/real-estate" onclick="closeMobile()">Real Estate</a>
+  <a href="/capabilities" onclick="closeMobile()">Capabilities</a>
+  <a href="/contact" class="m-cta" onclick="closeMobile()">Qurate Now →</a>
 </div>
 
-<div class="vhero">
+<!-- HERO -->
+<section class="vhero">
   <div class="hero-grid"></div>
   <div class="vhero-content">
-    <div class="crumb"><a href="index.html">Home</a> <span class="crumb-sep">/</span> Trades &amp; Construction</div>
-    <div class="vhero-eye">Trades &amp; Construction &mdash; Perth &amp; Adelaide</div>
-    <h1 class="vhero-hl">Your next job is<br>searching for you.<br><span class="r">Can they find you?</span></h1>
+    <div class="vhero-crumb"><a href="/home">Home</a> / Trades</div>
+    <div class="vhero-eye">For Trades & Construction</div>
+    <h1 class="vhero-hl">Perth Tradies<br>Deserve a Pipeline<br><span class="r">That Reflects<br>Their Work.</span></h1>
     <div class="vhero-row">
-      <p class="vhero-sub">You do great work. Your clients know it. The problem is <strong>the homeowner on Google at 8pm doesn&rsquo;t</strong> &mdash; and by morning they&rsquo;ve called someone else. Qurated builds the system that puts you in front of them and follows up before you&rsquo;ve seen the notification.</p>
+      <p class="vhero-sub">You do excellent work. Your phone shouldn't be quiet. <strong>Qurated builds the system that makes sure it never is.</strong></p>
       <div class="vhero-acts">
-        <button class="btn btn-red" onclick="openCalendly()">Book a Free Diagnosis &rarr;</button>
-        <a href="#problem" class="btn btn-ghost">See the problem</a>
+        <a href="/contact" class="btn btn-red">Get a Free Diagnosis →</a>
+        <button class="btn btn-ghost-w" onclick="openQuinn()">Talk to Quinn</button>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <div class="mq" aria-hidden="true"><div class="mq-track">
-  <span class="mq-item">Lead generation Perth</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Marketing for tradies Perth</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Real estate marketing Perth</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">AI enquiry handling</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Automated follow-up</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Website design Perth</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">CRM automation</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Growth systems</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Lead generation Perth</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Marketing for tradies Perth</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Real estate marketing Perth</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">AI enquiry handling</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Automated follow-up</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Website design Perth</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">CRM automation</span><span class="mq-item mq-dot">&middot;</span>
-  <span class="mq-item">Growth systems</span><span class="mq-item mq-dot">&middot;</span>
+  <span class="mq-item">Electricians</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Plumbers</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Builders</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Landscapers</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Roofers</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Tilers</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Concreters</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Painters</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">HVAC</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Shopfitters</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Electricians</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Plumbers</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Builders</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Landscapers</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Roofers</span><span class="mq-item mq-dot">·</span>
+  <span class="mq-item">Tilers</span><span class="mq-item mq-dot">·</span>
 </div></div>
 
-<section id="problem" class="sec" style="background:var(--s1);">
+<!-- PAIN POINTS -->
+<section class="prob-sec sec">
   <div class="inner">
     <div class="prob-headline-wrap reveal">
       <div class="ew">Sound familiar?</div>
-      <h2 class="prob-headline">Great tradespeople losing work to<br><span class="r">average ones with better marketing.</span></h2>
+      <h2 class="prob-headline">The tradie problem isn't the trade.<br>It's the pipeline.</h2>
     </div>
     <div class="prob-layout">
-      <div class="prob-list reveal">
-        <div class="prob-item">
-          <div class="p-n">01</div>
-          <div class="p-t">
-            <strong>The phone goes quiet between word-of-mouth runs</strong>
-            <p>Referrals are your best leads &mdash; but they&rsquo;re unpredictable. When the phone goes quiet, you&rsquo;re either scrambling for work or burning through slow weeks. A system that generates inbound jobs independently of who you know is the difference between a trade business and a lifestyle trap.</p>
-          </div>
-        </div>
-        <div class="prob-item">
-          <div class="p-n">02</div>
-          <div class="p-t">
-            <strong>Enquiries come in after hours and go cold by morning</strong>
-            <p>A homeowner needs a plumber Wednesday night. They message three tradespeople. You see it Thursday morning. They&rsquo;ve already booked the one who responded at 8:12pm. Speed of response is the job. You&rsquo;re losing work you never knew existed.</p>
-          </div>
-        </div>
-        <div class="prob-item">
-          <div class="p-n">03</div>
-          <div class="p-t">
-            <strong>Your online presence doesn&rsquo;t match the quality of your work</strong>
-            <p>Your craftsmanship is premium. Your website looks like you built it yourself in an afternoon. Potential clients Google you after a referral &mdash; and what they see doesn&rsquo;t match what they&rsquo;ve been told. That gap costs you conversions every week.</p>
-          </div>
-        </div>
-        <div class="prob-item">
-          <div class="p-n">04</div>
-          <div class="p-t">
-            <strong>You&rsquo;re running a trade business, not a marketing department</strong>
-            <p>You&rsquo;re quoting jobs, managing crews, ordering materials, and doing the actual work. Marketing is the last thing you have time for &mdash; but it&rsquo;s the first thing that fills your pipeline. Something has to give. It&rsquo;s always the marketing.</p>
-          </div>
-        </div>
+      <div class="prob-list reveal rd1">
+        <div class="prob-item"><div class="p-n">01</div><div class="p-t"><strong>Quiet periods hit without warning</strong><p>One week you're booked out three weeks ahead. The next you're chasing quotes that haven't come back. The inconsistency isn't bad luck — it's the absence of a system.</p></div></div>
+        <div class="prob-item"><div class="p-n">02</div><div class="p-t"><strong>You rely on word of mouth and hope</strong><p>Referrals built the business — but you can't scale on them alone. A system that generates inbound enquiries regardless of who you know is the difference between controlled growth and hoping the phone rings.</p></div></div>
+        <div class="prob-item"><div class="p-n">03</div><div class="p-t"><strong>Enquiries fall through the cracks on site</strong><p>A job inquiry hits your phone while you're under a roof or in a switchboard. By the time you call back — they've moved on. An automated follow-up system means no lead ever goes cold.</p></div></div>
+        <div class="prob-item"><div class="p-n">04</div><div class="p-t"><strong>Your online presence doesn't match your standard</strong><p>You take pride in your work — but your website and socials look like you started them five years ago and gave up. Better operators are winning jobs simply because they look more professional online.</p></div></div>
       </div>
-      <div class="prob-aside reveal">
-        <p class="prob-statement">The tradies with consistent inbound work aren&rsquo;t <em>better at their trade than you.</em> They just have a system that keeps them visible to the right people at the right moment.</p>
+      <div class="prob-aside reveal rd2">
+        <p class="prob-statement">The tradies winning the most consistent work aren't <em>better at the trade.</em> They're better at the system that keeps their phone ringing.</p>
         <div class="prob-stats">
-          <div class="pstat"><span class="pstat-lbl">Avg response time needed</span><span class="pstat-val">&lt; 5 min</span></div>
-          <div class="pstat"><span class="pstat-lbl">After-hours enquiries</span><span class="pstat-val">40%+</span></div>
-          <div class="pstat"><span class="pstat-lbl">Jobs you quote per system</span><span class="pstat-val">More</span></div>
-          <div class="pstat"><span class="pstat-lbl">Time managing marketing</span><span class="pstat-val">Zero</span></div>
+          <div class="pstat"><span class="pstat-lbl">Average lead response delay</span><span class="pstat-val">4+ hrs</span></div>
+          <div class="pstat"><span class="pstat-lbl">Jobs lost to slow follow-up</span><span class="pstat-val">High</span></div>
+          <div class="pstat"><span class="pstat-lbl">Time to new system live</span><span class="pstat-val">30 Days</span></div>
+          <div class="pstat"><span class="pstat-lbl">Work added to you</span><span class="pstat-val">Zero</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<section class="sec" style="background:var(--black);">
+<!-- WHAT WE BUILD FOR TRADIES -->
+<section class="svc-sec sec">
   <div class="inner">
-    <div class="svc-hdr">
+    <div class="svc-hdr reveal">
       <div>
-        <div class="ew reveal">What we build for tradies</div>
-        <h2 class="sh reveal">The system that<br><span class="r">fills your calendar.</span></h2>
+        <div class="ew">What we build for trades</div>
+        <h2 class="sh">A system built<br>for how tradies<br>actually work.</h2>
       </div>
-      <p class="sb reveal">Built specifically for trade businesses. Not a generic digital package &mdash; a lead generation system built around how tradies actually get and convert work.</p>
+      <p class="sb">You're on site, not behind a desk. Every system we build for trade businesses accounts for that — automated where it needs to be, professional where it matters, and zero extra work for you.</p>
     </div>
     <div class="svc-grid">
       <div class="svc-card reveal">
-        <div class="svc-n">01</div>
-        <div class="svc-tag">The Foundation</div>
-        <div class="svc-name">Trade Website &amp; AI Follow-Up</div>
-        <p class="svc-desc">A trade website built to convert enquiries &mdash; not just look professional. With AI chat that responds to after-hours leads before your competitors check their phones.</p>
+        <div class="svc-tag">Foundation</div>
+        <div class="svc-name">A Website That Quotes for You</div>
+        <p class="svc-desc">Your website isn't a brochure — it's your best salesperson. We build it to convert visitors into booked jobs, with a clear value proposition, service pages built for local SEO, and lead capture that works 24/7.</p>
         <ul class="svc-list">
-          <li>High-converting trade website</li>
-          <li>AI chatbot &mdash; responds to enquiries 24/7</li>
-          <li>CRM &amp; job pipeline setup</li>
-          <li>Suburb-level local SEO</li>
+          <li>Trade-specific design & copywriting</li>
+          <li>Service pages optimised for Perth searches</li>
           <li>Google Business Profile optimisation</li>
-          <li>Review generation system</li>
+          <li>Quote request funnels</li>
+          <li>Mobile-first (your clients search on phones)</li>
         </ul>
       </div>
       <div class="svc-card reveal rd1">
-        <div class="svc-n">02</div>
-        <div class="svc-tag">The Authority</div>
-        <div class="svc-name">Content &amp; Local Visibility</div>
-        <p class="svc-desc">Job photos, before/afters, client testimonials, and suburb-specific content that makes you the obvious choice when someone Googles your trade in your area. Managed monthly, without you chasing it.</p>
+        <div class="svc-tag">AI Layer</div>
+        <div class="svc-name">Instant Follow-Up. Zero Effort.</div>
+        <p class="svc-desc">When a lead comes in at 7pm, Quinn — your AI assistant — responds immediately, qualifies the enquiry, and books a callback. By the time you're off the tools, the lead is warm and scheduled.</p>
         <ul class="svc-list">
-          <li>Monthly content strategy</li>
-          <li>Social media management</li>
-          <li>Job photo content &amp; reels</li>
-          <li>Google &amp; Meta ads</li>
-          <li>Suburb-specific landing pages</li>
-          <li>Google review follow-up automation</li>
+          <li>AI chatbot trained on your services & pricing</li>
+          <li>Instant lead qualification</li>
+          <li>Automated SMS & email follow-up</li>
+          <li>CRM integration — every lead tracked</li>
+          <li>Never miss a job enquiry again</li>
         </ul>
       </div>
       <div class="svc-card reveal rd2">
-        <div class="svc-n">03</div>
-        <div class="svc-tag">The Full System</div>
-        <div class="svc-name">Full Tradie Growth System</div>
-        <p class="svc-desc">Everything running as one machine. Leads come in, get followed up automatically by AI, and land in your calendar. Your job is to do the work &mdash; the system finds you the next one.</p>
+        <div class="svc-tag">Authority</div>
+        <div class="svc-name">Content That Shows the Work</div>
+        <p class="svc-desc">Before and afters. Finished jobs. Testimonials. Content that proves your standard without you having to create it. We handle the strategy, creation, and publishing every month.</p>
         <ul class="svc-list">
-          <li>Website + AI + Content combined</li>
-          <li>Automated enquiry follow-up</li>
-          <li>Lead nurture sequences</li>
-          <li>Monthly performance reporting</li>
-          <li>Ongoing strategy &amp; optimisation</li>
-          <li>Priority access &amp; dedicated support</li>
+          <li>Monthly content calendar</li>
+          <li>Job photos + reels strategy</li>
+          <li>Social media management</li>
+          <li>Google review strategy</li>
+          <li>Meta ads (budget additional)</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
+<!-- OUTCOMES -->
 <section class="sec" style="background:var(--s1);">
   <div class="inner">
-    <div class="why-layout">
+    <div class="svc-hdr reveal">
       <div>
-        <div class="ew reveal">Why tradies choose us</div>
-        <h2 class="sh reveal" style="margin-bottom:1rem;">We understand<br>how trades<br><span class="r">businesses work.</span></h2>
-        <p class="sb reveal" style="margin-bottom:2.5rem;">We don&rsquo;t come from an agency that&rsquo;s never spoken to a tradie. We understand the feast-or-famine cycle, the after-hours enquiries, and what it actually takes to fill a pipeline in a trade that runs on trust and local reputation.</p>
-        <div class="why-pts reveal">
-          <div class="why-pt">
-            <div class="why-lbl">Local knowledge</div>
-            <div class="why-title">Perth suburbs. Adelaide suburbs. Your area.</div>
-            <p class="why-body">We target suburb-level search terms &mdash; not generic state-wide keywords. When someone in Joondalup searches for a plumber, we want you showing up, not a competitor from across town.</p>
-          </div>
-          <div class="why-pt">
-            <div class="why-lbl">Built around your workflow</div>
-            <div class="why-title">The system fits around you, not the other way.</div>
-            <p class="why-body">You review content once a month. Everything else runs automatically. No weekly check-ins, no approvals process, no additional admin. We built it this way deliberately.</p>
-          </div>
-          <div class="why-pt">
-            <div class="why-lbl">Priced on outcomes</div>
-            <div class="why-title">We don&rsquo;t charge for posts. We charge for pipeline.</div>
-            <p class="why-body">If the system isn&rsquo;t generating consistent work, the conversation about what to fix happens immediately. We don&rsquo;t keep sending invoices for things that aren&rsquo;t working.</p>
-          </div>
-        </div>
+        <div class="ew">What changes</div>
+        <h2 class="sh">What your business<br>looks like with<br>the system running.</h2>
       </div>
-      <div class="why-box reveal">
-        <p class="why-quote">The tradies who are fully booked weeks in advance aren&rsquo;t better tradespeople. They&rsquo;re the ones who solved the &ldquo;how do I get found&rdquo; problem first &mdash; and now it runs on autopilot.</p>
-        <div class="wstat"><span class="wstat-lbl">System live</span><span class="wstat-val">30 Days</span></div>
-        <div class="wstat"><span class="wstat-lbl">After-hours enquiries handled</span><span class="wstat-val">Automatically</span></div>
-        <div class="wstat"><span class="wstat-lbl">Content managed by you</span><span class="wstat-val">Zero</span></div>
-        <div class="wstat"><span class="wstat-lbl">Markets</span><span class="wstat-val">Perth &amp; Adelaide</span></div>
+      <p class="sb">This isn't about looking good online. It's about having a pipeline that's <strong>predictable, consistent, and working while you're working.</strong></p>
+    </div>
+    <div class="outcome-grid">
+      <div class="outcome-card reveal">
+        <div class="outcome-icon">01</div>
+        <div class="outcome-title">Inbound enquiries — not chased quotes</div>
+        <p class="outcome-body">Businesses move from chasing quotes to receiving qualified inbound enquiries. The system brings the jobs to you.</p>
+      </div>
+      <div class="outcome-card reveal rd1">
+        <div class="outcome-icon">02</div>
+        <div class="outcome-title">No lead ever goes cold again</div>
+        <p class="outcome-body">Every enquiry — day or night, on site or off — is followed up within minutes. Automated, personalised, professional.</p>
+      </div>
+      <div class="outcome-card reveal rd2">
+        <div class="outcome-icon">03</div>
+        <div class="outcome-title">A brand that matches your standard</div>
+        <p class="outcome-body">Your online presence will reflect the quality of your work. Prospects will know you're worth the call before they make it.</p>
+      </div>
+      <div class="outcome-card reveal rd3">
+        <div class="outcome-icon">04</div>
+        <div class="outcome-title">A pipeline you can plan around</div>
+        <p class="outcome-body">Consistent inbound means consistent revenue. You can quote, plan, and hire with confidence — not hope.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TRUST BAND -->
+<div class="trust-band">
+  <div class="trust-inner">
+    <div class="trust-stat"><span class="trust-num">30</span><span class="trust-lbl">Days to<br>system live</span></div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat"><span class="trust-num">0</span><span class="trust-lbl">Extra work<br>for you</span></div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat"><span class="trust-num">24/7</span><span class="trust-lbl">Lead follow-up<br>automated</span></div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat"><span class="trust-num">100%</span><span class="trust-lbl">Content managed<br>by us</span></div>
+  </div>
+</div>
+
+<!-- PROCESS FOR TRADIES -->
+<section class="proc-sec sec">
+  <div class="inner">
+    <div class="proc-hdr reveal">
+      <div>
+        <div class="ew">How it works</div>
+        <h2 class="sh">From diagnosis<br>to running system<br>in 30 days.</h2>
+      </div>
+      <p class="sb">We build fast because we've built this before. Your business doesn't change — the system wraps around it.</p>
+    </div>
+    <div class="proc-steps">
+      <div class="proc-step reveal"><div class="proc-n">01</div><div class="proc-title">Diagnose</div><p class="proc-desc">30-minute call. We map your current pipeline, understand what's working and what's not, and tell you exactly what the system should look like for your trade and area.</p></div>
+      <div class="proc-step reveal rd1"><div class="proc-n">02</div><div class="proc-title">Prescribe</div><p class="proc-desc">One clear recommendation — which package, what it includes, what it should deliver in 30, 60, and 90 days. No jargon, no surprises.</p></div>
+      <div class="proc-step reveal rd2"><div class="proc-n">03</div><div class="proc-title">Build</div><p class="proc-desc">We handle everything. Website, AI setup, content strategy, CRM, social. You're asked for your input on the things only you can answer — nothing more.</p></div>
+      <div class="proc-step reveal rd3"><div class="proc-n">04</div><div class="proc-title">Compound</div><p class="proc-desc">Monthly reviews. Optimising what's working, cutting what's not. The system gets sharper every month. You stay focused on the trade.</p></div>
+    </div>
+    <div class="proc-cta reveal">
+      <p class="proc-cta-text">The diagnosis call is free. Thirty minutes and you'll know exactly <em>what your pipeline needs</em> — whether you work with us or not.</p>
+      <a href="/contact" class="btn btn-red">Book Your Free Diagnosis →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
 <section class="cta-band">
   <div class="cta-grid"></div>
   <div class="cta-inner">
-    <div class="cta-eye">Perth tradies &amp; Adelaide tradies</div>
-    <h2 class="cta-hl">Stop waiting for<br>the phone to ring.<br><span style="opacity:.75;font-size:.85em;">Build the system that makes it.</span></h2>
-    <p class="cta-sub">Free 30-minute call. We&rsquo;ll tell you exactly what&rsquo;s stopping consistent inbound work and what we&rsquo;d build to fix it.</p>
+    <div class="cta-eye">Perth trades</div>
+    <h2 class="cta-hl">Stop chasing jobs.<br>Let the system<br>bring them to you.</h2>
+    <p class="cta-sub">Book a free 30-minute diagnosis call. We'll tell you exactly what your business needs — and build it if you want us to.</p>
     <div class="cta-acts">
-      <button class="btn btn-white" onclick="openCalendly()">Book a Free Diagnosis &rarr;</button>
-      <button class="btn btn-ghost-w" onclick="openQuinn()">Talk to Quinn first</button>
+      <a href="/contact" class="btn btn-white">Get a Free Diagnosis →</a>
+      <button class="btn btn-ghost-w" onclick="openQuinn()">Ask Quinn about your trade</button>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-brand-logo"><img src="logo_long_white.png" alt="Qurated" width="160" height="20"/></div>
-      <p class="footer-tagline">We build the system. <em>You build the business.</em></p>
-      <p class="footer-desc">Growth systems agency &mdash; Perth, WA &amp; Adelaide, SA. Lead generation, AI automation, and content for businesses too busy to chase their own growth.</p>
-    </div>
+  <div class="footer-inner">
+    <a href="/home" class="footer-logo"><img src="logo_long_white.png" alt="Qurated" width="180" height="24"/></a>
+    <p class="footer-tag">We build the system. <em>You build the business.</em></p>
     <div>
-      <div class="footer-col-label">Company</div>
-      <ul class="footer-col-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="capabilities.html">Capabilities</a></li>
-        <li><a href="qurate-now.html">Qurate Now</a></li>
+      <p class="footer-copy">© 2026 Qurated · Perth, WA · <a href="mailto:info@quratedagency.com">info@quratedagency.com</a></p>
+      <ul class="footer-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/trades">Trades</a></li>
+        <li><a href="/real-estate">Real Estate</a></li>
+        <li><a href="/capabilities">Capabilities</a></li>
+        <li><a href="/contact">Qurate Now</a></li>
       </ul>
     </div>
-    <div>
-      <div class="footer-col-label">Who We Serve</div>
-      <ul class="footer-col-links">
-        <li><a href="trades.html">Trades &amp; Construction</a></li>
-        <li><a href="real-estate.html">Real Estate Agents</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-label">Contact</div>
-      <ul class="footer-col-links">
-        <li><a href="mailto:info@quratedagency.com">info@quratedagency.com</a></li>
-        <li><a href="tel:0456847420">0456 847 420</a></li>
-        <li><a href="https://instagram.com/quratedagency" target="_blank" rel="noopener">@quratedagency</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">&copy; 2026 Qurated &middot; Perth, WA &middot; Adelaide, SA &middot; <a href="mailto:info@quratedagency.com">info@quratedagency.com</a></p>
-    <p class="footer-copy"><a href="qurate-now.html">Start a conversation &#x2192;</a></p>
   </div>
 </footer>
+
+<script>const QUINN_PAGE='trades';</script>
 <div class="quinn-bubble" id="quinn-bubble">
-  <div class="q-proactive" id="q-proactive" onclick="openQuinn()">Not sure if we're the right fit? Ask Quinn &#x2192;</div>
+  <div class="q-proactive" id="q-proactive" onclick="openQuinn()">What's your biggest challenge right now? →</div>
   <div class="q-panel" id="q-panel">
-    <div class="q-hd"><div class="q-av">Q</div><div><div class="q-nm">Quinn</div><div class="q-st">Online &middot; Qurated AI</div></div></div>
+    <div class="q-hd"><div class="q-av">Q</div><div><div class="q-nm">Quinn</div><div class="q-st">Online now · Qurated AI</div></div></div>
     <div class="q-msgs" id="q-msgs"><div class="q-typing" id="q-typing"><span></span><span></span><span></span></div></div>
     <div class="q-chips hidden" id="q-chips"></div>
-    <div class="q-input-row"><input class="q-input" id="q-input" type="text" placeholder="Or type a message..." autocomplete="off"/><button class="q-send" id="q-send" aria-label="Send">&#x2192;</button></div>
+    <div class="q-input-row"><input class="q-input" id="q-input" type="text" placeholder="Or type a message..." autocomplete="off"/><button class="q-send" id="q-send" aria-label="Send">→</button></div>
   </div>
   <button class="q-toggle" id="q-toggle" aria-label="Chat with Quinn"><span class="q-toggle-q">Q</span><span class="q-badge"></span></button>
 </div>
-<script async src="https://assets.calendly.com/assets/external/widget.js"></script>
-<script src="main.js"></script>
-<script src="quinn-widget.js"></script>
+
+
+<script src="main.js" defer></script>
+<script src="quinn-widget.js" defer></script>
 </body>
 </html>
