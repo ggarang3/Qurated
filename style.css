@@ -489,3 +489,15 @@ body.touch .mobile-menu a{padding:.5rem 0;min-height:56px;display:flex;align-ite
 @media(max-width:900px){.founder-layout{grid-template-columns:1fr;gap:2.5rem;}.founder-card{flex-direction:row;text-align:left;align-items:center;gap:1.5rem;}}
 @media(max-width:768px){.budget-opts{grid-template-columns:1fr 1fr;}.founder-card{flex-direction:column;text-align:center;}}
 @media(max-width:480px){.budget-opts{grid-template-columns:1fr;}}
+
+/* ── POOL / MODEL SECTION ────────────────────────────────── */
+.pool-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--w08);}
+.pool-card{background:var(--s2);padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:.6rem;transition:background .2s;}
+.pool-card:hover{background:var(--s3);}
+.pool-icon{font-family:var(--fc);font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);}
+.pool-title{font-family:var(--fd);font-size:1.3rem;letter-spacing:.03em;color:var(--w100);}
+.pool-body{font-size:var(--t-sm);color:var(--w40);line-height:1.7;}
+.pool-statement{margin-top:3rem;padding:2rem 2.5rem;border-left:2px solid var(--red);background:var(--s2);}
+.pool-statement p{font-family:var(--fc);font-size:1.05rem;font-weight:400;letter-spacing:.02em;color:var(--w60);line-height:1.7;}
+.pool-statement strong{color:var(--w100);font-weight:600;}
+@media(max-width:768px){.pool-grid{grid-template-columns:1fr;}}
