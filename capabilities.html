@@ -184,7 +184,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Do you work with businesses outside of Perth?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Yes — Adelaide is our second city, and we work with businesses across Australia. Our systems are built for local markets, so wherever you operate, the approach is calibrated for your area — not just applied generically.</p></div>
+        <div class="faq-a"><p>Perth is our home market and where our knowledge runs deepest — that's not changing. We do work with select businesses across Australia where the fit is strong and we can genuinely deliver the same standard. If you're outside Perth, reach out and we'll be straight with you about whether it makes sense.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Can I start with one package and add more later?<span class="faq-icon">+</span></button>
@@ -209,6 +209,78 @@
     </div>
   </div>
 </section>
+
+<!-- BUDGET SELECTOR -->
+<section class="sec" style="background:var(--s1);">
+  <div class="inner">
+    <div class="reveal">
+      <div class="ew">Find your fit</div>
+      <h2 class="sh">What's your monthly<br>marketing budget?</h2>
+      <p class="sb" style="margin-top:1rem;">No commitment — just helps us point you toward the right starting point.</p>
+    </div>
+    <div class="budget-opts reveal">
+      <button class="budget-opt" onclick="selectBudget(this,'foundation')">
+        <span class="bo-range">Under $1,500</span>
+        <span class="bo-label">per month</span>
+      </button>
+      <button class="budget-opt" onclick="selectBudget(this,'authority')">
+        <span class="bo-range">$1,500 – $3,000</span>
+        <span class="bo-label">per month</span>
+      </button>
+      <button class="budget-opt" onclick="selectBudget(this,'engine')">
+        <span class="bo-range">$3,000 – $5,000</span>
+        <span class="bo-label">per month</span>
+      </button>
+      <button class="budget-opt" onclick="selectBudget(this,'engine-plus')">
+        <span class="bo-range">$5,000+</span>
+        <span class="bo-label">per month</span>
+      </button>
+    </div>
+    <div class="budget-result hidden" id="budget-result">
+      <div class="br-inner" id="budget-result-inner"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+const budgetData = {
+  foundation: {
+    badge: 'Recommended — The Foundation',
+    name: 'Web & AI Systems',
+    copy: 'A strong starting point. We build you a high-converting website with AI lead qualification and CRM automation — so every enquiry gets followed up, even while you sleep.',
+    cta: 'Start with Foundation →'
+  },
+  authority: {
+    badge: 'Recommended — The Authority',
+    name: 'Content & Social',
+    copy: 'Your budget works well for consistent content and social management. Strategy, creative, and publishing handled monthly — you approve, we run it.',
+    cta: 'Start with Authority →'
+  },
+  engine: {
+    badge: 'Recommended — The Full Engine',
+    name: 'Growth Systems',
+    copy: "You're in the right range to run the complete system — web, AI, content, and CRM compounding as one. This is where real momentum builds.",
+    cta: 'Start with Full Engine →'
+  },
+  'engine-plus': {
+    badge: 'Recommended — The Full Engine',
+    name: 'Growth Systems + Custom',
+    copy: "At this level we run the Full Engine and layer in custom integrations, dedicated support, and a growth stack built specifically around your business.",
+    cta: 'Book Your Diagnosis →'
+  }
+};
+function selectBudget(btn, key) {
+  document.querySelectorAll('.budget-opt').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const d = budgetData[key];
+  document.getElementById('budget-result-inner').innerHTML =
+    `<div class="br-badge">${d.badge}</div>
+     <div class="br-name">${d.name}</div>
+     <p class="br-copy">${d.copy}</p>
+     <a href="/contact" class="btn btn-red">${d.cta}</a>`;
+  document.getElementById('budget-result').classList.remove('hidden');
+}
+</script>
 
 <!-- CTA BAND -->
 <section class="cta-band">
