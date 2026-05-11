@@ -1,6 +1,10 @@
 # Redirect non-www to www
 http://quratedagency.com/* https://www.quratedagency.com/:splat 301!
 
+# /home redirects to root — one canonical home URL
+/home  /  301
+
 # Clean URLs — serve .html files without extension
-/trades        /trades.html       200
-/real-estate   /real-estate.html  200
+/trades        /trades.html        200
+/real-estate   /real-estate.html   200
+/allied-health /allied-health.html 200
