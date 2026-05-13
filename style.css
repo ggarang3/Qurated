@@ -288,3 +288,16 @@ footer{background:var(--black);border-top:1px solid var(--w08);padding:2.25rem 3
   .footer-copy,.footer-links{text-align:center;justify-content:center;}
   .q-panel{width:calc(100vw - 3rem);max-width:340px;}
 }
+
+/* ── HOW-LIST (trades page plain-language section) ──────── */
+.how-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;border:0.5px solid var(--w08);}
+.how-item{display:grid;grid-template-columns:56px 1fr;gap:0;padding:2rem 2rem;border-bottom:0.5px solid var(--w08);transition:background .2s;}
+.how-item:last-child{border-bottom:none;}
+.how-item:hover{background:var(--s2);}
+.how-n{font-family:var(--fc);font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);padding-top:.2rem;}
+.how-content{display:flex;flex-direction:column;gap:.6rem;}
+.how-title{font-family:var(--fd);font-size:1.55rem;letter-spacing:.03em;color:var(--w100);line-height:1.1;}
+.how-body{font-size:var(--t-body);color:var(--w40);line-height:1.8;max-width:580px;}
+.how-callout{margin-top:2rem;padding:2rem 2.5rem;background:var(--s2);border-left:2px solid var(--red);}
+.how-callout p{font-family:var(--fc);font-size:.9rem;font-weight:400;letter-spacing:.01em;color:var(--w60);line-height:1.7;margin:0;}
+@media(max-width:600px){.how-item{grid-template-columns:1fr;gap:.4rem;padding:1.5rem 1.25rem;}.how-n{font-size:.55rem;}}
