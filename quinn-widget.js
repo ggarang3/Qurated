@@ -1,184 +1,230 @@
-// Quinn Widget — full branching conversational flow
-const qPanel=document.getElementById('q-panel'),
-      qMsgs=document.getElementById('q-msgs'),
-      qInput=document.getElementById('q-input'),
-      qTyping=document.getElementById('q-typing'),
-      qChips=document.getElementById('q-chips');
+/* ── QUINN PAGE CONFIG ──────────────────────────────────────
+ *  Set `const QUINN_PAGE = 'pagename'` in each HTML file
+ *  before this script loads.
+ * ──────────────────────────────────────────────────────── */
+const PAGE = (typeof QUINN_PAGE !== 'undefined') ? QUINN_PAGE : 'home';
 
-if(!qPanel) throw new Error('Quinn: missing DOM elements');
+const PAGE_CONFIG = {
+  cover:        { greeting: "Not sure where to start? Tell me a bit about your business and I'll point you in the right direction.", proactive: "Not sure where to start? Ask Quinn →", delay: 8000, bizType: null },
+  home:         { greeting: "Hey — I'm Quinn. Two quick questions and I'll know exactly whether Qurated's the right fit for your business.", proactive: "Not sure if we're the right fit? Ask Quinn →", delay: 5000, bizType: null },
+  about:        { greeting: "Curious about how Qurated works or who's behind it? Ask me anything — no prep needed.", proactive: "Curious about how we work? Ask Quinn →", delay: 7000, bizType: null },
+  trades:       { greeting: "Hey — I work with trade businesses across Perth. What's your biggest challenge right now — leads, follow-up, or online presence?", proactive: "What's your biggest challenge right now? →", delay: 4000, bizType: 'Trades or Construction' },
+  realestate:   { greeting: "Hey — I work with Perth agents and property businesses. Where's your pipeline at right now — consistent, patchy, or barely there?", proactive: "Where's your pipeline at right now? →", delay: 4000, bizType: 'Real Estate' },
+  capabilities: { greeting: "Not sure which Qurated package fits your business? Tell me what you're working with and I'll give you a straight answer.", proactive: "Not sure which package fits? Give me 60 seconds →", delay: 5000, bizType: null },
+  contact:      { greeting: "Need help before you hit submit? Ask me anything — how we work, what to expect, whether we're the right fit.", proactive: "Need help before you submit? Ask Quinn →", delay: 6000, bizType: null },
+};
 
-let qOpen=false,qStarted=false;
-let collecting=false,dStep=0,dData={};
-let qH=[],businessType='',mainChallenge='',quinnStage=0;
+const cfg = PAGE_CONFIG[PAGE] || PAGE_CONFIG.home;
 
-// Proactive bubble after 10s
-setTimeout(()=>{
-  const p=document.getElementById('q-proactive');
-  if(p&&!qOpen){p.classList.add('visible');setTimeout(()=>p.classList.remove('visible'),9000);}
-},10000);
+/* ── STATE ──────────────────────────────────────────────── */
+let stage        = cfg.bizType ? 2 : 1; // skip bizType stage if page pre-selects
+let businessType = cfg.bizType || '';
+let challenge    = '';
+let isOpen       = false;
+let proactiveTimer;
 
+/* ── DOM REFS ────────────────────────────────────────────── */
+const panel     = document.getElementById('q-panel');
+const msgs      = document.getElementById('q-msgs');
+const typing    = document.getElementById('q-typing');
+const chipsWrap = document.getElementById('q-chips');
+const input     = document.getElementById('q-input');
+const sendBtn   = document.getElementById('q-send');
+const toggle    = document.getElementById('q-toggle');
+const proactive = document.getElementById('q-proactive');
+
+if(!panel) console.warn('Quinn: panel not found');
+
+/* ── OPEN / CLOSE ────────────────────────────────────────── */
 function openQuinn(){
-  const p=document.getElementById('q-proactive');
-  if(p) p.classList.remove('visible');
-  qOpen=true;qPanel.classList.add('open');
-  if(!qStarted) initQ();
-  setTimeout(()=>qInput.focus(),300);
+  if(!panel) return;
+  if(!isOpen){
+    isOpen = true;
+    panel.classList.add('open');
+    if(proactive) proactive.classList.remove('visible');
+    if(!msgs.dataset.started) initQ();
+    setTimeout(() => input && input.focus(), 350);
+  }
+}
+function closeQuinn(){
+  isOpen = false;
+  if(panel) panel.classList.remove('open');
 }
 
-const tog=document.getElementById('q-toggle');
-if(tog) tog.addEventListener('click',()=>{
-  qOpen=!qOpen;qPanel.classList.toggle('open',qOpen);
-  const p=document.getElementById('q-proactive');if(p) p.classList.remove('visible');
-  if(qOpen&&!qStarted) initQ();
-  if(qOpen) setTimeout(()=>qInput.focus(),300);
-});
+if(toggle){ toggle.addEventListener('click', () => isOpen ? closeQuinn() : openQuinn()); }
 
-// Branching scripts — one line each, then CTA
-const T1={
-  'Trades or Construction':"Got it. What's the biggest thing stopping your phone from ringing consistently?",
-  'Real Estate':           "Got it. What's the biggest gap in your pipeline right now?",
-  'Professional Services': "Got it. What's holding back consistent enquiries for you?",
-  'Something else':        "Got it. What's your biggest challenge with getting leads online?"
-};
-const T2={
-  'Not enough inbound leads':    "That's the core of what we fix. Most clients have a lead generation system live and generating within 30 days.",
-  'No time to manage marketing': "That's what we're built for — the system runs without you managing it. Setup takes 30 days.",
-  "Website isn't converting":    "We rebuild for conversion with AI follow-up built in so no lead goes cold. Live within 30 days.",
-  'Need more visibility online': "Consistent presence is part of the system — content managed every month, end to end."
-};
-const CTA_CHIPS=[
-  {l:'Book a free call',a:'book'},
-  {l:'Leave my details',a:'details'}
-];
+/* ── PROACTIVE BUBBLE — disabled ────────────────────────── */
+// Proactive popup removed. Quinn is accessible via the toggle button only.
 
-// Helpers
-function addQ(t){const d=document.createElement('div');d.className='qm qq';const p=document.createElement('p');p.textContent=t;d.appendChild(p);qMsgs.insertBefore(d,qTyping);qMsgs.scrollTop=qMsgs.scrollHeight;}
-function addU(t){const d=document.createElement('div');d.className='qm qu';const p=document.createElement('p');p.textContent=t;d.appendChild(p);qMsgs.insertBefore(d,qTyping);qMsgs.scrollTop=qMsgs.scrollHeight;}
-function showT(){qTyping.style.display='flex';qMsgs.scrollTop=qMsgs.scrollHeight;}
-function hideT(){qTyping.style.display='none';}
-function dl(ms){return new Promise(r=>setTimeout(r,ms));}
+/* ── MESSAGES ────────────────────────────────────────────── */
+function addMsg(text, who){
+  const div = document.createElement('div');
+  div.className = `qm ${who}`;
+  const p = document.createElement('p');
+  p.textContent = text;
+  div.appendChild(p);
+  msgs.insertBefore(div, typing);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
 
-function showChips(chips){
-  qChips.innerHTML='';
-  chips.forEach(c=>{
-    const b=document.createElement('button');b.className='q-chip';b.textContent=c.l;
-    b.addEventListener('click',()=>{
-      hideChips();
-      if(c.a==='book')          openCalendly();
-      else if(c.a==='details')  startCollect();
-      else if(c.a==='business'){businessType=c.l;handleInput(c.l);}
-      else if(c.a==='challenge'){mainChallenge=c.l;handleInput(c.l);}
-      else handleInput(c.l);
-    });
-    qChips.appendChild(b);
+function showTyping(){ if(typing) typing.style.display = 'flex'; msgs.scrollTop = msgs.scrollHeight; }
+function hideTyping(){ if(typing) typing.style.display = 'none'; }
+
+function quinnSay(text, delay = 900){
+  return new Promise(resolve => {
+    showTyping();
+    setTimeout(() => {
+      hideTyping();
+      addMsg(text, 'qq');
+      resolve();
+    }, delay);
   });
-  qChips.classList.remove('hidden');
 }
-function hideChips(){qChips.classList.add('hidden');qChips.innerHTML='';}
 
-// Init
+/* ── CHIPS ───────────────────────────────────────────────── */
+function setChips(options, onSelect){
+  if(!chipsWrap) return;
+  chipsWrap.innerHTML = '';
+  chipsWrap.className = 'q-chips';
+  options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'q-chip';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => {
+      clearChips();
+      addMsg(opt, 'qu');
+      onSelect(opt);
+    });
+    chipsWrap.appendChild(btn);
+  });
+}
+function clearChips(){ if(chipsWrap){ chipsWrap.innerHTML = ''; chipsWrap.className = 'q-chips hidden'; } }
+
+/* ── INIT FLOW ───────────────────────────────────────────── */
 async function initQ(){
-  qStarted=true;
-  showT();await dl(900);hideT();
-  addQ("Hey — I'm Quinn. Two quick questions and I'll know if Qurated's the right fit for you.");
-  showT();await dl(700);hideT();
-  addQ("What kind of business do you run?");
-  quinnStage=1;
-  showChips([
-    {l:'Trades or Construction',a:'business'},
-    {l:'Real Estate',           a:'business'},
-    {l:'Professional Services', a:'business'},
-    {l:'Something else',        a:'business'}
-  ]);
-}
+  msgs.dataset.started = '1';
+  await quinnSay(cfg.greeting, 700);
 
-// Main handler
-async function handleInput(text){
-  if(!text.trim()) return;
-  hideChips();addU(text);qH.push({role:'user',content:text});
-  if(collecting){handleCollect(text);return;}
-
-  if(quinnStage===1){
-    const reply=T1[businessType]||T1['Something else'];
-    showT();await dl(700);hideT();
-    addQ(reply);qH.push({role:'assistant',content:reply});
-    quinnStage=2;
-    showChips([
-      {l:'Not enough inbound leads',   a:'challenge'},
-      {l:'No time to manage marketing',a:'challenge'},
-      {l:"Website isn't converting",   a:'challenge'},
-      {l:'Need more visibility online',a:'challenge'}
-    ]);
-    return;
-  }
-  if(quinnStage===2){
-    const reply=T2[mainChallenge]||T2['Not enough inbound leads'];
-    showT();await dl(700);hideT();
-    addQ(reply);qH.push({role:'assistant',content:reply});
-    showT();await dl(600);hideT();
-    addQ("What's the best next step for you?");
-    quinnStage=3;
-    showChips(CTA_CHIPS);
-    return;
-  }
-  // Stage 3+ — AI takes over, brief and CTA-focused
-  showT();
-  const rep=await callAPI();
-  hideT();
-  if(rep){addQ(rep);qH.push({role:'assistant',content:rep});}
-  showChips(CTA_CHIPS);
-}
-
-async function callAPI(){
-  try{
-    const r=await fetch('/.netlify/functions/quinn',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({messages:qH,context:{businessType,mainChallenge}})
+  if(stage === 1){
+    // Stage 1: What type of business?
+    await quinnSay("First — what type of business are you running?", 600);
+    setChips(['Trades or Construction','Real Estate','Professional Services','Other'], async (opt) => {
+      businessType = opt;
+      stage = 2;
+      await handleStage2();
     });
-    const d=await r.json();
-    return d.reply||"Reach us at info@quratedagency.com.";
-  }catch{return "Reach us at info@quratedagency.com.";}
+  } else {
+    // Page already has business type (trades/RE pages)
+    await handleStage2();
+  }
 }
 
-// Detail collection
-function startCollect(){
-  collecting=true;dStep=0;dData={};hideChips();
-  showT();setTimeout(()=>{hideT();addQ("What's your name?");},600);
-}
-function handleCollect(t){
-  if(dStep===0){dData.name=t;dStep=1;showT();setTimeout(()=>{hideT();addQ("And your email?");},600);}
-  else if(dStep===1){dData.email=t;dStep=2;showT();setTimeout(()=>{hideT();addQ("Best phone number?");},600);}
-  else if(dStep===2){dData.phone=t;dStep=3;showT();setTimeout(()=>{hideT();addQ("What's your business called?");},600);}
-  else if(dStep===3){dData.business=t;submitLead();}
+async function handleStage2(){
+  await quinnSay("Got it. And what's the biggest gap right now?", 600);
+  setChips(['Not enough inbound leads','Leads going cold before follow-up','No time to manage marketing','Website isn\'t converting','Need more visibility online','Not sure — need advice'], async (opt) => {
+    challenge = opt;
+    stage = 3;
+    await handleStage3();
+  });
 }
 
-async function submitLead(){
-  showT();
-  const payload={
-    name:dData.name,email:dData.email,phone:dData.phone,business:dData.business,
-    businessType:businessType||'Not specified',
-    challenge:mainChallenge||'Not specified',
-    source:'Quinn AI Chat — '+window.location.pathname
-  };
-  try{await fetch('/.netlify/functions/submit-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}catch(e){}
-  try{
-    await fetch('https://formspree.io/f/mreovojd',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        _subject:'New Quinn Lead: '+dData.business,
-        Name:dData.name,Email:dData.email,Phone:dData.phone,Business:dData.business,
-        'Business Type':businessType||'Not specified',
-        'Main Challenge':mainChallenge||'Not specified',
-        'Page':window.location.pathname
-      })
+async function handleStage3(){
+  await quinnSay(getRecommendation(), 700);
+  await quinnSay("Want me to connect you with the team for a free 30-minute diagnosis call? No pitch — just clarity on what your business actually needs.", 700);
+  setChips(['Yes — book me in','Not yet, I have more questions','Send me more info'], async (opt) => {
+    if(opt === 'Yes — book me in'){
+      await quinnSay("Perfect. Click the button below to pick a time — the call is free, 30 minutes, and we won't pitch you anything you didn't ask for.", 600);
+      setTimeout(() => openCalendly(), 1000);
+    } else if(opt === 'Not yet, I have more questions'){
+      clearChips();
+      await quinnSay("No problem — what do you want to know? I'll answer honestly, even if that means telling you we're not the right fit.", 600);
+    } else {
+      await quinnSay("Easy — head to our Capabilities page for the full breakdown, then reach out when you're ready. I'll be here.", 600);
+      setTimeout(() => window.location.href = '/capabilities', 1800);
+    }
+  });
+}
+
+function getRecommendation(){
+  const t = businessType.toLowerCase();
+  const c = challenge.toLowerCase();
+
+  if(c.includes('inbound leads') || c.includes('not enough')){
+    return `Based on what you've told me — ${businessType} with a lead generation gap — I'd start with The Foundation (website + AI). That's where the fastest change happens. Most clients see inbound within 30 days of launch.`;
+  }
+  if(c.includes('cold') || c.includes('follow-up')){
+    return `The leads-going-cold problem is almost always an automation gap. The AI follow-up layer is what fixes it — instant response, lead qualification, no manual chasing. That's built into The Foundation package.`;
+  }
+  if(c.includes('time') || c.includes('managing marketing')){
+    return `If time is the constraint, The Authority package is the answer — we handle all content and social management monthly. You review, we publish. You get your time back.`;
+  }
+  if(c.includes('converting') || c.includes('website')){
+    return `A non-converting website is usually a copy and structure problem, not a design one. The Foundation package rebuilds it around your buyer's journey — with a clear CTA path, local SEO, and a lead capture funnel built in.`;
+  }
+  if(c.includes('visibility')){
+    const re = t.includes('real') ? ' — suburb-specific content and Google authority building for your areas.' : ' — local SEO, Google Business Profile, and consistent content publishing.';
+    return `Visibility is a content + SEO game${re} The Authority package covers that. The Foundation + Authority combo is usually the sweet spot.`;
+  }
+  return `Based on what you've shared — ${businessType}, and a bit unsure where to start — the free diagnosis call is honestly the best next step. 30 minutes and you'll know exactly what the system should look like for your business.`;
+}
+
+/* ── FREE TEXT INPUT ─────────────────────────────────────── */
+async function sendUserMsg(){
+  if(!input) return;
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  clearChips();
+  addMsg(text, 'qu');
+  await handleFreeText(text.toLowerCase());
+}
+
+async function handleFreeText(text){
+  try {
+    showTyping();
+    const sysPrompt = `You are Quinn — a friendly, direct AI assistant for Qurated, a Perth-based growth systems agency. Qurated builds lead generation systems (website, AI, CRM, content) for trade businesses and real estate agents. Be concise, warm, and honest. If someone is clearly not a fit, say so. Always guide toward a free 30-minute diagnosis call at /contact or help them understand the right package (Foundation = web+AI, Authority = content+social, Full Engine = both). Current page context: ${PAGE}. Business type collected: "${businessType}". Challenge: "${challenge}". Answer in 2-3 sentences max unless a detailed explanation is genuinely needed.`;
+    const res = await fetch('/.netlify/functions/quinn', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text, systemPrompt: sysPrompt, page: PAGE, businessType, challenge })
     });
-  }catch(e){}
-  hideT();collecting=false;
-  addQ("Done, "+dData.name+" — we'll be in touch within 24 hours.");
-  showChips([{l:'Book a call now →',a:'book'}]);
+    hideTyping();
+    if(res.ok){
+      const data = await res.json();
+      const reply = data.reply || data.message || "Let me get the team to answer that one properly — head to our contact page and we'll follow up within the hour.";
+      addMsg(reply, 'qq');
+    } else {
+      addMsg(getFallbackReply(text), 'qq');
+    }
+  } catch(e){
+    hideTyping();
+    addMsg(getFallbackReply(text), 'qq');
+  }
 }
 
-// Send
-async function send(){const t=qInput.value.trim();if(!t)return;qInput.value='';await handleInput(t);}
-document.getElementById('q-send').addEventListener('click',send);
-qInput.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
+function getFallbackReply(text){
+  if(text.includes('price') || text.includes('cost') || text.includes('how much')){
+    return "Pricing varies by business — we don't do generic packages at generic prices. The fastest way to get a number is the free diagnosis call. We'll tell you what the system should look like and what it should cost. Book at the link above.";
+  }
+  if(text.includes('how long') || text.includes('timeline')){
+    return "The Foundation package goes live within 30 days. Authority management starts the following month. Full Engine is both running simultaneously. Good systems take 90 days to show their full capability.";
+  }
+  if(text.includes('perth') || text.includes('where')){
+    return "We're based in Perth, WA. We work primarily with Perth businesses and have clients in Adelaide too. If you're elsewhere in Australia — reach out. We'll tell you honestly if we can do the job well.";
+  }
+  if(text.includes('seo')){
+    return "Yes — local SEO is part of The Foundation package. Google Business Profile, service-page optimisation, suburb targeting where relevant. It's built in, not an add-on.";
+  }
+  return "Good question — that one's better answered by the team directly. Book a free diagnosis call at /contact and you'll get a straight answer within 24 hours, no pitch attached.";
+}
+
+/* ── SEND EVENTS ─────────────────────────────────────────── */
+if(sendBtn) sendBtn.addEventListener('click', sendUserMsg);
+if(input){
+  input.addEventListener('keydown', e => { if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); sendUserMsg(); } });
+}
+
+/* ── EXPOSE openQuinn GLOBALLY ───────────────────────────── */
+window.openQuinn = openQuinn;
+window.closeQuinn = closeQuinn;
