@@ -100,3 +100,38 @@ function selectBudget(btn,key){
   if(rb) rb.classList.remove('hidden');
 }
 
+
+// CONTACT FORM SUBMISSION
+async function submitContact(){
+  const name  = document.getElementById('f-name')?.value.trim();
+  const biz   = document.getElementById('f-biz')?.value.trim();
+  const email = document.getElementById('f-email')?.value.trim();
+  const phone = document.getElementById('f-phone')?.value.trim();
+  const type  = document.getElementById('f-type')?.value;
+  const chal  = document.getElementById('f-challenge')?.value;
+  const msg   = document.getElementById('f-msg')?.value.trim();
+
+  if(!name||!email||!email.includes('@')) return;
+
+  const btn=document.querySelector('.form-submit');
+  if(btn){btn.textContent='Sending...';btn.disabled=true;}
+
+  try{
+    await fetch('https://formspree.io/f/mreovojd',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        _subject:'New Contact: '+(biz||name),
+        Name:name, Business:biz, Email:email, Phone:phone,
+        'Business Type':type||'Not selected',
+        'Main Challenge':chal||'Not selected',
+        Message:msg||'—',
+        Source:'Contact Form — '+window.location.pathname
+      })
+    });
+  }catch(e){}
+
+  const ok=document.getElementById('form-ok');
+  if(ok) ok.style.display='block';
+  if(btn) btn.style.display='none';
+}
